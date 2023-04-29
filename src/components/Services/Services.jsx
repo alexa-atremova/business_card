@@ -8,6 +8,9 @@ const ServicesContainer = styled.div`
   margin-top: 150px;
   width: 100%;
   min-height: 1000px;
+  @media (max-width: 1359px) {
+    margin-top: 50px;
+  }
 `;
 
 const Title = styled.h2`
