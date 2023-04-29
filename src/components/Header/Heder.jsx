@@ -6,6 +6,8 @@ import {
   faInstagram,
   faFacebook,
   faTelegram,
+  faTwitter,
+  faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 
 const HeaderContainer = styled.header`
@@ -54,8 +56,12 @@ const Header = () => {
           <SocialIcon href="https://www.facebook.com">
             <FontAwesomeIcon icon={faFacebook} />
           </SocialIcon>
+
           <SocialIcon href="https://www.telegram.org">
-            <FontAwesomeIcon icon={faTelegram} />
+            <FontAwesomeIcon icon={faTwitter} />
+          </SocialIcon>
+          <SocialIcon href="https://www.telegram.org">
+            <FontAwesomeIcon icon={faTiktok} />
           </SocialIcon>
         </SocialIcons>
       </Wrapper>
