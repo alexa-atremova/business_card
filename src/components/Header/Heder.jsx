@@ -12,6 +12,7 @@ import {
 
 const HeaderContainer = styled.header`
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #fff;
   color: #000;
@@ -23,8 +24,13 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1300px;
   width: 100%;
   padding: 0 100px;
+  @media (max-width: 1359px) {
+    max-width: 900px;
+    padding: 0 50px;
+  }
 `;
 const Logo = styled.img`
   width: 120px;

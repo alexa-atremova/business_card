@@ -18,13 +18,16 @@ const Title = styled.h2`
   color: #363636;
   margin: 0;
   text-transform: uppercase;
+  @media (max-width: 1359px) {
+    font-size: 34px;
+  }
 `;
 
 const Description = styled.p`
   font-family: "Poppins";
   max-width: 600px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
   text-align: center;
   margin-bottom: 40px;
   color: #363636;
@@ -44,22 +47,34 @@ const BlocksContainer = styled.div`
   width: 100%;
   max-width: 1100px;
   gap: 20px;
+  @media (max-width: 1359px) {
+    max-width: 900px;
+  }
 `;
 
 const Block = styled.div`
   width: 250px;
-  height: 250px;
+  height: 260px;
+  font-family: "Poppins";
   background-color: white;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin-right: 16px;
   padding: 16px;
+  @media (max-width: 1359px) {
+    width: 250px;
+    height: 260px;
+  }
 `;
 
 const BlockTitle = styled.h3`
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
+  margin: 0;
+  @media (max-width: 1359px) {
+    margin: 0;
+  }
 `;
 
 const BlockText = styled.p`

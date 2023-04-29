@@ -1,12 +1,13 @@
 import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-
+import left from "./../../assets/left.png";
+import right from "./../../assets/right.png";
 const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
   width: 100%;
   min-height: 1000px;
@@ -18,9 +19,11 @@ const Title = styled.h2`
   font-weight: bold;
   border-bottom: 6px solid #ff6600;
   color: #363636;
-  margin: 0;
-  margin: 20px;
+
   text-transform: uppercase;
+  @media (max-width: 1359px) {
+    font-size: 34px;
+  }
 `;
 
 const Description = styled.p`
@@ -29,7 +32,8 @@ const Description = styled.p`
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  margin-bottom: 40px;
+  margin: 0;
+  margin-top: 10px;
   color: #363636;
   b {
     font-weight: bold;
@@ -44,28 +48,33 @@ const BlocksContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
 
   .desk {
     width: 100%;
-    height: 420px;
+    height: 480px;
 
     .block {
-      max-width: 600px;
-      height: 300px;
+      max-width: 700px;
+      height: 380px;
       background-color: white;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       margin-right: 16px;
+      font-family: "Poppins";
       padding: 16px;
+
       h3 {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin: 0;
       }
       p {
-        font-size: 14px;
-        line-height: 1.5;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+        margin-top: 10px;
       }
     }
     .slick-list {
@@ -92,15 +101,95 @@ const BlocksContainer = styled.div`
       opacity: 1;
     }
   }
+  @media (max-width: 1359px) {
+    max-width: 600px;
+    .desk {
+      width: 100%;
+      height: 670px;
+
+      .block {
+        max-width: 500px;
+        height: 570px;
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+`;
+export const StyledNextArrow = styled.div`
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -35px;
+
+  width: 30px;
+  height: 30px;
+
+  top: 50%;
+  user-select: none;
+  cursor: pointer;
+  ::before {
+    display: none;
+  }
+  @media (max-width: 1919px) {
+  }
+
+  @media (max-width: 540px) {
+    display: none;
+  }
 `;
 
+export const StyledPrevArrow = styled.div`
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: -35px;
+
+  width: 30px;
+  height: 30px;
+
+  user-select: none;
+  cursor: pointer;
+  ::before {
+    display: none;
+  }
+  @media (max-width: 1919px) {
+  }
+  @media (max-width: 540px) {
+    display: none;
+  }
+`;
 const Testimonials = () => {
+  function NextArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <StyledNextArrow className={className} onClick={onClick}>
+        <img src={right} alt="RightArrow" />
+      </StyledNextArrow>
+    );
+  }
+  function PrevArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <StyledPrevArrow className={className} onClick={onClick}>
+        <img src={left} alt="LeftArrow" />
+      </StyledPrevArrow>
+    );
+  }
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   return (
     <ServicesContainer>

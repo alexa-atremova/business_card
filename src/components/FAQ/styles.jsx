@@ -10,7 +10,7 @@ export const StyledFAQ = styled.section`
   .wrapper {
     width: 100%;
     max-width: 1000px;
-    margin-top: 0px;
+    margin-top: 50px;
     margin-bottom: 100px;
     display: flex;
     align-items: center;
@@ -18,12 +18,9 @@ export const StyledFAQ = styled.section`
     flex-direction: column;
 
     z-index: 1;
-    @media (max-width: 1919px) {
+    @media (max-width: 1359px) {
       margin-top: 50px;
       max-width: 675px;
-    }
-    @media (max-width: 767px) {
-      max-width: 320px;
     }
 
     .text {
@@ -34,7 +31,7 @@ export const StyledFAQ = styled.section`
       margin-top: 50px;
       margin-bottom: 50px;
       gap: 30px;
-      @media (max-width: 1919px) {
+      @media (max-width: 1359px) {
         margin-top: 10px;
         margin-bottom: 0px;
         gap: 20px;
@@ -49,39 +46,9 @@ export const StyledFAQ = styled.section`
         border-bottom: 6px solid #ff6600;
         padding-bottom: 16px;
         color: #363636;
-        @media (max-width: 1919px) {
-          height: 60px;
-          font-size: 35px;
-          line-height: 45px;
-        }
-        @media (max-width: 767px) {
-          width: 320px;
-          height: 110px;
-          font-size: 28px;
-          line-height: 45px;
-          text-align: center;
-        }
-      }
-      p {
-        margin: 0;
-        width: 905px;
-        font-family: "Poppins";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 35px;
-        /* or 175% */
-
-        text-align: center;
-
-        color: #1b1b1b;
-        @media (max-width: 1919px) {
-          width: 643.87px;
-          font-size: 18px;
-          line-height: 25px;
-        }
-        @media (max-width: 767px) {
-          width: 320px;
+        @media (max-width: 1359px) {
+          font-size: 34px;
+          padding-bottom: 10px;
         }
       }
     }
@@ -106,7 +73,7 @@ export const StyledFAQ = styled.section`
         line-height: 35px;
         /* identical to box height, or 159% */
 
-        color: #000000;
+        color: #363636;
 
         height: 70px;
         overflow: hidden;
@@ -122,29 +89,27 @@ export const StyledFAQ = styled.section`
           justify-content: space-between;
           align-items: center;
           height: 80px;
+
           h2 {
             margin: 0;
             font-family: "Poppins";
             font-style: normal;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 24px;
             line-height: 35px;
             /* identical to box height, or 159% */
 
-            color: #1b1b1b;
-            @media (max-width: 1919px) {
-              font-size: 16px;
-              line-height: 25px;
-            }
-            @media (max-width: 767px) {
+            color: #363636;
+            @media (max-width: 1359px) {
+              font-size: 21px;
             }
           }
           .arrow {
             width: 30px;
             height: 30px;
-            @media (max-width: 1919px) {
-              width: 20px;
-              height: 20px;
+            @media (max-width: 1359px) {
+              width: 25px;
+              height: 25px;
             }
           }
         }
@@ -161,21 +126,12 @@ export const StyledFAQ = styled.section`
 
           color: #1b1b1b;
           transition: all 0.5s ease;
-          @media (max-width: 1919px) {
+          @media (max-width: 1359px) {
             font-size: 16px;
-            line-height: 25px;
           }
-        }
-        @media (max-width: 1920px) {
-          height: 80px;
-        }
-        @media (max-width: 768px) {
         }
       }
       .second {
-        @media (max-width: 768px) {
-          height: 70px;
-        }
       }
 
       .opened {
@@ -189,22 +145,14 @@ export const StyledFAQ = styled.section`
         }
       }
       .opened.first {
-        @media (max-width: 1919px) {
-          height: 300px;
-        }
-
-        @media (max-width: 767px) {
-          height: 255px;
+        @media (max-width: 1359px) {
+          height: 840px;
         }
       }
       .opened.second {
         height: 420px;
-        @media (max-width: 1919px) {
-          height: 130px;
-        }
-
-        @media (max-width: 767px) {
-          height: 230px;
+        @media (max-width: 1359px) {
+          height: 530px;
         }
       }
     }

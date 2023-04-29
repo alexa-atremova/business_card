@@ -17,7 +17,6 @@ const FooterContainer = styled.header`
   width: 100%;
   min-height: 300px;
   color: #fff;
-  padding: 16px;
 `;
 const Wrapper = styled.div`
   display: flex;
