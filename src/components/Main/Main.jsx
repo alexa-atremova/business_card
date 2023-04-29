@@ -16,6 +16,7 @@ const MainContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  min-height: 600px;
   margin-top: 100px;
 `;
 const Wrapper = styled.div`
@@ -33,7 +34,7 @@ const TextContainer = styled.div`
   font-family: "Poppins";
   color: #363636;
   gap: 20px;
-  animation: ${fadeIn} 1s ease-in;
+  /* animation: ${fadeIn} 1s ease-in; */
 `;
 const TitleWrapp = styled.div`
   display: flex;
@@ -64,7 +65,7 @@ const Paragraph = styled.p`
 const ImageContainer = styled.div`
   width: 100%;
   max-width: 400px;
-  animation: ${fadeIn} 1s ease-in;
+  /* animation: ${fadeIn} 1s ease-in; */
 `;
 
 const Image = styled.img`
