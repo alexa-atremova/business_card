@@ -24,6 +24,9 @@ const Title = styled.h2`
   @media (max-width: 1359px) {
     font-size: 34px;
   }
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 `;
 
 const Description = styled.p`
@@ -40,6 +43,9 @@ const Description = styled.p`
   p {
     color: #ff6600;
   }
+  @media (max-width: 767px) {
+    max-width: 530px;
+  }
 `;
 
 const BlocksContainer = styled.div`
@@ -52,6 +58,9 @@ const BlocksContainer = styled.div`
   gap: 20px;
   @media (max-width: 1359px) {
     max-width: 900px;
+  }
+  @media (max-width: 767px) {
+    max-width: 530px;
   }
 `;
 
@@ -67,6 +76,10 @@ const Block = styled.div`
   @media (max-width: 1359px) {
     width: 250px;
     height: 260px;
+  }
+  @media (max-width: 767px) {
+    width: 400px;
+    height: 150px;
   }
 `;
 

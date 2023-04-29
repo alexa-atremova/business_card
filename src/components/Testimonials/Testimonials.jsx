@@ -24,6 +24,9 @@ const Title = styled.h2`
   @media (max-width: 1359px) {
     font-size: 34px;
   }
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 `;
 
 const Description = styled.p`
@@ -40,6 +43,9 @@ const Description = styled.p`
   }
   p {
     color: #ff6600;
+  }
+  @media (max-width: 767px) {
+    max-width: 530px;
   }
 `;
 
@@ -112,6 +118,22 @@ const BlocksContainer = styled.div`
         height: 570px;
         p {
           font-size: 17px;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    max-width: 500px;
+    .desk {
+      width: 100%;
+      height: 670px;
+
+      .block {
+        max-width: 400px;
+        height: 570px;
+        p {
+          font-size: 15px;
+          line-height: 25px;
         }
       }
     }

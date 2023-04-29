@@ -31,6 +31,9 @@ const Wrapper = styled.div`
   @media (max-width: 1359px) {
     max-width: 700px;
   }
+  @media (max-width: 767px) {
+    max-width: 510px;
+  }
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -42,7 +45,10 @@ const TextContainer = styled.div`
   gap: 20px;
   /* animation: ${fadeIn} 1s ease-in; */
   @media (max-width: 1359px) {
-    max-width: 400px;
+    max-width: 420px;
+  }
+  @media (max-width: 767px) {
+    max-width: 300px;
   }
 `;
 const TitleWrapp = styled.div`
@@ -60,6 +66,10 @@ const Title1 = styled.h1`
   @media (max-width: 1359px) {
     font-size: 26px;
   }
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
 `;
 
 const Title2 = styled.h2`
@@ -69,6 +79,9 @@ const Title2 = styled.h2`
   @media (max-width: 1359px) {
     font-size: 34px;
   }
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -76,7 +89,11 @@ const Paragraph = styled.p`
   line-height: 1.5;
   margin: 0;
   @media (max-width: 1359px) {
-    font-size: 16px;
+    font-size: 18px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 1.4;
   }
 `;
 
@@ -86,6 +103,9 @@ const ImageContainer = styled.div`
   /* animation: ${fadeIn} 1s ease-in; */
   @media (max-width: 1359px) {
     max-width: 250px;
+  }
+  @media (max-width: 767px) {
+    max-width: 180px;
   }
 `;
 

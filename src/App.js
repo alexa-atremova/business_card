@@ -8,6 +8,7 @@ import Testimonials from "./components/Testimonials/Testimonials";
 
 const SApp = styled.div`
   overflow: hidden;
+  user-select: none;
 `;
 function App() {
   return (

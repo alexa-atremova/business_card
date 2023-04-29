@@ -22,6 +22,9 @@ export const StyledFAQ = styled.section`
       margin-top: 50px;
       max-width: 675px;
     }
+    @media (max-width: 767px) {
+      max-width: 530px;
+    }
 
     .text {
       display: flex;
@@ -49,6 +52,10 @@ export const StyledFAQ = styled.section`
         @media (max-width: 1359px) {
           font-size: 34px;
           padding-bottom: 10px;
+        }
+        @media (max-width: 767px) {
+          height: 50px;
+          font-size: 26px;
         }
       }
     }
@@ -80,7 +87,9 @@ export const StyledFAQ = styled.section`
         transition: all 0.3s 0.2s linear;
 
         cursor: pointer;
-
+        @media (max-width: 767px) {
+          padding: 10px 20px;
+        }
         .head {
           display: flex;
           flex-direction: row;
@@ -102,6 +111,10 @@ export const StyledFAQ = styled.section`
             color: #363636;
             @media (max-width: 1359px) {
               font-size: 21px;
+            }
+            @media (max-width: 767px) {
+              line-height: 25px;
+              font-size: 20px;
             }
           }
           .arrow {
@@ -129,6 +142,10 @@ export const StyledFAQ = styled.section`
           @media (max-width: 1359px) {
             font-size: 16px;
           }
+          @media (max-width: 767px) {
+            padding: 0px 5px;
+            line-height: 25px;
+          }
         }
       }
       .second {
@@ -148,11 +165,17 @@ export const StyledFAQ = styled.section`
         @media (max-width: 1359px) {
           height: 840px;
         }
+        @media (max-width: 767px) {
+          height: 800px;
+        }
       }
       .opened.second {
         height: 420px;
         @media (max-width: 1359px) {
           height: 530px;
+        }
+        @media (max-width: 767px) {
+          height: 510px;
         }
       }
     }
