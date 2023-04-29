@@ -36,6 +36,9 @@ const Wrapper = styled.div`
       margin-left: 10px;
     }
   }
+  @media (max-width: 539px) {
+    padding: 0 20px;
+  }
 `;
 
 const SocialIcons = styled.div`

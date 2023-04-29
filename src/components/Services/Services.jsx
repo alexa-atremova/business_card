@@ -11,6 +11,9 @@ const ServicesContainer = styled.div`
   @media (max-width: 1359px) {
     margin-top: 50px;
   }
+  @media (max-width: 539px) {
+    margin-top: 80px;
+  }
 `;
 
 const Title = styled.h2`
@@ -46,6 +49,14 @@ const Description = styled.p`
   @media (max-width: 767px) {
     max-width: 530px;
   }
+  @media (max-width: 539px) {
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 const BlocksContainer = styled.div`
@@ -61,6 +72,9 @@ const BlocksContainer = styled.div`
   }
   @media (max-width: 767px) {
     max-width: 530px;
+  }
+  @media (max-width: 539px) {
+    max-width: 320px;
   }
 `;
 
@@ -81,6 +95,10 @@ const Block = styled.div`
     width: 400px;
     height: 150px;
   }
+  @media (max-width: 539px) {
+    width: 320px;
+    height: 175px;
+  }
 `;
 
 const BlockTitle = styled.h3`
@@ -91,11 +109,19 @@ const BlockTitle = styled.h3`
   @media (max-width: 1359px) {
     margin: 0;
   }
+  @media (max-width: 539px) {
+    font-size: 15px;
+  }
 `;
 
 const BlockText = styled.p`
   font-size: 14px;
   line-height: 1.5;
+  @media (max-width: 539px) {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
 `;
 
 const Services = () => {

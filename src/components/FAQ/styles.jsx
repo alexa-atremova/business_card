@@ -25,6 +25,9 @@ export const StyledFAQ = styled.section`
     @media (max-width: 767px) {
       max-width: 530px;
     }
+    @media (max-width: 539px) {
+      max-width: 320px;
+    }
 
     .text {
       display: flex;
@@ -90,6 +93,10 @@ export const StyledFAQ = styled.section`
         @media (max-width: 767px) {
           padding: 10px 20px;
         }
+        @media (max-width: 539px) {
+          padding: 15px 10px;
+        }
+
         .head {
           display: flex;
           flex-direction: row;
@@ -115,6 +122,10 @@ export const StyledFAQ = styled.section`
             @media (max-width: 767px) {
               line-height: 25px;
               font-size: 20px;
+            }
+            @media (max-width: 539px) {
+              font-size: 16px;
+              line-height: 20px;
             }
           }
           .arrow {
@@ -146,6 +157,10 @@ export const StyledFAQ = styled.section`
             padding: 0px 5px;
             line-height: 25px;
           }
+          @media (max-width: 539px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
         }
       }
       .second {
@@ -168,6 +183,9 @@ export const StyledFAQ = styled.section`
         @media (max-width: 767px) {
           height: 800px;
         }
+        @media (max-width: 539px) {
+          height: 930px;
+        }
       }
       .opened.second {
         height: 420px;
@@ -176,6 +194,9 @@ export const StyledFAQ = styled.section`
         }
         @media (max-width: 767px) {
           height: 510px;
+        }
+        @media (max-width: 539px) {
+          height: 600px;
         }
       }
     }

@@ -4,7 +4,7 @@ import close from "../../assets/close.png";
 import { StyledFAQ } from "./styles";
 
 export default function FAQ() {
-  const [active, setActive] = useState("first");
+  const [active, setActive] = useState("");
   return (
     <StyledFAQ>
       <div className="wrapper">

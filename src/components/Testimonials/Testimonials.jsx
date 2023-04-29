@@ -47,6 +47,11 @@ const Description = styled.p`
   @media (max-width: 767px) {
     max-width: 530px;
   }
+  @media (max-width: 539px) {
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
 `;
 
 const BlocksContainer = styled.div`
@@ -123,17 +128,42 @@ const BlocksContainer = styled.div`
     }
   }
   @media (max-width: 767px) {
-    max-width: 500px;
+    max-width: 480px;
     .desk {
       width: 100%;
       height: 670px;
-
+      .slick-list {
+        padding: 30px;
+      }
       .block {
         max-width: 400px;
         height: 570px;
         p {
           font-size: 15px;
           line-height: 25px;
+        }
+      }
+    }
+  }
+  @media (max-width: 539px) {
+    max-width: 360px;
+    .desk {
+      width: 100%;
+      height: 620px;
+
+      .slick-list {
+        padding: 10px;
+      }
+      .block {
+        max-width: 320px;
+        height: 570px;
+
+        margin-right: 0px;
+
+        padding: 10px;
+        p {
+          font-size: 14px;
+          line-height: 20px;
         }
       }
     }

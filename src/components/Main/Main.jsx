@@ -34,6 +34,9 @@ const Wrapper = styled.div`
   @media (max-width: 767px) {
     max-width: 510px;
   }
+  @media (max-width: 539px) {
+    flex-direction: column;
+  }
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -106,6 +109,10 @@ const ImageContainer = styled.div`
   }
   @media (max-width: 767px) {
     max-width: 180px;
+  }
+  @media (max-width: 539px) {
+    margin-top: 20px;
+    max-width: 200px;
   }
 `;
 

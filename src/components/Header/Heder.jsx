@@ -31,9 +31,18 @@ const Wrapper = styled.div`
     max-width: 900px;
     padding: 0 50px;
   }
+  @media (max-width: 767px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 539px) {
+    padding: 0;
+  }
 `;
 const Logo = styled.img`
   width: 120px;
+  @media (max-width: 539px) {
+    width: 90px;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -47,6 +56,10 @@ const SocialIcon = styled.a`
   text-decoration: none;
   &:hover {
     color: #ff6600;
+  }
+  @media (max-width: 539px) {
+    font-size: 20px;
+    margin-left: 10px;
   }
 `;
 
