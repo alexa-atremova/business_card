@@ -17,6 +17,7 @@ const Title = styled.h2`
   border-bottom: 6px solid #ff6600;
   color: #363636;
   margin: 0;
+  text-transform: uppercase;
 `;
 
 const Description = styled.p`
