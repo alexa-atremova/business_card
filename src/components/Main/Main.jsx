@@ -14,6 +14,7 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
   width: 100%;
   height: 100%;
   min-height: 600px;

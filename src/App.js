@@ -5,6 +5,7 @@ import Header from "./components/Header/Heder";
 import Main from "./components/Main/Main";
 import Services from "./components/Services/Services";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Story from "./components/Story/Story";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -17,6 +18,7 @@ function App() {
       <Main />
       <Services />
       <FAQ />
+      <Story />
       <Testimonials />
       <Footer />
     </SApp>
