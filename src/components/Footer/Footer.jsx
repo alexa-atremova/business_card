@@ -31,6 +31,7 @@ const Wrapper = styled.div`
     font-size: 14px;
     font-weight: 200;
     a {
+      user-select: all;
       text-decoration: none;
       color: orange;
       margin-left: 10px;
@@ -61,19 +62,22 @@ const Footer = () => {
     <FooterContainer>
       <Wrapper>
         <SocialIcons>
-          <SocialIcon href="https://www.instagram.com">
+          <SocialIcon href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y=">
             <FontAwesomeIcon icon={faInstagram} />
           </SocialIcon>
-          <SocialIcon href="https://www.facebook.com">
+          <SocialIcon href="https://www.facebook.com/profile.php?id=100092432314300">
             <FontAwesomeIcon icon={faFacebook} />
           </SocialIcon>
-          <SocialIcon href="https://www.telegram.org">
+          <SocialIcon href="https://twitter.com/confidantpro?s=11">
             <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
           <SocialIcon href="https://www.telegram.org">
             <FontAwesomeIcon icon={faTiktok} />
           </SocialIcon>
         </SocialIcons>
+        <h1>
+          Email: <a>FirstConfidantService@gmail.com</a>
+        </h1>
         <h1>
           Created by:{" "}
           <a href="https://www.linkedin.com/in/alexandra-artemova-2884a3204/">

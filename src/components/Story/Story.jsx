@@ -15,6 +15,7 @@ const StoryContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
   height: 740px;
   margin-bottom: 100px;
 
