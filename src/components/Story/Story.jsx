@@ -26,7 +26,7 @@ const StoryContainer = styled.div`
   }
   @media (max-width: 767px) {
     margin-top: 30px;
-    height: 1000px;
+    height: 1100px;
   }
 `;
 const Wrapper = styled.div`
@@ -52,7 +52,8 @@ const Wrapper = styled.div`
 `;
 const TextContainer = styled.div`
   display: flex;
-  align-items: end;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   max-width: 750px;
@@ -136,11 +137,11 @@ const Paragraph = styled.p`
   }
   @media (max-width: 767px) {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.7;
   }
   @media (max-width: 539px) {
     font-size: 13px;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 `;
 
