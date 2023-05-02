@@ -59,12 +59,21 @@ const SocialIcon = styled.a`
   &:hover {
     color: #ff6600;
   }
-  @media (max-width: 539px) {
+  @media (max-width: 1359px) {
+    font-size: 25px;
+    margin-left: 10px;
+  }
+  @media (max-width: 767px) {
     font-size: 20px;
+    margin-left: 10px;
+  }
+  @media (max-width: 539px) {
+    font-size: 18px;
     margin-left: 10px;
   }
 `;
 const ButtonsContainer = styled.div`
+  margin-left: 20px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -76,19 +85,18 @@ const ButtonsContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2px 5px;
-    margin-left: 10px;
+    margin-left: 5px;
     gap: 5px;
 
-    width: 84px;
-    height: 45px;
+    width: 55px;
+    height: 40px;
     background: #ffffff;
     border: 1px solid #cfcfcf;
     border-radius: 10px;
 
-    font-family: "Avante Int";
-    font-style: normal;
+    font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 24px;
 
     color: #1b1b1b;
@@ -107,12 +115,8 @@ const ButtonsContainer = styled.div`
     }
   }
   .langImg {
-    width: 25px;
-    height: 25px;
-    @media (max-width: 1365px) {
-      width: 20px;
-      height: 20px;
-    }
+    width: 20px;
+    height: 20px;
     @media (max-width: 1365px) {
       width: 17px;
       height: 17px;
@@ -151,23 +155,26 @@ const Header = ({ onLanguageChange, lang }) => {
           <SocialIcon href="https://www.telegram.org">
             <FontAwesomeIcon icon={faTiktok} />
           </SocialIcon>
+          <ButtonsContainer>
+            {lang === "ru" ? (
+              <button
+                className="langButton"
+                onClick={() => onLanguageChange("en")}
+              >
+                <img className={"langImg"} src={eng} />
+                En
+              </button>
+            ) : (
+              <button
+                className="langButton"
+                onClick={() => onLanguageChange("ru")}
+              >
+                <img className="langImg" src={ru} />
+                Ru
+              </button>
+            )}
+          </ButtonsContainer>
         </SocialIcons>
-        <ButtonsContainer>
-          <button
-            className={lang === "en" ? "langButton" : "disableLang"}
-            onClick={() => onLanguageChange("en")}
-          >
-            <img className={"langImg"} src={eng} />
-            En
-          </button>
-          <button
-            className={lang === "ru" ? "langButton" : "disableLang"}
-            onClick={() => onLanguageChange("ru")}
-          >
-            <img className="langImg" src={ru} />
-            Ru
-          </button>
-        </ButtonsContainer>
       </Wrapper>
     </HeaderContainer>
   );
