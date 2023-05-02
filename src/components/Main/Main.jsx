@@ -1,6 +1,7 @@
 import React from "react";
 import photo from "./../../assets/photo.jpg";
 import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 
 const fadeIn = keyframes`
   0% {
@@ -44,7 +45,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 680px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   color: #363636;
   gap: 20px;
   /* animation: ${fadeIn} 1s ease-in; */
@@ -53,6 +54,11 @@ const TextContainer = styled.div`
   }
   @media (max-width: 767px) {
     max-width: 300px;
+  }
+  @media (max-width: 539px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 const TitleWrapp = styled.div`
@@ -124,29 +130,49 @@ const Image = styled.img`
   border-radius: 8px;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
 `;
-const Main = () => {
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #363636;
+  color: #ff6600;
+  border-radius: 8px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
+`;
+const Main = ({ lang }) => {
+  const scrollToStart = () => {
+    const startElement = document.getElementById("start");
+    if (startElement) {
+      startElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <MainContainer>
       <Wrapper>
         <TextContainer>
           <TitleWrapp>
-            <Title1>Welcome to</Title1>
+            <Title1>
+              {lang === "ru" ? "Добро пожаловать в" : "Welcome to"}
+            </Title1>
             <Title2>CONFIDANT SERVICE</Title2>
           </TitleWrapp>
           <Paragraph>
-            I am Avgust Platina, known as 'Confidant' for my ability to provide
-            a safe space for people to open up and share their deepest thoughts
-            and emotions. With my passion for helping others navigate difficult
-            situations and find solutions to their challenges, my name has
-            become synonymous with my services. My life experience has shaped me
-            into the person I am today, and I am honored to share my unique
-            perspective with those in need of support.
+            {lang === "ru"
+              ? "Мое имя Август Платина, люди называют меня Конфидант, что означает по сути близкий человек. Это для меня очень много значит. Это так благодаря моей способности создавать безопасную среду для людей, где они могут раскрыться и поделиться своими самыми глубокими мыслями и эмоциями. Мое стремление помочь людям в прохождении сложных ситуаций и поиске решений для их проблем привело меня к тому, что мое имя стало синонимом того что я делаю.Мой жизненный путь сформировал меня в того, кто я есть сегодня. Для меня это большая честь, делиться своим уникальным пониманием жизни, видением и опытом с теми, кто нуждается в моей поддержке."
+              : "I am Avgust Platina, known as 'Confidant' for my ability to provide a safe space for people to open up and share their deepest thoughts and emotions. With my passion for helping others navigate difficult situations and find solutions to their challenges, my name has become synonymous with my services. My life experience has shaped me into the person I am today, and I am honored to share my unique perspective with those in need of support."}
           </Paragraph>
           <Paragraph>
-            I believe that each person I meet brings a gift of their presence
-            into my life, just as I hope to provide valuable experiences for
-            them.
+            {lang === "ru"
+              ? "Я верю, что каждый человек, с кем я встречаюсь, приносит в мою жизнь свой уникальный дар, и я хочу чтобы общение со мной обогатило людей тем ценным опытом который поможет им преодолеть любые трудности."
+              : "I believe that each person I meet brings a gift of their presence into my life, just as I hope to provide valuable experiences for them."}
           </Paragraph>
+          <Button onClick={scrollToStart}>
+            {lang === "ru" ? "Как начать" : "How to start"}
+          </Button>
         </TextContainer>
         <ImageContainer>
           <Image src={photo} alt="Photograph" />
