@@ -25,7 +25,7 @@ function App() {
       <Main lang={lang} />
       <Services lang={lang} />
       <FAQ lang={lang} />
-      <Story />
+      <Story lang={lang} />
       <Testimonials lang={lang} />
       <Start lang={lang} />
       <Footer lang={lang} />

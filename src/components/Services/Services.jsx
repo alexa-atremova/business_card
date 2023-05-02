@@ -88,16 +88,15 @@ const Block = styled.div`
   margin-right: 16px;
   padding: 16px;
   @media (max-width: 1359px) {
-    width: 250px;
+    width: 280px;
     height: 260px;
   }
   @media (max-width: 767px) {
     width: 400px;
-    height: 150px;
+    height: fit-content;
   }
   @media (max-width: 539px) {
     width: 320px;
-    height: 175px;
   }
 `;
 
