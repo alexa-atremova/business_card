@@ -17,22 +17,23 @@ const StoryContainer = styled.div`
   justify-content: center;
   width: 100%;
 
-  height: 940px;
+  height: fit-content;
   margin-bottom: 100px;
 
   @media (max-width: 1359px) {
     margin-top: 30px;
-    height: 1200px;
+    height: fit-content;
   }
   @media (max-width: 767px) {
-    margin-top: 30px;
-    height: 1100px;
+    margin-top: 50px;
+    height: fit-content;
   }
 `;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
   border-right: 8px solid #ff6600;
   padding-right: 16px;

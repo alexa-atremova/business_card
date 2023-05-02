@@ -8,9 +8,9 @@ const ServicesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   width: 100%;
-  min-height: 1000px;
+  height: fit-content;
 `;
 
 const Title = styled.h2`

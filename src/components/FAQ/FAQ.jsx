@@ -61,7 +61,7 @@ export default function FAQ({ lang }) {
             <div className="head">
               <h2>
                 {lang === "ru"
-                  ? "Каков ваш подход к помощи людям и что отличает Вас от врачей, наставников или тренеров? "
+                  ? "Каков Ваш подход к помощи людям и что отличает Вас от врачей, наставников или тренеров? "
                   : "What is your approach to helping people and what sets you apart from doctors, mentors, or coaches?"}
               </h2>
               <img

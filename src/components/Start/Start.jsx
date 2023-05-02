@@ -24,17 +24,19 @@ const fadeOut = keyframes`
 const StartContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 100px;
   width: 100%;
 
-  min-height: 850px;
+  height: fit-content;
   @media (max-width: 1359px) {
     margin-top: 50px;
   }
   @media (max-width: 539px) {
-    margin-top: 80px;
-    min-height: 900px;
+    margin-top: 50px;
+    height: fit-content;
+    min-height: 1100px;
   }
   .bttn {
     display: flex;

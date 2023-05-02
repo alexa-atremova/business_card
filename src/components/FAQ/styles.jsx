@@ -27,6 +27,7 @@ export const StyledFAQ = styled.section`
     }
     @media (max-width: 539px) {
       max-width: 320px;
+      margin-bottom: 0px;
     }
 
     .text {
@@ -64,7 +65,7 @@ export const StyledFAQ = styled.section`
           height: 50px;
           font-size: 26px;
           max-width: 320px;
-          height: 100px;
+          height: fit-content;
           line-height: 35px;
         }
       }
