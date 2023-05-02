@@ -14,7 +14,7 @@ const ServicesContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 42px;
   font-weight: bold;
   border-bottom: 6px solid #ff6600;
@@ -30,7 +30,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   max-width: 700px;
   font-size: 16px;
   line-height: 1.5;
@@ -72,7 +72,7 @@ const BlocksContainer = styled.div`
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       margin-right: 16px;
-      font-family: "Poppins";
+      font-family: "Poppins", sans-serif;
       padding: 16px;
 
       h3 {

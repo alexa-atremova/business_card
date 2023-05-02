@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
@@ -13,16 +14,21 @@ const SApp = styled.div`
   user-select: none;
 `;
 function App() {
+  const [lang, setLang] = useState("en");
+
+  function handleLanguageChange(lang) {
+    setLang(lang);
+  }
   return (
     <SApp>
-      <Header />
-      <Main />
-      <Services />
-      <FAQ />
+      <Header onLanguageChange={handleLanguageChange} lang={lang} />
+      <Main lang={lang} />
+      <Services lang={lang} />
+      <FAQ lang={lang} />
       <Story />
-      <Testimonials />
-      <Start />
-      <Footer />
+      <Testimonials lang={lang} />
+      <Start lang={lang} />
+      <Footer lang={lang} />
     </SApp>
   );
 }

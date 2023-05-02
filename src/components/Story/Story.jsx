@@ -54,7 +54,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 680px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 
   color: #363636;
   gap: 20px;
@@ -162,13 +162,13 @@ const VideoContainer = styled.div`
     border-radius: 10px;
   }
 `;
-const Button = styled.button`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 150px;
   height: 30px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   background-color: #363636;
   color: #ff6600;
