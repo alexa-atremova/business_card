@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import video from "./../../assets/video.mp4";
+import posterImage from "./../../assets/posterImg.png";
 import styled, { keyframes } from "styled-components";
 
 const fadeIn = keyframes`
@@ -196,7 +197,7 @@ const Story = ({ lang }) => {
     <StoryContainer>
       <Wrapper>
         <VideoContainer>
-          <video src={video} controls />
+          <video src={video} controls poster={posterImage} />
         </VideoContainer>
 
         <TextContainer>

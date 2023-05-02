@@ -76,7 +76,7 @@ const Footer = () => {
           </SocialIcon>
         </SocialIcons>
         <h1>
-          Email: <a>FirstConfidantService@gmail.com</a>
+          Email: <a>info@confidantservice.com</a>
         </h1>
         <h1>
           Created by:{" "}
