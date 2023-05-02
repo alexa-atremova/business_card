@@ -127,7 +127,7 @@ const Paragraph = styled.p`
   align-items: end;
   text-align: justify;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 2;
   margin: 0;
   @media (max-width: 1359px) {
     justify-content: center;
