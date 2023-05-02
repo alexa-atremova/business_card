@@ -44,9 +44,12 @@ export const StyledFAQ = styled.section`
       }
       h1 {
         margin: 0;
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: 700;
+        max-width: 800px;
+        max-height: 200px;
+        text-align: center;
         font-size: 42px;
         line-height: 65px;
         border-bottom: 6px solid #ff6600;
@@ -55,10 +58,14 @@ export const StyledFAQ = styled.section`
         @media (max-width: 1359px) {
           font-size: 34px;
           padding-bottom: 10px;
+          max-width: 700px;
         }
         @media (max-width: 767px) {
           height: 50px;
           font-size: 26px;
+          max-width: 320px;
+          height: 100px;
+          line-height: 35px;
         }
       }
     }
@@ -76,7 +83,7 @@ export const StyledFAQ = styled.section`
         border-radius: 0px 10px;
 
         padding: 5px 15px;
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
@@ -108,7 +115,7 @@ export const StyledFAQ = styled.section`
 
           h2 {
             margin: 0;
-            font-family: "Poppins";
+            font-family: "Poppins", sans-serif;
             font-style: normal;
             font-weight: 700;
             font-size: 24px;
@@ -139,7 +146,7 @@ export const StyledFAQ = styled.section`
         }
 
         p {
-          font-family: "Poppins";
+          font-family: "Poppins", sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 18px;
@@ -167,7 +174,7 @@ export const StyledFAQ = styled.section`
       }
 
       .opened {
-        height: 630px;
+        height: fit-content;
         transition: all 0.5s ease;
         cursor: default;
 
@@ -177,27 +184,10 @@ export const StyledFAQ = styled.section`
         }
       }
       .opened.first {
-        @media (max-width: 1359px) {
-          height: 840px;
-        }
-        @media (max-width: 767px) {
-          height: 800px;
-        }
-        @media (max-width: 539px) {
-          height: 930px;
-        }
+        height: fit-content;
       }
       .opened.second {
-        height: 420px;
-        @media (max-width: 1359px) {
-          height: 530px;
-        }
-        @media (max-width: 767px) {
-          height: 510px;
-        }
-        @media (max-width: 539px) {
-          height: 600px;
-        }
+        height: fit-content;
       }
     }
   }
