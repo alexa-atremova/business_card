@@ -207,7 +207,7 @@ const Start = ({ lang }) => {
     <StartContainer id="start">
       <Title>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Title>
       <Description>
-        {lang === "ru" ? "Если вы готовы " : "If you're ready to "}
+        {lang === "ru" ? "Если Вы готовы " : "If you're ready to "}
         <a>
           {lang === "ru" ? "внести изменения" : "start making changes"}
         </a>{" "}
@@ -234,7 +234,7 @@ const Start = ({ lang }) => {
         <Block>
           <BlockText>
             {lang === "ru"
-              ? "Если вы решите продолжить работу со мной после консультации, эта плата будет учтена в общей стоимости моих услуг. Я предлагаю персонализированные услуги, адаптированные под ваши индивидуальные потребности и цели, и я обязуюсь поддерживать вас на каждом шагу."
+              ? "Если Вы решите продолжить работу со мной после консультации, эта плата будет учтена в общей стоимости моих услуг. Я предлагаю персонализированные услуги, адаптированные под ваши индивидуальные потребности и цели, и я обязуюсь поддерживать вас на каждом шагу."
               : "If you choose to continue working with me after the consultation, this fee will be applied towards your overall service costs. I offer personalized services tailored to your unique needs and goals, and I am committed to supporting you every step of the way."}
             <b>
               {lang === "ru"
@@ -297,7 +297,7 @@ const Start = ({ lang }) => {
             : "By using my Confidant Services, you acknowledge and agree that any advice or support I provide is based solely on my personal life experience and is not intended to diagnose or treat any medical or mental health condition."}
         </b>
         {lang === "ru"
-          ? "Вы также признаете и соглашаетесь с тем, что несете единоличную ответственность за свое благополучие и что Вы не будете возлагать на меня ответственность за любые решения или действия, которые вы можете предпринять на основе информации или рекомендаций, предоставленных во время наших сеансов."
+          ? "Вы также признаете и соглашаетесь с тем, что несете единоличную ответственность за свое благополучие и что Вы не будете возлагать на меня ответственность за любые решения или действия, которые Вы можете предпринять на основе информации или рекомендаций, предоставленных во время наших сеансов."
           : "You also acknowledge and agree that you are solely responsible for your own well-being and that you will not hold me liable for any decisions or actions you may take based on the information or guidance provided during our sessions."}
         <br />
         {lang === "ru"
