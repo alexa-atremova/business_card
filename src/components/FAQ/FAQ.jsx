@@ -25,7 +25,7 @@ export default function FAQ({ lang }) {
             <div className="head">
               <h2>
                 {lang === "ru"
-                  ? "Что делает вас компетентным в предоставлении советов и поддержки другим людям?"
+                  ? "Что делает Вас компетентным в предоставлении советов и поддержки другим людям?"
                   : "What makes you qualified to offer advice and support to others?"}
               </h2>
               <img
@@ -61,7 +61,7 @@ export default function FAQ({ lang }) {
             <div className="head">
               <h2>
                 {lang === "ru"
-                  ? "Каков ваш подход к помощи людям и что отличает вас от врачей, наставников или тренеров? "
+                  ? "Каков ваш подход к помощи людям и что отличает Вас от врачей, наставников или тренеров? "
                   : "What is your approach to helping people and what sets you apart from doctors, mentors, or coaches?"}
               </h2>
               <img
