@@ -15,7 +15,7 @@ const FooterContainer = styled.header`
   justify-content: center;
   background-color: #363636;
   width: 100%;
-  min-height: 300px;
+  min-height: 400px;
   color: #fff;
 `;
 const Wrapper = styled.div`
@@ -76,14 +76,20 @@ const Footer = () => {
           </SocialIcon>
         </SocialIcons>
         <h1>
-          Email: <a>info@confidantservice.com</a>
-        </h1>
-        <h1>
           Created by:{" "}
           <a href="https://www.linkedin.com/in/alexandra-artemova-2884a3204/">
             Alexandra Artemova
           </a>
+        </h1>{" "}
+        <h1>
+          Email: <a> info@confidantservice.com</a>{" "}
         </h1>
+        <h1>Confidant Service KVK Number: 90095693</h1>
+        <h1>Registered Address: Veenkade 6 2513 EE’s-Gravenhage</h1>
+        <h1>
+          Mailing address: Confidant Service Veenkade 6 2513 EE’s-Gravenhage
+        </h1>
+        <h1>Netherlands </h1>
         <h1>&copy; Avgust Platina</h1>
       </Wrapper>
     </FooterContainer>
