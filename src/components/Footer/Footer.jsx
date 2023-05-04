@@ -8,6 +8,7 @@ import {
   faTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const FooterContainer = styled.header`
   display: flex;
@@ -72,7 +73,7 @@ const Footer = () => {
           <SocialIcon href="https://twitter.com/confidantpro?s=11">
             <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
-          <SocialIcon href="https://www.telegram.org">
+          <SocialIcon href="http://www.tiktok.com/@confidantservice">
             <FontAwesomeIcon icon={faTiktok} />
           </SocialIcon>
         </SocialIcons>
@@ -91,6 +92,9 @@ const Footer = () => {
           Mailing address: Confidant Service Veenkade 6 2513 EE’s-Gravenhage
         </h1>
         <h1>Netherlands </h1>
+        <h1>
+          <Link to="/privacy">Privacy Policy</Link>
+        </h1>
         <h1>&copy; Avgust Platina</h1>
       </Wrapper>
     </FooterContainer>

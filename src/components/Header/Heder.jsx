@@ -11,6 +11,7 @@ import {
   faTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -131,7 +132,7 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-const Header = ({ onLanguageChange, lang }) => {
+const Header = ({ handleLanguageChange, lang }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleModal = () => {
@@ -140,26 +141,40 @@ const Header = ({ onLanguageChange, lang }) => {
   return (
     <HeaderContainer>
       <Wrapper>
-        <Logo src={logo} />
+        <Link to="/">
+          <Logo src={logo} />
+        </Link>
         <SocialIcons>
-          <SocialIcon href="https://www.instagram.com">
+          <SocialIcon
+            href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faInstagram} />
           </SocialIcon>
-          <SocialIcon href="https://www.facebook.com">
+          <SocialIcon
+            href="https://www.facebook.com/profile.php?id=100092432314300"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faFacebook} />
           </SocialIcon>
 
-          <SocialIcon href="https://www.telegram.org">
+          <SocialIcon
+            href="https://twitter.com/confidantpro?s=11"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
-          <SocialIcon href="https://www.telegram.org">
+          <SocialIcon
+            href="http://www.tiktok.com/@confidantservice"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faTiktok} />
           </SocialIcon>
           <ButtonsContainer>
             {lang === "ru" ? (
               <button
                 className="langButton"
-                onClick={() => onLanguageChange("en")}
+                onClick={() => handleLanguageChange("en")}
               >
                 <img className={"langImg"} src={eng} />
                 En
@@ -167,7 +182,7 @@ const Header = ({ onLanguageChange, lang }) => {
             ) : (
               <button
                 className="langButton"
-                onClick={() => onLanguageChange("ru")}
+                onClick={() => handleLanguageChange("ru")}
               >
                 <img className="langImg" src={ru} />
                 Ru

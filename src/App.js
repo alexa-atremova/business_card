@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import FAQ from "./components/FAQ/FAQ";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Heder";
-import Main from "./components/Main/Main";
-import Services from "./components/Services/Services";
-import Testimonials from "./components/Testimonials/Testimonials";
-import Story from "./components/Story/Story";
-import Start from "./components/Start/Start";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./components/pages/main/MainPage";
+import PrivacyPolicy from "./components/pages/privacy/PrivacyPolicy";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -21,14 +16,30 @@ function App() {
   }
   return (
     <SApp>
-      <Header onLanguageChange={handleLanguageChange} lang={lang} />
-      <Main lang={lang} />
-      <Services lang={lang} />
-      <FAQ lang={lang} />
-      <Story lang={lang} />
-      <Testimonials lang={lang} />
-      <Start lang={lang} />
-      <Footer lang={lang} />
+      <Routes>
+        <Route
+          exact
+          path=""
+          element={
+            <MainPage handleLanguageChange={handleLanguageChange} lang={lang} />
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <MainPage handleLanguageChange={handleLanguageChange} lang={lang} />
+          }
+        />
+        <Route
+          path="/privacy"
+          element={
+            <PrivacyPolicy
+              handleLanguageChange={handleLanguageChange}
+              lang={lang}
+            />
+          }
+        />
+      </Routes>
     </SApp>
   );
 }

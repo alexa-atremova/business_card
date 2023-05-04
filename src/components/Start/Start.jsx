@@ -279,12 +279,12 @@ const Start = ({ lang }) => {
           ? "Важно понимать, что услуги Confidant, которые я предлагаю, не предназначены для замены профессионального медицинского или психологического лечения."
           : "It is important to understand that the Confidant Services I offer are not intended to replace professional medical or psychological treatment."}{" "}
         {lang === "ru"
-          ? "Мои услуги предназначены для дополнения такого лечения и оказания дополнительной поддержки людям, которые стремятся улучшить свое психическое здоровье и благополучие."
-          : "My services are designed to complement such treatment and provide additional support to individuals who are seeking to improve their mental health and well-being."}{" "}
+          ? "Мои услуги предназначены для дополнения такого лечения и оказания дополнительной поддержки людям, которые стремятся улучшить свое личное развитие и благополучие."
+          : "My services are designed to complement such treatment and provide additional support to individuals who are seeking to improve their well-being and personal development."}{" "}
         <br />{" "}
         <b>
           {lang === "ru"
-            ? "Имейте в виду, что любые советы или рекомендации, которые я даю, не предназначены для замены профессиональной медицинской консультации или лечения."
+            ? "Имейте в виду, что любые советы или рекомендации, которые я даю, не предназначены для замены профессиональной медицинской консультации или лечения. "
             : "Please be aware that any advice or guidance I provide is not intended as a substitute for professional advice or treatment."}
         </b>
         {lang === "ru"
