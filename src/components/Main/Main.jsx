@@ -19,8 +19,8 @@ const MainContainer = styled.div`
   text-align: justify;
   width: 100%;
   height: 100%;
-  min-height: 600px;
-  margin-top: 100px;
+
+  margin-top: 150px;
   @media (max-width: 1359px) {
     margin-top: 30px;
   }
