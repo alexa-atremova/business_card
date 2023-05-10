@@ -150,7 +150,7 @@ const BlockText = styled.p`
   font-size: 18px;
   line-height: 1.5;
   color: #363636;
-  text-align: justify;
+
   @media (max-width: 539px) {
     font-size: 14px;
     line-height: 20px;
