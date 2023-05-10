@@ -9,6 +9,9 @@ import Testimonials from "../../Testimonials/Testimonials";
 import Story from "../../Story/Story";
 import Start from "../../Start/Start";
 import FAQ from "../../FAQ/FAQ";
+import GPT from "../../GPT/GPT";
+import Statement from "../../Statement/Statement";
+import Ask from "../../Ask/Ask";
 
 const SMainPage = styled.div`
   overflow: hidden;
@@ -19,10 +22,13 @@ function MainPage({ handleLanguageChange, lang }) {
     <SMainPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <Main lang={lang} />
+      <Ask lang={lang} />
+      <GPT lang={lang} />
       <Services lang={lang} />
       <FAQ lang={lang} />
       <Story lang={lang} />
       <Testimonials lang={lang} />
+      <Statement lang={lang} />
       <Start lang={lang} />
       <Footer lang={lang} />
     </SMainPage>

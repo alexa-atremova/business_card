@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../../Header/Heder";
+import Footer from "../../Footer/Footer";
 
 const SPrivacyPolicy = styled.div`
   display: flex;
@@ -91,6 +92,9 @@ const Paragraph = styled.p`
   }
 `;
 function PrivacyPolicy({ handleLanguageChange, lang }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
@@ -172,6 +176,7 @@ function PrivacyPolicy({ handleLanguageChange, lang }) {
           </Paragraph>
         </Wrapper>
       </SPrivacyPolicy>
+      <Footer />
     </>
   );
 }
