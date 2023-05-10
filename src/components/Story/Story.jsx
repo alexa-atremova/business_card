@@ -195,6 +195,9 @@ const Story = ({ lang }) => {
     const halfLength = Math.ceil(text.length / 2);
     return text.slice(0, halfLength) + "...";
   };
+  const buttonTextRu = showFullText ? "Свернуть" : "Читать дальше";
+  const buttonText = showFullText ? "Hide" : "Read more";
+
   return (
     <StoryContainer>
       <Wrapper>
@@ -225,11 +228,10 @@ const Story = ({ lang }) => {
             </Paragraph>
           )}
           <div className="wrap">
-            {!showFullText && (
-              <Button onClick={toggleText}>
-                {" "}
-                {lang === "ru" ? "Читать дальше" : " Read more"}
-              </Button>
+            {lang === "ru" ? (
+              <Button onClick={toggleText}>{buttonTextRu}</Button>
+            ) : (
+              <Button onClick={toggleText}>{buttonText}</Button>
             )}
           </div>
         </TextContainer>
