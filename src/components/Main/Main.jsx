@@ -1,7 +1,8 @@
 import React from "react";
 import photo from "./../../assets/photo.jpg";
 import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const fadeIn = keyframes`
   0% {
@@ -49,6 +50,41 @@ const TextContainer = styled.div`
   color: #363636;
   gap: 20px;
   /* animation: ${fadeIn} 1s ease-in; */
+  .icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    .iconimges {
+      font-size: 22px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+
+      a {
+        font-weight: 500;
+        user-select: all;
+      }
+    }
+    @media (max-width: 1359px) {
+      .iconimges {
+        font-size: 20px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+    }
+    @media (max-width: 767px) {
+      .iconimges {
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
   @media (max-width: 1359px) {
     max-width: 420px;
   }
@@ -173,6 +209,13 @@ const Main = ({ lang }) => {
           <Button onClick={scrollToStart}>
             {lang === "ru" ? "Как начать" : "How to start"}
           </Button>
+          <div className="icon">
+            <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
+            <h1>
+              {" "}
+              Email: <a> info@confidantservice.com</a>{" "}
+            </h1>
+          </div>
         </TextContainer>
         <ImageContainer>
           <Image src={photo} alt="Photograph" />

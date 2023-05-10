@@ -84,7 +84,7 @@ const Description = styled.p`
   font-family: "Poppins", sans-serif;
 
   max-width: 500px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   text-align: center;
   margin-bottom: 40px;
@@ -147,8 +147,10 @@ const Block = styled.div`
 `;
 
 const BlockText = styled.p`
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
+  color: #363636;
+  text-align: justify;
   @media (max-width: 539px) {
     font-size: 14px;
     line-height: 20px;
@@ -219,7 +221,7 @@ const Start = ({ lang }) => {
         <Block>
           <BlockText>
             {lang === "ru"
-              ? " Как КОНФИДАНТ я понимаю, что поиск правильного человека для сотрудничества - это личное решение, поэтому я предлагаю "
+              ? " Как Confidant я понимаю, что поиск правильного человека для сотрудничества - это личное решение, поэтому я предлагаю "
               : " As CONFIDANT I understand that finding the right person to cooperate with is a personal decision, which is why I offer an "}
             <b>
               {lang === "ru"

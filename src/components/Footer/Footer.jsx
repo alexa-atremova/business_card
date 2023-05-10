@@ -16,7 +16,7 @@ const FooterContainer = styled.header`
   justify-content: center;
   background-color: #363636;
   width: 100%;
-  min-height: 400px;
+  min-height: 440px;
   color: #fff;
 `;
 const Wrapper = styled.div`
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
 
 const SocialIcons = styled.div`
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 `;
 
 const SocialIcon = styled.a`
@@ -88,9 +88,8 @@ const Footer = () => {
         </h1>
         <h1>Confidant Service KVK Number: 90095693</h1>
         <h1>Registered Address: Veenkade 6 2513 EE’s-Gravenhage</h1>
-        <h1>
-          Mailing address: Confidant Service Veenkade 6 2513 EE’s-Gravenhage
-        </h1>
+        <h1>Mailing address: Confidant Service Veenkade 6</h1>
+        <h1>2513 EE’s-Gravenhage</h1>
         <h1>Netherlands </h1>
         <h1>
           <Link to="/privacy">Privacy Policy</Link>

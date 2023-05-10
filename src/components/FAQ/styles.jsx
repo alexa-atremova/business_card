@@ -9,9 +9,9 @@ export const StyledFAQ = styled.section`
   overflow: hidden;
   .wrapper {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +122,7 @@ export const StyledFAQ = styled.section`
             font-size: 24px;
             line-height: 35px;
             /* identical to box height, or 159% */
-
+            max-width: 1000px;
             color: #363636;
             @media (max-width: 1359px) {
               font-size: 21px;
