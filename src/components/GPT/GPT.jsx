@@ -12,6 +12,7 @@ const GPTContainer = styled.div`
   height: 100%;
   min-height: 600px;
   margin-top: 150px;
+  margin-bottom: 100px;
   @media (max-width: 1359px) {
     margin-top: 100px;
   }

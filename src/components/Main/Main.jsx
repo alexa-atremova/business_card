@@ -22,7 +22,7 @@ const MainContainer = styled.div`
 
   margin-top: 150px;
   @media (max-width: 1359px) {
-    margin-top: 30px;
+    margin-top: 100px;
   }
 `;
 const Wrapper = styled.div`

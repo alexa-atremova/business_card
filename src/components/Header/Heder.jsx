@@ -26,6 +26,12 @@ const HeaderContainer = styled.header`
   height: 50px;
   position: fixed;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  z-index: 10;
+  @media (max-width: 539px) {
+    padding: 0;
+    height: 70px;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -34,14 +40,23 @@ const Wrapper = styled.div`
   max-width: 1200px;
   width: 100%;
   padding: 0 50px;
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
   @media (max-width: 1359px) {
     max-width: 900px;
     padding: 0 50px;
   }
   @media (max-width: 767px) {
+    max-width: 500px;
     padding: 0 10px;
   }
   @media (max-width: 539px) {
+    max-width: 320px;
     padding: 0;
   }
 `;
@@ -75,6 +90,7 @@ const SocialIcon = styled.a`
   @media (max-width: 539px) {
     font-size: 18px;
     margin-left: 10px;
+    display: none;
   }
 `;
 const ButtonsContainer = styled.div`
@@ -142,6 +158,10 @@ const MenuIcon = styled.div`
   align-items: center;
   font-size: 40px;
   color: #000000;
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 `;
 
 const MobileMenu = styled.nav`
@@ -149,12 +169,19 @@ const MobileMenu = styled.nav`
   top: 0;
   left: 0;
   bottom: 0;
-  width: 18%;
+  width: 350px;
   background-color: #333333;
   color: #fff;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    background-color: #333333b3;
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -196,18 +223,6 @@ const NavLinks = styled.ul`
         text-decoration: none;
         &:hover {
           color: #ff6600;
-        }
-        @media (max-width: 1359px) {
-          font-size: 25px;
-          margin-left: 10px;
-        }
-        @media (max-width: 767px) {
-          font-size: 20px;
-          margin-left: 10px;
-        }
-        @media (max-width: 539px) {
-          font-size: 18px;
-          margin-left: 10px;
         }
       }
     }
@@ -258,13 +273,15 @@ const Header = ({ handleLanguageChange, lang }) => {
   return (
     <>
       <HeaderContainer>
-        <MenuIcon>
-          <FontAwesomeIcon icon={faBars} onClick={handleMenuIconClick} />
-        </MenuIcon>
         <Wrapper>
-          <Link to="/">
-            <Logo src={logo} />
-          </Link>
+          <div className="menu">
+            <MenuIcon>
+              <FontAwesomeIcon icon={faBars} onClick={handleMenuIconClick} />
+            </MenuIcon>
+            <Link to="/">
+              <Logo src={logo} />
+            </Link>
+          </div>
           <SocialIcons>
             <SocialIcon
               href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
@@ -321,20 +338,23 @@ const Header = ({ handleLanguageChange, lang }) => {
           <div className="wrap">
             <div className="links">
               <li>
-                <a href="#">Story of Creation </a>
+                <Link to="/">Main Page </Link>
               </li>
               <li>
-                <a href="#"> Opening New Horizons</a>
+                <Link to="/story">Story of Creation </Link>
+              </li>
+              <li>
+                <Link to="/horizons"> Opening New Horizons</Link>
               </li>
 
               <li>
-                <a href="#">Testimonials</a>
+                <Link to="/testimonials">Testimonials</Link>
               </li>
               <li>
-                <a href="#"> Statement of Responsibility</a>
+                <Link to="/statement"> Statement of Responsibility</Link>
               </li>
               <li>
-                <a href="#">Privacy Policy </a>
+                <Link to="/privacy">Privacy Policy </Link>
               </li>
             </div>
             <div className="soc">

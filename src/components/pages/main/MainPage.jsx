@@ -23,12 +23,8 @@ function MainPage({ handleLanguageChange, lang }) {
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <Main lang={lang} />
       <Ask lang={lang} />
-      <GPT lang={lang} />
       <Services lang={lang} />
       <FAQ lang={lang} />
-      <Story lang={lang} />
-      <Testimonials lang={lang} />
-      <Statement lang={lang} />
       <Start lang={lang} />
       <Footer lang={lang} />
     </SMainPage>

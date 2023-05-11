@@ -18,14 +18,16 @@ const StoryContainer = styled.div`
   width: 100%;
 
   height: fit-content;
+
+  margin-top: 150px;
   margin-bottom: 100px;
 
   @media (max-width: 1359px) {
-    margin-top: 30px;
+    margin-top: 100px;
     height: fit-content;
   }
   @media (max-width: 767px) {
-    margin-top: 50px;
+    margin-top: 100px;
     height: fit-content;
   }
 `;
