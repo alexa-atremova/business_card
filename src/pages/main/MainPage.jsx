@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Heder";
-import Main from "../../Main/Main";
-import Services from "../../Services/Services";
-import Testimonials from "../../Testimonials/Testimonials";
-import Story from "../../Story/Story";
-import Start from "../../Start/Start";
-import FAQ from "../../FAQ/FAQ";
-import GPT from "../../GPT/GPT";
-import Statement from "../../Statement/Statement";
-import Ask from "../../Ask/Ask";
+import Footer from "./../../components/Footer/Footer";
+import Header from "./../../components/Header/Heder";
+import Main from "./../../components/Main/Main";
+import Services from "./../../components/Services/Services";
+import Start from "./../../components/Start/Start";
+import FAQ from "./../../components/FAQ/FAQ";
+import Ask from "./../../components/Ask/Ask";
 
 const SMainPage = styled.div`
   overflow: hidden;

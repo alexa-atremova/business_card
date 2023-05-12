@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "../../Header/Heder";
-import Footer from "../../Footer/Footer";
+import Header from "./../../components/Header/Heder";
+import Footer from "./../../components/Footer/Footer";
 
 const SPrivacyPolicy = styled.div`
   display: flex;

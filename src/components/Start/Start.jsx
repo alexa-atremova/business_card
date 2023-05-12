@@ -157,7 +157,7 @@ const BlockText = styled.p`
     margin: 0;
   }
 `;
-const DisclaimerButton = styled.button`
+export const DisclaimerButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

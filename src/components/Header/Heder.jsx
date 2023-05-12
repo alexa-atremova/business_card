@@ -356,6 +356,9 @@ const Header = ({ handleLanguageChange, lang }) => {
               <li>
                 <Link to="/privacy">Privacy Policy </Link>
               </li>
+              <li>
+                <Link to="/contacts">Contact Me </Link>
+              </li>
             </div>
             <div className="soc">
               <a

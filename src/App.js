@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
-import MainPage from "./components/pages/main/MainPage";
-import PrivacyPolicy from "./components/pages/privacy/PrivacyPolicy";
-import Story from "./components/Story/Story";
-import Testimonials from "./components/Testimonials/Testimonials";
-import TestimonialPage from "./components/pages/testimonialPage/TestimonialPage";
-import OpeningHorizonsPage from "./components/pages/openingHorizonsPage/OpeningHorizonsPage";
-import StatementPage from "./components/pages/statementPage/StatementPage";
-import StoryPage from "./components/pages/storyPage/StoryPage";
+import MainPage from "./pages/main/MainPage";
+import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
+import TestimonialPage from "./pages/testimonialPage/TestimonialPage";
+import OpeningHorizonsPage from "./pages/openingHorizonsPage/OpeningHorizonsPage";
+import StatementPage from "./pages/statementPage/StatementPage";
+import StoryPage from "./pages/storyPage/StoryPage";
+import Contacts from "./pages/Contacts/Contacts";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -25,18 +24,13 @@ function App() {
       <Routes>
         <Route
           exact
-          path=""
+          path="/"
           element={
             <MainPage handleLanguageChange={handleLanguageChange} lang={lang} />
           }
         />
         <Route
-          path="*"
-          element={
-            <MainPage handleLanguageChange={handleLanguageChange} lang={lang} />
-          }
-        />
-        <Route
+          exact
           path="/privacy"
           element={
             <PrivacyPolicy
@@ -46,6 +40,7 @@ function App() {
           }
         />
         <Route
+          exact
           path="/story"
           element={
             <StoryPage
@@ -55,6 +50,7 @@ function App() {
           }
         />
         <Route
+          exact
           path="/testimonials"
           element={
             <TestimonialPage
@@ -64,6 +60,7 @@ function App() {
           }
         />
         <Route
+          exact
           path="/horizons"
           element={
             <OpeningHorizonsPage
@@ -73,12 +70,27 @@ function App() {
           }
         />
         <Route
+          exact
           path="/statement"
           element={
             <StatementPage
               handleLanguageChange={handleLanguageChange}
               lang={lang}
             />
+          }
+        />
+        <Route
+          exact
+          path="/contacts"
+          element={
+            <Contacts handleLanguageChange={handleLanguageChange} lang={lang} />
+          }
+        />
+        <Route
+          exact
+          path="*"
+          element={
+            <MainPage handleLanguageChange={handleLanguageChange} lang={lang} />
           }
         />
       </Routes>
