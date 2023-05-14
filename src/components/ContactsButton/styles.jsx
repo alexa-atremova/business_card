@@ -91,9 +91,76 @@ export const StyledContactsButton = styled.div`
     pointer-events: none;
     animation: none;
   }
-
   @media (max-width: 767px) {
-    display: none;
+    right: 10px;
+    .buttn {
+      width: 40px;
+      height: 40px;
+
+      padding: 1px;
+
+      .icon {
+        width: 35px;
+        height: 35px;
+
+        .iconimges {
+          font-size: 20px;
+        }
+      }
+
+      .link {
+        opacity: 0;
+
+        font-size: 13px;
+        line-height: 18px;
+
+        :hover {
+          .icon {
+            margin-right: 4px;
+          }
+          .link {
+            width: 60px;
+
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 539px) {
+    .buttn {
+      width: 35px;
+      height: 35px;
+
+      padding: 1px;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+
+        .iconimges {
+          font-size: 20px;
+        }
+      }
+
+      .link {
+        opacity: 0;
+
+        font-size: 13px;
+        line-height: 18px;
+
+        :hover {
+          .icon {
+            margin-right: 4px;
+          }
+          .link {
+            width: 60px;
+
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
 
   @keyframes slideIn {

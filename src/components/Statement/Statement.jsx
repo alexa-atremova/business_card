@@ -10,10 +10,9 @@ const StatementContainer = styled.div`
   width: 100%;
 
   @media (max-width: 1359px) {
-    margin-top: 50px;
   }
   @media (max-width: 539px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 `;
 

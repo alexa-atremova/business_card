@@ -14,11 +14,13 @@ const SApp = styled.div`
   user-select: none;
 `;
 function App() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState(window.localStorage.getItem("lang") || "en");
 
   function handleLanguageChange(lang) {
     setLang(lang);
+    window.localStorage.setItem("lang", lang);
   }
+
   return (
     <SApp>
       <Routes>
