@@ -193,6 +193,8 @@ export const StyledFeedbackForm = styled.section`
 
             display: flex;
             flex-direction: column;
+            /* align-items: center;
+            justify-content: center; */
 
             gap: 20px;
 
@@ -217,15 +219,14 @@ export const StyledFeedbackForm = styled.section`
                 outline: 1px solid orange;
               }
             }
-            .block {
+            .userContacts {
               display: flex;
               flex-direction: row;
               gap: 20px;
-              .userContacts {
+              .block {
               }
             }
             .textarea {
-              margin-top: 20px;
               width: 100%;
               height: 160px;
               text-align: left;
@@ -263,6 +264,12 @@ export const StyledFeedbackForm = styled.section`
               line-height: 20px;
 
               color: red;
+            }
+            .submitting-message {
+              margin-left: 10px;
+              display: inline-block;
+              font-size: 14px;
+              color: #333;
             }
           }
         }

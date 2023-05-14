@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledContactsButton } from "./styles";
-import mail from "./../../assets/ContactsButton/mail.png";
 import { NavLink, useLocation } from "react-router-dom";
 import scrollToTop from "../../helpers/scrollToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

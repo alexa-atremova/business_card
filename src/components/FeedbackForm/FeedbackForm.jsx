@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
 
@@ -8,18 +8,29 @@ import { DisclaimerButton } from "../Start/Start";
 
 export default function FeedbackForm() {
   const [isSubmitted, setSubmitted] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   emailjs.init("LWiX1fH5uhdPCg5Iu");
 
   const sendEmail = (templateParams) =>
     emailjs.send("service_6g878jv", "template_3yolkz8", templateParams).then(
       function (response) {
         setSubmitted(true);
+        setShowSuccessMessage(true);
         console.log("SUCCESS!", response.status, response.text);
       },
       function (error) {
         console.log("FAILED...", error);
       }
     );
+  useEffect(() => {
+    if (showSuccessMessage) {
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessMessage]);
 
   return (
     <StyledFeedbackForm id="Contacts_block">
@@ -79,7 +90,7 @@ export default function FeedbackForm() {
                         className="field"
                         type="name"
                         name="name"
-                        placeholder="Fitrst name"
+                        placeholder="Your name"
                       />
                       <ErrorMessage
                         className="error"
@@ -101,7 +112,8 @@ export default function FeedbackForm() {
                           name="phone"
                           component="div"
                         />
-
+                      </div>
+                      <div className="block">
                         <Field
                           className="field"
                           type="email"
@@ -114,24 +126,28 @@ export default function FeedbackForm() {
                           component="div"
                         />
                       </div>
-                      <div>
-                        <Field
-                          className="textarea"
-                          name="message"
-                          placeholder="Your message"
-                          component="textarea"
-                        />
-                        <ErrorMessage
-                          className="error"
-                          name="message"
-                          component="div"
-                        />
-                      </div>
                     </div>
-
-                    <DisclaimerButton type="submit" disabled={isSubmitting}>
-                      {isSubmitting ? "Sending..." : "Send message"}
+                    <div>
+                      <Field
+                        className="textarea"
+                        name="message"
+                        placeholder="Your message"
+                        component="textarea"
+                      />
+                      <ErrorMessage
+                        className="error"
+                        name="message"
+                        component="div"
+                      />
+                    </div>
+                    <DisclaimerButton type="submit">
+                      Send message
                     </DisclaimerButton>
+                    {showSuccessMessage && (
+                      <Description className="successMessage">
+                        Your message has been sent!
+                      </Description>
+                    )}
                   </Form>
                 )}
               </Formik>

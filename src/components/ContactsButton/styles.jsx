@@ -4,7 +4,7 @@ export const StyledContactsButton = styled.div`
   position: fixed;
 
   bottom: 40px;
-  left: 50px;
+  right: 50px;
 
   z-index: 100;
 
