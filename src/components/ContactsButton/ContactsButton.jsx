@@ -3,29 +3,23 @@ import { StyledContactsButton } from "./styles";
 import mail from "./../../assets/ContactsButton/mail.png";
 import { NavLink, useLocation } from "react-router-dom";
 import scrollToTop from "../../helpers/scrollToTop";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-export default function ContactsButton({ scrolled }) {
+export default function ContactsButton() {
   const path = useLocation();
   return (
     <StyledContactsButton>
-      <div
-        data-testid="ContactsButton"
-        className={
-          path.pathname === "/about"
-            ? "buttn"
-            : scrolled
-            ? "buttn"
-            : "buttn hidden"
-        }
-      >
-        <img className="mail" src={mail} alt="" />
+      <div className="buttn">
+        <div className="icon">
+          <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
+        </div>
         <NavLink
-          data-testid="ContactsLink"
           to={"/contacts"}
           className={"link"}
           onClick={() => scrollToTop()}
         >
-          contact us
+          contact me
         </NavLink>
       </div>
     </StyledContactsButton>
