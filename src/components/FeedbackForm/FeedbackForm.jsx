@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
 
-import FeedbackFormButton from "./FeedbackFormButton";
 import { StyledFeedbackForm } from "./styles";
 import { Description, MainTitle } from "../Services/Services";
+import { DisclaimerButton } from "../Start/Start";
 
 export default function FeedbackForm() {
   const [isSubmitted, setSubmitted] = useState(false);
-  emailjs.init("K3f3TYoiRPS2K5iBz");
+  emailjs.init("LWiX1fH5uhdPCg5Iu");
 
   const sendEmail = (templateParams) =>
-    emailjs.send("service_zzgwce5", "template_15djijo", templateParams).then(
+    emailjs.send("service_6g878jv", "template_3yolkz8", templateParams).then(
       function (response) {
         setSubmitted(true);
         console.log("SUCCESS!", response.status, response.text);
@@ -27,19 +27,6 @@ export default function FeedbackForm() {
 
       <div className="wrapper">
         <div className="centerBlock">
-          <div className="left">
-            <div className="contactsBlock">
-              <h1>Share with us your ideas, thoughts or just say hello</h1>
-              <div className="contacts">
-                <div className="contact">
-                  <a href="tel:+380 11 222 33 44">+38-066-022-83-74</a>
-                </div>
-                <div className="contact">
-                  <a href="mailto:artkdev@gmail.com">artkdev2020@gmail.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="right">
             <div className="feedback">
               <Formik
@@ -47,9 +34,9 @@ export default function FeedbackForm() {
                 validate={(values) => {
                   const errors = {};
                   if (!values.name) {
-                    errors.name = "required";
+                    errors.name = "Please enter your name";
                   } else if (!values.email) {
-                    errors.email = "required";
+                    errors.email = "Please enter email";
                   } else if (
                     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
                       values.email
@@ -66,15 +53,21 @@ export default function FeedbackForm() {
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                   setTimeout(() => {
                     var templateParams = {
-                      to_name: "ArtKDev",
+                      to_name: "Avgust",
                       from_name: values.name,
                       from_phone: values.phone,
                       reply_to: values.email,
                       message: values.message,
                     };
-                    sendEmail(templateParams);
-                    // alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
+                    sendEmail(templateParams)
+                      .then(() => {
+                        console.log("Email sent successfully!");
+                        setSubmitting(false);
+                      })
+                      .catch((error) => {
+                        console.log("Email sending failed: ", error);
+                        setSubmitting(false);
+                      });
                   }, 400);
                   resetForm();
                 }}
@@ -135,22 +128,10 @@ export default function FeedbackForm() {
                         />
                       </div>
                     </div>
-                    <div className="contactsBlock">
-                      <div className="contacts">
-                        <div className="contact">
-                          <a href="tel:+380 11 222 33 44">+38-066-022-83-74</a>
-                        </div>
-                        <div className="contact">
-                          <a href="mailto:artkdev@gmail.com">
-                            artkdev2020@gmail.com
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <FeedbackFormButton
-                      isSubmitting={isSubmitting}
-                      isSubmitted={isSubmitted}
-                    />
+
+                    <DisclaimerButton type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send message"}
+                    </DisclaimerButton>
                   </Form>
                 )}
               </Formik>

@@ -117,6 +117,21 @@ export const StyledFeedbackForm = styled.section`
 
                 color: #363636;
               }
+              .soc {
+                display: flex;
+                flex-direction: row;
+                justify-self: center;
+                align-self: center;
+                gap: 20px;
+                a {
+                  color: #000000;
+                  font-size: 30px;
+                  text-decoration: none;
+                  &:hover {
+                    color: #ff6600;
+                  }
+                }
+              }
             }
           }
           .social {
@@ -237,25 +252,17 @@ export const StyledFeedbackForm = styled.section`
               }
             }
             .error {
-              margin-top: 10px;
-              padding: 0 20px;
+              margin-top: 0px;
+
               width: 100%;
               text-align: right;
               font-family: "Source Sans Pro";
               font-style: normal;
               font-weight: 400;
               font-size: 18px;
-              line-height: 145%;
-              /* identical to box height, or 20px */
+              line-height: 20px;
 
               color: red;
-            }
-
-            .disabled {
-              background: #1e1e20;
-            }
-            .contactsBlock {
-              display: none;
             }
           }
         }

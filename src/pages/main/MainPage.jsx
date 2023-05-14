@@ -8,15 +8,18 @@ import Services from "./../../components/Services/Services";
 import Start from "./../../components/Start/Start";
 import FAQ from "./../../components/FAQ/FAQ";
 import Ask from "./../../components/Ask/Ask";
+import ContactsButton from "../../components/ContactsButton/ContactsButton";
 
 const SMainPage = styled.div`
   overflow: hidden;
   user-select: none;
 `;
 function MainPage({ handleLanguageChange, lang }) {
+  const [scrolled, setScrolled] = useState(false);
   return (
     <SMainPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
+      <ContactsButton scrolled={scrolled} />
       <Main lang={lang} />
       <Ask lang={lang} />
       <Services lang={lang} />
