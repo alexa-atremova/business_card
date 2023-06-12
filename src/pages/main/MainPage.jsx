@@ -9,6 +9,7 @@ import Start from "./../../components/Start/Start";
 import FAQ from "./../../components/FAQ/FAQ";
 import Ask from "./../../components/Ask/Ask";
 import ContactsButton from "../../components/ContactsButton/ContactsButton";
+import PROPOSITION from "../../components/PROPOSITION/PROPOSITION";
 
 const SMainPage = styled.div`
   overflow: hidden;
@@ -22,6 +23,7 @@ function MainPage({ handleLanguageChange, lang }) {
       <ContactsButton scrolled={scrolled} />
       <Main lang={lang} />
       <Ask lang={lang} />
+      <PROPOSITION lang={lang} />
       <Services lang={lang} />
       <FAQ lang={lang} />
       <Start lang={lang} />
