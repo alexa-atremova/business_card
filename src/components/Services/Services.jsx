@@ -5,7 +5,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
   width: 100%;
   min-height: 1000px;
   @media (max-width: 1359px) {

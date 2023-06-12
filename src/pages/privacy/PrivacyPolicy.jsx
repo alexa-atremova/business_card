@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./../../components/Header/Heder";
 import Footer from "./../../components/Footer/Footer";
+import ContactsButton from "../../components/ContactsButton/ContactsButton";
 
 const SPrivacyPolicy = styled.div`
   display: flex;
@@ -95,6 +96,7 @@ function PrivacyPolicy({ handleLanguageChange, lang }) {
   return (
     <>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
+      <ContactsButton />
       <SPrivacyPolicy id="privacy">
         <Wrapper>
           <Title>Privacy Policy</Title>
