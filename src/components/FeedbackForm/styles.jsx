@@ -575,9 +575,9 @@ export const StyledFeedbackForm = styled.section`
   @media (max-width: 533px) {
     padding-top: 10px;
     .head {
-      width: 350px;
+      width: 320px;
       img {
-        width: 350px;
+        width: 320px;
         padding-right: 90px;
       }
       h1 {
@@ -606,7 +606,7 @@ export const StyledFeedbackForm = styled.section`
           }
         }
         .right {
-          max-width: 350px;
+          max-width: 320px;
           .feedback {
             .form {
               .field {

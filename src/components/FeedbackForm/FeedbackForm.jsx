@@ -34,7 +34,7 @@ export default function FeedbackForm() {
 
   return (
     <StyledFeedbackForm id="Contacts_block">
-      <MainTitle>Contacts</MainTitle>
+      <MainTitle>Contact Me</MainTitle>
 
       <div className="wrapper">
         <div className="centerBlock">
