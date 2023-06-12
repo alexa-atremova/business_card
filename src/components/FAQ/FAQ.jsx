@@ -16,12 +16,7 @@ export default function FAQ({ lang }) {
           </h1>
         </div>
         <ul>
-          <li
-            className={active === "first" ? "opened first" : "first"}
-            onClick={() =>
-              active === "first" ? setActive("") : setActive("first")
-            }
-          >
+          <li className={active === "first" ? "opened first" : "first"}>
             <div className="head">
               <h2>
                 {lang === "ru"
@@ -32,6 +27,9 @@ export default function FAQ({ lang }) {
                 className="arrow"
                 src={active === "first" ? close : open}
                 alt=""
+                onClick={() =>
+                  active === "first" ? setActive("") : setActive("first")
+                }
               />
             </div>
             {lang == "ru" ? (
@@ -104,12 +102,7 @@ export default function FAQ({ lang }) {
               </p>
             )}
           </li>
-          <li
-            className={active === "second" ? "opened second" : "second"}
-            onClick={() =>
-              active === "second" ? setActive("") : setActive("second")
-            }
-          >
+          <li className={active === "second" ? "opened second" : "second"}>
             <div className="head">
               <h2>
                 {lang === "ru"
@@ -120,6 +113,9 @@ export default function FAQ({ lang }) {
                 className="arrow"
                 src={active === "second" ? close : open}
                 alt=""
+                onClick={() =>
+                  active === "second" ? setActive("") : setActive("second")
+                }
               />
             </div>
 
