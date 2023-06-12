@@ -8,6 +8,7 @@ import OpeningHorizonsPage from "./pages/openingHorizonsPage/OpeningHorizonsPage
 import StatementPage from "./pages/statementPage/StatementPage";
 import StoryPage from "./pages/storyPage/StoryPage";
 import Contacts from "./pages/Contacts/Contacts";
+import Calling from "./pages/calling/Calling";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -49,6 +50,13 @@ function App() {
               handleLanguageChange={handleLanguageChange}
               lang={lang}
             />
+          }
+        />
+        <Route
+          exact
+          path="/calling"
+          element={
+            <Calling handleLanguageChange={handleLanguageChange} lang={lang} />
           }
         />
         <Route
