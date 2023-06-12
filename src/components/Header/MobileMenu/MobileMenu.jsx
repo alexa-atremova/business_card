@@ -6,7 +6,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
   faFacebook,
-  faTelegram,
   faTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
@@ -52,23 +51,27 @@ const NavLinks = styled.ul`
   justify-content: center;
   align-items: center;
   height: 100%;
+
   .wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    max-height: 500px;
+    max-height: 700px;
+
     .soc {
       margin-top: 30px;
       display: flex;
       flex-direction: row;
       justify-self: center;
       align-self: center;
+
       gap: 20px;
+
       a {
         color: #fff;
-        font-size: 30px;
+        font-size: 35px;
         text-decoration: none;
         &:hover {
           color: #ff6600;
@@ -79,7 +82,9 @@ const NavLinks = styled.ul`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      text-align: center;
       align-items: center;
+
       li {
         padding: 20px;
         a {
@@ -88,10 +93,55 @@ const NavLinks = styled.ul`
           color: #fff;
           text-decoration: none;
           border-bottom: 2px solid #ff6600;
+
           :hover {
             color: #ff6600;
 
             border-bottom: 0;
+          }
+        }
+      }
+      .cll {
+        margin-top: 20px;
+        a {
+          font-size: 16px;
+          border-bottom: 1px solid #ff6600;
+        }
+      }
+    }
+  }
+  @media (max-width: 539px) {
+    .wrap {
+      max-height: 500px;
+
+      .soc {
+        gap: 20px;
+
+        a {
+          font-size: 30px;
+        }
+      }
+      .links {
+        li {
+          padding: 15px;
+          a {
+            font-size: 18px;
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid #ff6600;
+
+            :hover {
+              color: #ff6600;
+
+              border-bottom: 0;
+            }
+          }
+        }
+        .cll {
+          a {
+            font-size: 16px;
+            border-bottom: 1px solid #ff6600;
           }
         }
       }
@@ -111,26 +161,29 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
             <div className="wrap">
               <div className="links">
                 <li>
-                  <Link to="/">Главная страница</Link>
+                  <Link to="/">Главная Страница</Link>
                 </li>
                 <li>
-                  <Link to="/story">История создания</Link>
+                  <Link to="/story">История Создания</Link>
                 </li>
                 <li>
-                  <Link to="/horizons"> Открывая новые горизонты</Link>
+                  <Link to="/horizons"> Открывая Новые Горизонты</Link>
                 </li>
 
                 <li>
-                  <Link to="/testimonials">Отзывы</Link>
-                </li>
-                <li>
-                  <Link to="/statement"> Заявление об ответственности</Link>
+                  <Link to="/statement"> Заявление Ответственности</Link>
                 </li>
                 <li>
                   <Link to="/privacy">Privacy Policy </Link>
                 </li>
                 <li>
                   <Link to="/contacts">Связаться со мной </Link>
+                </li>
+                <li>
+                  <Link to="/testimonials">Отзывы</Link>
+                </li>
+                <li className="cll">
+                  <Link to="/calling">«Зов Сердца Садовника»</Link>
                 </li>
               </div>
               <div className="soc">
@@ -174,16 +227,21 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
                 </li>
 
                 <li>
-                  <Link to="/testimonials">Testimonials</Link>
-                </li>
-                <li>
                   <Link to="/statement"> Statement of Responsibility</Link>
                 </li>
                 <li>
                   <Link to="/privacy">Privacy Policy </Link>
                 </li>
                 <li>
+                  <Link to="/testimonials">Testimonials</Link>
+                </li>
+                <li>
                   <Link to="/contacts">Contact Me </Link>
+                </li>
+                <li className="cll">
+                  <Link to="/calling">
+                    "The Calling of the Gardener's Heart"
+                  </Link>
                 </li>
               </div>
               <div className="soc">

@@ -229,16 +229,17 @@ const Header = ({ handleLanguageChange, lang }) => {
                   className="langButton"
                   onClick={() => handleLanguageChange("en")}
                 >
-                  <img className={"langImg"} src={eng} />
-                  En
+                  <img className="langImg" src={ru} />
+                  Ru
                 </button>
               ) : (
                 <button
                   className="langButton"
                   onClick={() => handleLanguageChange("ru")}
                 >
-                  <img className="langImg" src={ru} />
-                  Ru
+                  {" "}
+                  <img className={"langImg"} src={eng} />
+                  En
                 </button>
               )}
             </ButtonsContainer>
