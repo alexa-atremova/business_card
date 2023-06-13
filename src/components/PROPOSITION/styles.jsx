@@ -16,6 +16,7 @@ export const Button1 = styled.div`
 
 export const StyledFAQ = styled.section`
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,9 +24,9 @@ export const StyledFAQ = styled.section`
   overflow: hidden;
   .wrapper {
     width: 100%;
+    height: 100%;
     max-width: 1200px;
-    min-height: 700px;
-    max-height: 700px;
+    min-height: 600px;
     margin-top: 150px;
 
     display: flex;
@@ -37,13 +38,19 @@ export const StyledFAQ = styled.section`
     @media (max-width: 1359px) {
       margin-top: 100px;
       max-width: 675px;
+      min-height: 550px;
       gap: 20px;
     }
     @media (max-width: 767px) {
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       max-width: 500px;
+      min-height: 800px;
+      margin-top: 50px;
     }
     @media (max-width: 539px) {
-      flex-direction: column;
       max-width: 320px;
 
       margin-bottom: 0px;
@@ -53,33 +60,15 @@ export const StyledFAQ = styled.section`
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
+
       width: 100%;
-      h1 {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        max-width: 800px;
-        max-height: 200px;
-        text-align: center;
-        font-size: 42px;
-        line-height: 65px;
-        border-bottom: 6px solid #ff6600;
-        padding-bottom: 16px;
-        color: #363636;
-        @media (max-width: 1359px) {
-          padding-bottom: 10px;
-          font-size: 34px;
-          padding-bottom: 10px;
-          max-width: 700px;
-        }
-        @media (max-width: 767px) {
-          height: 50px;
-          font-size: 26px;
-          max-width: 320px;
-          height: fit-content;
-          line-height: 35px;
-        }
+      @media (max-width: 1359px) {
+        max-width: 350px;
+      }
+      @media (max-width: 767px) {
+        align-items: center;
+        justify-content: center;
+        max-width: 320px;
       }
       .text {
         display: flex;
@@ -87,10 +76,11 @@ export const StyledFAQ = styled.section`
         justify-content: center;
         flex-direction: column;
         margin-top: 20px;
-        margin-bottom: 50px;
+
         font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: 500;
+        margin-bottom: 50px;
         font-size: 30px;
         line-height: 35px;
         /* identical to box height, or 159% */
@@ -99,28 +89,23 @@ export const StyledFAQ = styled.section`
         gap: 30px;
         @media (max-width: 1359px) {
           margin-top: 10px;
-          margin-bottom: 0px;
+          margin-bottom: 30px;
           gap: 20px;
           font-size: 20px;
           line-height: 35px;
         }
         @media (max-width: 767px) {
           margin-top: 10px;
-          margin-bottom: 0px;
+          margin-bottom: 20px;
           gap: 20px;
           font-size: 16px;
           line-height: 30px;
         }
       }
-      @media (max-width: 1359px) {
-        max-width: 250px;
-      }
-      @media (max-width: 1359px) {
-        max-width: 200px;
-      }
     }
 
-    .right {
+    .right,
+    .rightru {
       width: 100%;
       ul {
         list-style-type: none;
@@ -144,7 +129,7 @@ export const StyledFAQ = styled.section`
 
           color: #363636;
 
-          height: 70px;
+          height: 60px;
           overflow: hidden;
           transition: all 0.3s 0.2s linear;
 
@@ -164,7 +149,7 @@ export const StyledFAQ = styled.section`
 
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 60px;
 
             h2 {
               margin: 0;
@@ -197,7 +182,7 @@ export const StyledFAQ = styled.section`
               transform: rotate(180deg);
             }
             @media (max-width: 1359px) {
-              height: 60px;
+              height: 50px;
             }
             @media (max-width: 767px) {
               height: 60px;
@@ -218,7 +203,7 @@ export const StyledFAQ = styled.section`
             transition: all 0.5s ease;
             @media (max-width: 1359px) {
               font-size: 14px;
-              line-height: 30px;
+              line-height: 25px;
             }
             @media (max-width: 767px) {
               padding: 0px 5px;
@@ -251,6 +236,73 @@ export const StyledFAQ = styled.section`
         }
         @media (max-width: 1359px) {
           gap: 0px;
+        }
+      }
+      @media (max-width: 1359px) {
+        max-width: 350px;
+      }
+    }
+    .rightru {
+      ul {
+        li {
+          .head {
+            h2 {
+              margin: 0;
+              font-family: "Poppins", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 35px;
+              /* identical to box height, or 159% */
+              max-width: 700px;
+              color: #363636;
+              @media (max-width: 1359px) {
+                font-size: 18px;
+                line-height: 30px;
+              }
+              @media (max-width: 767px) {
+                line-height: 25px;
+                font-size: 16px;
+              }
+              @media (max-width: 539px) {
+                font-size: 16px;
+                line-height: 20px;
+              }
+            }
+
+            @media (max-width: 1359px) {
+              height: 50px;
+            }
+            @media (max-width: 767px) {
+              height: 60px;
+            }
+          }
+
+          p {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 35px;
+            /* or 159% */
+
+            letter-spacing: 0.01em;
+
+            color: #1b1b1b;
+            transition: all 0.5s ease;
+            @media (max-width: 1359px) {
+              font-size: 14px;
+              line-height: 25px;
+            }
+            @media (max-width: 767px) {
+              padding: 0px 5px;
+              line-height: 25px;
+            }
+            @media (max-width: 539px) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
         }
       }
     }
