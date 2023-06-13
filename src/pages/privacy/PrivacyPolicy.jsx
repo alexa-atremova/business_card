@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "../../Header/Heder";
-import Footer from "../../Footer/Footer";
+import Header from "./../../components/Header/Heder";
+import Footer from "./../../components/Footer/Footer";
+import ContactsButton from "../../components/ContactsButton/ContactsButton";
 
 const SPrivacyPolicy = styled.div`
   display: flex;
@@ -10,11 +11,8 @@ const SPrivacyPolicy = styled.div`
   text-align: justify;
   width: 100%;
   height: fit-content;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
-  @media (max-width: 1359px) {
-    margin-top: 30px;
-  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -98,6 +96,7 @@ function PrivacyPolicy({ handleLanguageChange, lang }) {
   return (
     <>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
+      <ContactsButton />
       <SPrivacyPolicy id="privacy">
         <Wrapper>
           <Title>Privacy Policy</Title>

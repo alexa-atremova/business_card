@@ -6,13 +6,13 @@ const StatementContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 150px;
+  margin-bottom: 100px;
   width: 100%;
 
   @media (max-width: 1359px) {
-    margin-top: 50px;
   }
   @media (max-width: 539px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 `;
 
@@ -25,6 +25,7 @@ const Title = styled.h2`
   border-bottom: 6px solid #ff6600;
   color: #363636;
   margin: 0;
+
   text-transform: uppercase;
   @media (max-width: 1359px) {
     font-size: 30px;

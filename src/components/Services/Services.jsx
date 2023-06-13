@@ -5,7 +5,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
   width: 100%;
   min-height: 1000px;
   @media (max-width: 1359px) {
@@ -16,7 +16,7 @@ const ServicesContainer = styled.div`
   }
 `;
 
-const Title = styled.h2`
+export const MainTitle = styled.h2`
   font-family: "Poppins", sans-serif;
   font-size: 42px;
   font-weight: bold;
@@ -32,7 +32,7 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-family: "Poppins", sans-serif;
   max-width: 600px;
   font-size: 16px;
@@ -126,7 +126,7 @@ const BlockText = styled.p`
 const Services = ({ lang }) => {
   return (
     <ServicesContainer>
-      <Title>{lang === "ru" ? "Услуги" : "Services"}</Title>
+      <MainTitle>{lang === "ru" ? "Услуги" : "Services"}</MainTitle>
 
       <Description>
         <b>

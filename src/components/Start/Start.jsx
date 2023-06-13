@@ -145,19 +145,40 @@ const Block = styled.div`
     width: 320px;
   }
 `;
+const Block1 = styled.div`
+  width: 500px;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgb(255, 115, 0);
+  border-radius: 8px;
+  margin-right: 16px;
+  padding: 16px;
 
+  @media (max-width: 767px) {
+    width: 400px;
+  }
+  @media (max-width: 539px) {
+    width: 320px;
+  }
+`;
 const BlockText = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
   color: #363636;
 
+  text-align: justify;
+  a {
+    font-weight: 600;
+    color: #ff6600;
+  }
   @media (max-width: 539px) {
     font-size: 14px;
     line-height: 20px;
     margin: 0;
   }
 `;
-const DisclaimerButton = styled.button`
+export const DisclaimerButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,7 +239,7 @@ const Start = ({ lang }) => {
           : "in your life, the process is simple and easy."}
       </Description>
       <BlocksContainer>
-        <Block>
+        <Block1>
           <BlockText>
             {lang === "ru"
               ? " Как Confidant я понимаю, что поиск правильного человека для сотрудничества - это личное решение, поэтому я предлагаю "
@@ -228,13 +249,21 @@ const Start = ({ lang }) => {
                 ? "начальную консультацию, чтобы убедиться, что мы подходим друг другу."
                 : "initial consultation to ensure that we are a good match."}
             </b>{" "}
-            {lang === "ru"
-              ? "Во время этой консультации, стоимостью 100€ за один час, мы обсудим ваши потребности и цели в подробностях."
-              : "During this consultation, which is charged at a rate of 100€ for one hour, we will discuss your needs and goals in depth."}
-          </BlockText>
-        </Block>
-        <Block>
-          <BlockText>
+            {lang === "ru" ? (
+              <div>
+                Во время этой консультации, стоимостью 100€ за один час, мы
+                обсудим ваши потребности и цели в подробностях."
+              </div>
+            ) : (
+              <div>
+                <br />
+                During this consultation, which is charged at a
+                <a> rate of 100€</a> for one hour, we will discuss your needs
+                and goals in depth.
+                <br />
+                <br />
+              </div>
+            )}
             {lang === "ru"
               ? "Если Вы решите продолжить работу со мной после консультации, эта плата будет учтена в общей стоимости моих услуг. Я предлагаю персонализированные услуги, адаптированные под ваши индивидуальные потребности и цели, и я обязуюсь поддерживать вас на каждом шагу."
               : "If you choose to continue working with me after the consultation, this fee will be applied towards your overall service costs. I offer personalized services tailored to your unique needs and goals, and I am committed to supporting you every step of the way."}
@@ -247,7 +276,7 @@ const Start = ({ lang }) => {
               ? ", учитывая, что каждая сессия уникальна и персонализирована."
               : ", given that each session is unique and personalized."}
           </BlockText>
-        </Block>
+        </Block1>
         <Block>
           <BlockText>
             {lang === "ru"

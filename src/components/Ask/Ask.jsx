@@ -21,7 +21,7 @@ const MainContainer = styled.div`
 `;
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   width: 100%;
@@ -78,7 +78,6 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 `;
 
 const Image = styled.img`

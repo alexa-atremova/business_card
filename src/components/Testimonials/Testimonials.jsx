@@ -7,7 +7,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
   width: 100%;
   height: fit-content;

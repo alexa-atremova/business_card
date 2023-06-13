@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import logo from "./../../assets/logo.jpg";
 import ru from "./../../assets/ru.png";
 import eng from "./../../assets/eng.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
   faFacebook,
@@ -12,32 +14,50 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  color: #000;
+  color: #363636;
   padding: 16px;
-
+  width: 100%;
+  height: 50px;
+  position: fixed;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  z-index: 10;
+  @media (max-width: 539px) {
+    padding: 0;
+    height: 70px;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 50px;
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
   @media (max-width: 1359px) {
     max-width: 900px;
     padding: 0 50px;
   }
   @media (max-width: 767px) {
+    max-width: 500px;
     padding: 0 10px;
   }
   @media (max-width: 539px) {
+    max-width: 320px;
     padding: 0;
   }
 `;
@@ -71,6 +91,7 @@ const SocialIcon = styled.a`
   @media (max-width: 539px) {
     font-size: 18px;
     margin-left: 10px;
+    display: none;
   }
 `;
 const ButtonsContainer = styled.div`
@@ -132,66 +153,106 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const MenuIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #000000;
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
+`;
+
 const Header = ({ handleLanguageChange, lang }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
+  const mobileMenuRef = useRef(null);
 
-  const handleModal = () => {
-    setShowModal(!showModal);
+  const handleMenuIconClick = () => {
+    setOpen(!open);
   };
-  return (
-    <HeaderContainer>
-      <Wrapper>
-        <Link to="/">
-          <Logo src={logo} />
-        </Link>
-        <SocialIcons>
-          <SocialIcon
-            href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-          </SocialIcon>
-          <SocialIcon
-            href="https://www.facebook.com/profile.php?id=100092432314300"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faFacebook} />
-          </SocialIcon>
 
-          <SocialIcon
-            href="https://twitter.com/confidantpro?s=11"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faTwitter} />
-          </SocialIcon>
-          <SocialIcon
-            href="http://www.tiktok.com/@confidantservice"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faTiktok} />
-          </SocialIcon>
-          <ButtonsContainer>
-            {lang === "ru" ? (
-              <button
-                className="langButton"
-                onClick={() => handleLanguageChange("en")}
-              >
-                <img className={"langImg"} src={eng} />
-                En
-              </button>
-            ) : (
-              <button
-                className="langButton"
-                onClick={() => handleLanguageChange("ru")}
-              >
-                <img className="langImg" src={ru} />
-                Ru
-              </button>
-            )}
-          </ButtonsContainer>
-        </SocialIcons>
-      </Wrapper>
-    </HeaderContainer>
+  const handleOverlayClick = (e) => {
+    if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOverlayClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOverlayClick);
+    };
+  }, []);
+  return (
+    <>
+      <HeaderContainer>
+        <Wrapper>
+          <div className="menu">
+            <MenuIcon>
+              <FontAwesomeIcon icon={faBars} onClick={handleMenuIconClick} />
+            </MenuIcon>
+            <Link to="/">
+              <Logo src={logo} />
+            </Link>
+          </div>
+          <SocialIcons>
+            <SocialIcon
+              href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </SocialIcon>
+            <SocialIcon
+              href="https://www.facebook.com/profile.php?id=100092432314300"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </SocialIcon>
+
+            <SocialIcon
+              href="https://twitter.com/confidantpro?s=11"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </SocialIcon>
+            <SocialIcon
+              href="http://www.tiktok.com/@confidantservice"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faTiktok} />
+            </SocialIcon>
+            <ButtonsContainer>
+              {lang === "ru" ? (
+                <button
+                  className="langButton"
+                  onClick={() => handleLanguageChange("en")}
+                >
+                  <img className="langImg" src={ru} />
+                  Ru
+                </button>
+              ) : (
+                <button
+                  className="langButton"
+                  onClick={() => handleLanguageChange("ru")}
+                >
+                  {" "}
+                  <img className={"langImg"} src={eng} />
+                  En
+                </button>
+              )}
+            </ButtonsContainer>
+          </SocialIcons>
+        </Wrapper>
+      </HeaderContainer>
+      <MobileMenu
+        lang={lang}
+        open={open}
+        handleMenuIconClick={handleMenuIconClick}
+        mobileMenuRef={mobileMenuRef}
+      />
+    </>
   );
 };
 

@@ -27,6 +27,7 @@ export const StyledFAQ = styled.section`
     }
     @media (max-width: 539px) {
       max-width: 320px;
+
       margin-bottom: 0px;
     }
 
@@ -139,10 +140,8 @@ export const StyledFAQ = styled.section`
           .arrow {
             width: 30px;
             height: 30px;
-            @media (max-width: 1359px) {
-              width: 25px;
-              height: 25px;
-            }
+            background-color: #000000;
+            border-radius: 50px;
           }
         }
 
