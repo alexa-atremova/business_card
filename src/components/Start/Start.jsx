@@ -166,6 +166,7 @@ const BlockText = styled.p`
   font-size: 20px;
   line-height: 1.5;
   color: #363636;
+
   text-align: justify;
   a {
     font-weight: 600;
