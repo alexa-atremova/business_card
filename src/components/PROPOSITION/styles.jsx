@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../res/themes";
 
 export const Button1 = styled.div`
   display: flex;
@@ -8,9 +9,9 @@ export const Button1 = styled.div`
   height: 60px;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  background-color: #ff6600;
+  background-color: ${theme.colors.highlighted};
 
-  color: #ffffff;
+  color: ${theme.colors.light_background};
   border-radius: 8px;
 `;
 
@@ -85,7 +86,7 @@ export const StyledFAQ = styled.section`
         line-height: 35px;
         /* identical to box height, or 159% */
         max-width: 700px;
-        color: #363636;
+        color: ${theme.colors.text_color};
         gap: 30px;
         @media (max-width: 1359px) {
           margin-top: 10px;
@@ -112,13 +113,13 @@ export const StyledFAQ = styled.section`
         display: flex;
 
         flex-direction: column;
-        border-bottom: 3px solid #ff6600;
+        border-bottom: 3px solid ${theme.colors.highlighted};
         gap: 10px;
         padding: 0;
         li {
           background: #ffffff;
-          border-top: 3px solid #ff6600;
-
+          border-top: 3px solid ${theme.colors.highlighted};
+          background-color: ${theme.colors.light_background};
           padding: 5px;
           font-family: "Poppins", sans-serif;
           font-style: normal;
@@ -127,8 +128,8 @@ export const StyledFAQ = styled.section`
           line-height: 35px;
           /* identical to box height, or 159% */
 
-          color: #363636;
-
+          color: ${theme.colors.text_color};
+          padding: 10px 20px;
           height: 60px;
           overflow: hidden;
           transition: all 0.3s 0.2s linear;
@@ -160,7 +161,7 @@ export const StyledFAQ = styled.section`
               line-height: 35px;
               /* identical to box height, or 159% */
               max-width: 700px;
-              color: #363636;
+              color: ${theme.colors.text_color};
               @media (max-width: 1359px) {
                 font-size: 18px;
                 line-height: 30px;
@@ -174,9 +175,18 @@ export const StyledFAQ = styled.section`
                 line-height: 20px;
               }
             }
-            img {
+            .ig {
+              display: flex;
+              align-items: center;
+              justify-content: center;
               width: 30px;
               height: 30px;
+              background-color: ${theme.colors.highlighted};
+              border-radius: 50px;
+              img {
+                width: 30px;
+                height: 30px;
+              }
             }
             .flipped {
               transform: rotate(180deg);
@@ -199,7 +209,7 @@ export const StyledFAQ = styled.section`
 
             letter-spacing: 0.01em;
 
-            color: #1b1b1b;
+            color: ${theme.colors.text_color};
             transition: all 0.5s ease;
             @media (max-width: 1359px) {
               font-size: 14px;
@@ -255,7 +265,7 @@ export const StyledFAQ = styled.section`
               line-height: 35px;
               /* identical to box height, or 159% */
               max-width: 700px;
-              color: #363636;
+              color: ${theme.colors.text_color};
               @media (max-width: 1359px) {
                 font-size: 18px;
                 line-height: 30px;
@@ -288,7 +298,7 @@ export const StyledFAQ = styled.section`
 
             letter-spacing: 0.01em;
 
-            color: #1b1b1b;
+            color: ${theme.colors.text_color};
             transition: all 0.5s ease;
             @media (max-width: 1359px) {
               font-size: 14px;

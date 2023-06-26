@@ -37,14 +37,18 @@ export default function PROPOSITION({ lang }) {
                     >
                       ОТКРОЙТЕ В СЕБЕ НЕОБЫКНОВЕННОЕ
                     </h2>
-                    <img
-                      className={active === "first" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "first" ? setActive("") : setActive("first")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "first" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "first"
+                            ? setActive("")
+                            : setActive("first")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -66,18 +70,21 @@ export default function PROPOSITION({ lang }) {
                           : setActive("second")
                       }
                     >
-                      ОТКРОЙТЕ ДЛЯ СЕБЯ СИЛУ ПОДЛИННОГО ОБЩЕНИЯ
+                      ОТКРОЙТЕ ДЛЯ СЕБЯ СИЛУ <br />
+                      ПОДЛИННОГО ОБЩЕНИЯ
                     </h2>
-                    <img
-                      className={active === "second" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "second"
-                          ? setActive("")
-                          : setActive("second")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "second" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "second"
+                            ? setActive("")
+                            : setActive("second")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -99,14 +106,16 @@ export default function PROPOSITION({ lang }) {
                     >
                       РАСКРОЙТЕ СВОЙ ПОТЕНЦИАЛ
                     </h2>
-                    <img
-                      className={active === "4" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "4" ? setActive("") : setActive("4")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "4" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "4" ? setActive("") : setActive("4")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -127,14 +136,16 @@ export default function PROPOSITION({ lang }) {
                     >
                       СДЕЛАЙТЕ ПРЫЖОК
                     </h2>
-                    <img
-                      className={active === "5" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "5" ? setActive("") : setActive("5")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "5" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "5" ? setActive("") : setActive("5")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -175,14 +186,18 @@ export default function PROPOSITION({ lang }) {
                     >
                       UNLOCK THE EXTRAORDINARY WITHIN YOU{" "}
                     </h2>
-                    <img
-                      className={active === "first" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "first" ? setActive("") : setActive("first")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "first" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "first"
+                            ? setActive("")
+                            : setActive("first")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -205,16 +220,18 @@ export default function PROPOSITION({ lang }) {
                     >
                       DISCOVER THE POWER OF AUTHENTIC COMMUNICATION{" "}
                     </h2>
-                    <img
-                      className={active === "second" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "second"
-                          ? setActive("")
-                          : setActive("second")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "second" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "second"
+                            ? setActive("")
+                            : setActive("second")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -236,14 +253,16 @@ export default function PROPOSITION({ lang }) {
                     >
                       UNLEASH YOUR POTENTIAL{" "}
                     </h2>
-                    <img
-                      className={active === "4" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "4" ? setActive("") : setActive("4")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "4" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "4" ? setActive("") : setActive("4")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>
@@ -264,14 +283,16 @@ export default function PROPOSITION({ lang }) {
                     >
                       TAKE THE LEAP
                     </h2>
-                    <img
-                      className={active === "5" ? "flipped" : ""}
-                      src={arrow}
-                      alt=""
-                      onClick={() =>
-                        active === "5" ? setActive("") : setActive("5")
-                      }
-                    />
+                    <div className="ig">
+                      <img
+                        className={active === "5" ? "flipped" : ""}
+                        src={arrow}
+                        alt=""
+                        onClick={() =>
+                          active === "5" ? setActive("") : setActive("5")
+                        }
+                      />
+                    </div>
                   </div>
 
                   <p>

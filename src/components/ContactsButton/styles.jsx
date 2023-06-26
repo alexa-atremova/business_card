@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../res/themes";
 
 export const StyledContactsButton = styled.div`
   position: fixed;
@@ -15,7 +16,7 @@ export const StyledContactsButton = styled.div`
     width: 50px;
     height: 50px;
 
-    background: #363636;
+    background: ${theme.colors.text_color};
     border-radius: 63px;
 
     display: flex;
@@ -32,14 +33,15 @@ export const StyledContactsButton = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: #ff6600;
+      width: 50px;
+      height: 50px;
+      background: ${theme.colors.dark_background};
       border-radius: 92px;
 
       transition: all 0.5s;
       .iconimges {
         font-size: 30px;
+        color: ${theme.colors.highlighted};
       }
     }
 
@@ -50,7 +52,7 @@ export const StyledContactsButton = styled.div`
       overflow: hidden;
 
       font-family: "Poppins", sans-serif;
-      color: #fff;
+      color: ${theme.colors.light_background};
       font-weight: 600;
       font-size: 13px;
       line-height: 18px;
@@ -69,7 +71,8 @@ export const StyledContactsButton = styled.div`
       animation: slideIn 0.5s forwards ease-in-out;
       opacity: 1 !important;
       width: 165px;
-      box-shadow: 0px 0px 20px #ff5e00 !important;
+
+      box-shadow: 0px 0px 20px ${theme.colors.highlighted};
       transition: all 0.5s;
       cursor: pointer;
 
@@ -179,7 +182,7 @@ export const StyledContactsButton = styled.div`
     }
     90% {
       opacity: 1;
-      box-shadow: 0px 0px 20px #ff7300;
+      box-shadow: 0px 0px 20px ${theme.colors.highlighted};
     }
     100% {
       opacity: 0.5;

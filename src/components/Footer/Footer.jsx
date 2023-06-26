@@ -9,15 +9,19 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { theme } from "../../res/themes";
 
 const FooterContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #363636;
+  background-color: ${theme.colors.highlighted};
   width: 100%;
   min-height: 440px;
-  color: #fff;
+  color: ${theme.colors.light_background};
+
+  /* box-shadow: 0px 0px 5px ${theme.colors.highlighted};
+  border-top: 7px solid ${theme.colors.line}; */
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -28,14 +32,47 @@ const Wrapper = styled.div`
   padding: 0 100px;
   text-align: center;
   h1 {
-    display: flex;
+    display: inline-block;
 
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 500;
+    .w {
+      display: inline-block;
+      p {
+        margin-left: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        .circle {
+          display: inline-block;
+
+          margin-left: 2px;
+          margin-bottom: 15px;
+
+          font-family: "Noto Serif";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: transparent;
+          border: 1px solid ${theme.colors.light_background};
+          color: ${theme.colors.light_background};
+          text-align: center;
+
+          font-weight: 700;
+          line-height: 10px;
+          font-size: 8px;
+        }
+
+        .circle::before {
+          content: "G";
+        }
+      }
+    }
     a {
       user-select: all;
       text-decoration: none;
-      color: orange;
+      color: ${theme.colors.line};
       margin-left: 10px;
     }
   }
@@ -51,11 +88,11 @@ const SocialIcons = styled.div`
 
 const SocialIcon = styled.a`
   margin-left: 20px;
-  color: #fff;
+  color: ${theme.colors.light_background};
   font-size: 30px;
   text-decoration: none;
   &:hover {
-    color: #ff6600;
+    color: ${theme.colors.line};
   }
 `;
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import logo from "./../../assets/logo.jpg";
+import logo from "./../../assets/logo.png";
 import ru from "./../../assets/ru.png";
 import eng from "./../../assets/eng.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,23 +15,40 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu/MobileMenu";
+import { theme } from "../../res/themes";
 
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  color: #363636;
-  padding: 16px;
+  border-top: 7px solid white;
+  /* background-color: ${theme.colors.highlighted}; */
+  /* background-color: #2e3d25; */
+  background-color: ${theme.colors.highlighted};
+  color: ${theme.colors.dark_background};
+  padding: 15px;
   width: 100%;
-  height: 50px;
+  height: 70px;
   position: fixed;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
-  z-index: 10;
-  @media (max-width: 539px) {
+  box-shadow: 0px 1px 0px ${theme.colors.highlighted};
+  border-bottom: 7px solid ${theme.colors.line};
+  z-index: 100000;
+  ::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    height: 1px;
+    width: 100%;
+    background-color: ${theme.colors.light_background};
+  }
+
+  ::before {
+    box-shadow: 0px 1px 0px ${theme.colors.light_background};
+    border-bottom: 1px solid ${theme.colors.highlighted};
+  }
+  @media (max-width: 768px) {
     padding: 0;
-    height: 70px;
   }
 `;
 const Wrapper = styled.div`
@@ -54,7 +71,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 767px) {
     max-width: 500px;
-    padding: 0 10px;
+    padding: 0;
   }
   @media (max-width: 539px) {
     max-width: 320px;
@@ -62,9 +79,10 @@ const Wrapper = styled.div`
   }
 `;
 const Logo = styled.img`
-  width: 120px;
-  @media (max-width: 539px) {
-    width: 90px;
+  width: 80px;
+
+  @media (max-width: 768px) {
+    width: 60px;
   }
 `;
 
@@ -74,11 +92,11 @@ const SocialIcons = styled.div`
 
 const SocialIcon = styled.a`
   margin-left: 20px;
-  color: #000;
+  color: ${theme.colors.light_background};
   font-size: 30px;
   text-decoration: none;
   &:hover {
-    color: #ff6600;
+    color: ${theme.colors.line};
   }
   @media (max-width: 1359px) {
     font-size: 25px;
@@ -100,8 +118,7 @@ const ButtonsContainer = styled.div`
   align-items: center;
   flex-direction: row;
   gap: 5px;
-  .langButton,
-  .disableLang {
+  .langButton {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -112,7 +129,7 @@ const ButtonsContainer = styled.div`
 
     width: 55px;
     height: 40px;
-    background: #ffffff;
+    background: ${theme.colors.light_background};
     border: 1px solid #cfcfcf;
     border-radius: 10px;
 
@@ -121,7 +138,7 @@ const ButtonsContainer = styled.div`
     font-size: 15px;
     line-height: 24px;
 
-    color: #1b1b1b;
+    color: ${theme.colors.text_color};
     @media (max-width: 1365px) {
       width: 67px;
       height: 36px;
@@ -144,13 +161,6 @@ const ButtonsContainer = styled.div`
       height: 17px;
     }
   }
-  .disableLang {
-    color: #787878;
-    .langImg {
-      opacity: 0.5;
-      filter: grayscale(1);
-    }
-  }
 `;
 
 const MenuIcon = styled.div`
@@ -158,7 +168,10 @@ const MenuIcon = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  color: #000000;
+  color: ${theme.colors.light_background};
+  &:hover {
+    color: ${theme.colors.line};
+  }
 
   @media (max-width: 767px) {
     font-size: 26px;
@@ -173,25 +186,25 @@ const Header = ({ handleLanguageChange, lang }) => {
     setOpen(!open);
   };
 
-  const handleOverlayClick = (e) => {
-    if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
-      setOpen(false);
-    }
-  };
+  // const handleOverlayClick = (e) => {
+  //   if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+  //     setOpen(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOverlayClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOverlayClick);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleOverlayClick);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleOverlayClick);
+  //   };
+  // }, []);
   return (
     <>
       <HeaderContainer>
         <Wrapper>
-          <div className="menu">
-            <MenuIcon>
-              <FontAwesomeIcon icon={faBars} onClick={handleMenuIconClick} />
+          <div className="menu" ref={mobileMenuRef}>
+            <MenuIcon onClick={handleMenuIconClick}>
+              <FontAwesomeIcon icon={faBars} />
             </MenuIcon>
             <Link to="/">
               <Logo src={logo} />
@@ -223,7 +236,7 @@ const Header = ({ handleLanguageChange, lang }) => {
             >
               <FontAwesomeIcon icon={faTiktok} />
             </SocialIcon>
-            <ButtonsContainer>
+            {/* <ButtonsContainer>
               {lang === "ru" ? (
                 <button
                   className="langButton"
@@ -242,7 +255,7 @@ const Header = ({ handleLanguageChange, lang }) => {
                   En
                 </button>
               )}
-            </ButtonsContainer>
+            </ButtonsContainer> */}
           </SocialIcons>
         </Wrapper>
       </HeaderContainer>

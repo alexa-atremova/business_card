@@ -1,17 +1,12 @@
-import React from "react";
-import photo from "./../../assets/photo.jpg";
+import React, { useEffect } from "react";
+import photo from "./../../assets/photo.png";
 import styled, { keyframes } from "styled-components";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { theme } from "../../res/themes";
+import { NavLink } from "react-router-dom";
+import scrollToTop from "../../helpers/scrollToTop";
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
 const MainContainer = styled.div`
   display: flex;
   align-items: center;
@@ -21,22 +16,26 @@ const MainContainer = styled.div`
   height: 100%;
 
   margin-top: 150px;
+  a {
+    text-decoration: none;
+  }
   @media (max-width: 1359px) {
-    margin-top: 120px;
+    margin-top: 150px;
   }
 `;
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  gap: 20px;
   @media (max-width: 1359px) {
     align-items: flex-start;
     max-width: 700px;
   }
   @media (max-width: 767px) {
-    max-width: 530px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
     flex-direction: column;
@@ -46,12 +45,12 @@ const Wrapper = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 100%;
-  max-width: 680px;
+
   font-family: "Poppins", sans-serif;
-  color: #363636;
-  gap: 20px;
-  /* animation: ${fadeIn} 1s ease-in; */
+  color: ${theme.colors.text_color};
+
   .icon {
     display: flex;
     flex-direction: row;
@@ -88,15 +87,16 @@ const TextContainer = styled.div`
     }
   }
   @media (max-width: 1359px) {
-    max-width: 420px;
+    gap: 20px;
   }
   @media (max-width: 767px) {
-    max-width: 330px;
-  }
-  @media (max-width: 539px) {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 500px;
+  }
+  @media (max-width: 539px) {
+    max-width: 320px;
   }
 `;
 const TitleWrapp = styled.div`
@@ -105,14 +105,15 @@ const TitleWrapp = styled.div`
   justify-content: flex-start;
   text-align: left;
   flex-direction: column;
+  font-family: "Poppins", sans-serif;
   width: 100%;
-  border-left: 8px solid #ff6600;
+  border-left: 2px solid ${theme.colors.highlighted};
   padding-left: 16px;
-  gap: 10px;
 `;
 const Title1 = styled.h1`
   font-size: 34px;
-  font-weight: bold;
+
+  color: ${theme.colors.highlighted};
   margin: 0;
   @media (max-width: 1359px) {
     font-size: 26px;
@@ -123,22 +124,65 @@ const Title1 = styled.h1`
   }
 `;
 
-const Title2 = styled.h2`
-  font-size: 42px;
-  font-weight: bold;
-  margin: 0;
+const Title2 = styled.div`
+  display: flex;
 
+  flex-direction: row;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  color: ${theme.colors.highlighted};
+  gap: 5px;
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+
+    font-weight: 500;
+    line-height: 12px;
+    font-size: 10px;
+  }
+
+  .circle::before {
+    content: "G";
+  }
   @media (max-width: 1359px) {
     font-size: 30px;
+    .circle {
+      width: 11px;
+      height: 11px;
+      line-height: 11px;
+      font-size: 10px;
+    }
+
+    .circle::before {
+      content: "G";
+    }
   }
   @media (max-width: 767px) {
     font-size: 26px;
+    .circle {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      font-weight: 500;
+      line-height: 11px;
+      font-size: 8px;
+    }
+
+    .circle::before {
+      content: "G";
+    }
   }
   h2 {
     margin: 0;
     font-weight: 700;
     font-size: 30px;
-    color: #ff6600;
+    color: ${theme.colors.highlighted};
     @media (max-width: 1359px) {
       font-size: 18px;
     }
@@ -147,78 +191,83 @@ const Title2 = styled.h2`
     }
   }
 `;
+const Title3 = styled.h1`
+  font-size: 34px;
+
+  color: ${theme.colors.text_color};
+  margin: 0;
+  @media (max-width: 1359px) {
+    font-size: 26px;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+`;
+
+const ParagraphWrap = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  gap: 50px;
+  @media (max-width: 1359px) {
+    gap: 35px;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+`;
 
 const Paragraph = styled.p`
-  font-size: 20px;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  /* text-align: left; */
-
-  @media (max-width: 1359px) {
-    font-size: 16px;
-    width: 700px;
-  }
-  @media (max-width: 767px) {
-    font-size: 14px;
-    line-height: 1.4;
-    width: 530px;
-  }
-  @media (max-width: 539px) {
-    font-size: 14px;
-    line-height: 1.4;
-    width: 320px;
-  }
-`;
-
-const Paragraph1 = styled.p`
-  margin: 0;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  /* text-align: left; */
-  @media (max-width: 1359px) {
-    font-size: 16px;
-  }
-  @media (max-width: 767px) {
-    font-size: 13px;
-    width: 320px;
-    line-height: 1.3;
-  }
-`;
-const Paragraph2 = styled.p`
-  margin: 0;
-  font-size: 20px;
-
-  /* text-transform: uppercase; */
-  font-weight: bold;
-  /* text-align: left; */
-  @media (max-width: 1359px) {
-    font-size: 16px;
-  }
-  @media (max-width: 767px) {
-    font-size: 13px;
-    width: 320px;
-    line-height: 1.3;
-  }
-`;
-const ImageContainer = styled.div`
   width: 100%;
-  max-width: 400px;
+  position: relative;
+  font-size: 25px;
+  line-height: 35px;
+  font-family: "Noto Serif";
+  font-style: italic;
+  p {
+    margin: 0;
+    align-self: flex-end;
 
-  /* animation: ${fadeIn} 1s ease-in; */
+    margin-right: 30px;
+  }
+
   @media (max-width: 1359px) {
-    margin-top: 50px;
-    max-width: 250px;
+    font-size: 20px;
   }
   @media (max-width: 767px) {
-    max-width: 180px;
+    font-size: 16px;
+    line-height: 28px;
   }
-  @media (max-width: 539px) {
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  align-self: flex-start;
+  justify-self: flex-start;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1359px) {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    max-width: 290px;
+  }
+  @media (max-width: 767px) {
     display: flex;
     align-self: center;
-    justify-self: center;
-    margin-top: 20px;
-    max-width: 200px;
+    justify-self: flex-start;
+    margin: 0;
+    max-width: 320px;
   }
 `;
 
@@ -226,23 +275,26 @@ const Image = styled.img`
   width: 100%;
   max-width: 400px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
+  border-radius: 200px;
 `;
 const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
   width: 170px;
   height: 60px;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  background-color: #ff6600;
+  background-color: ${theme.colors.highlighted};
 
-  color: #ffffff;
+  color: ${theme.colors.light_background};
   border-radius: 8px;
 `;
 const Main = ({ lang }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const scrollToStart = () => {
     const startElement = document.getElementById("start");
     if (startElement) {
@@ -264,14 +316,7 @@ const Main = ({ lang }) => {
                 </h2>
               </Title2>
             </TitleWrapp>
-            <Paragraph2>
-              В отличие от традиционных методов , я не ограничиваюсь простыми
-              словами. Я содействую трансформационному процессу, который выходит
-              за рамки поверхностных изменений, помогая Вам осуществить глубокую
-              трансформацию изнутри. Углубившись в язык смыслов и соединившись
-              со своей внутренней истиной, Вы ощутите глубокий сдвиг в своем
-              мышлении, отношениях и общем самочувствии.
-            </Paragraph2>
+
             <Paragraph>
               Мое имя Август Платина, люди называют меня Конфидант, что означает
               по сути близкий человек. Это для меня очень много значит. Это так
@@ -309,35 +354,41 @@ const Main = ({ lang }) => {
               </Title1>
               <Title2>
                 CONFIDANT SERVICE <br />
-                <h2>
-                  {" "}
-                  YOUR CHANCE TO CHANGE YOUR LIFE
-                  <br /> EXPERIENCE TRUE TRANSFORMATION
-                </h2>
+                <div className="circle"></div>
               </Title2>
+              <Title3>CONVERSATIONS THAT CHANGE LIVES</Title3>
             </TitleWrapp>
-            <Paragraph1>
-              Unlike conventional therapies, my focus extends beyond mere words.
-              I facilitate a transformative process that goes beyond superficial
-              change, empowering you to embrace profound transformation from
-              within. By delving into the language of meanings and connecting
-              with your inner truth, you will experience a profound shift in
-              your mindset, relationships, and overall well-being.
-            </Paragraph1>
+            <ParagraphWrap>
+              <Paragraph>
+                “Dear Avgust , in the realm of wonders, you are a true miracle
+                maker. Your presence and actions, have the power to create
+                extraordinary transformations in the lives of others. With your
+                kindness, compassion, and belief, you inspire miracles to
+                unfold, bringing hope and joy to those around you. Your ability
+                to see the best in people and nurture their potential is truly
+                remarkable. You are a beacon of light, igniting the spark of
+                miracles wherever you go.” <br /> <p>Anna K.</p>
+              </Paragraph>
+              <ImageContainer>
+                <Image src={photo} alt="Photograph" />
+              </ImageContainer>
+            </ParagraphWrap>
+
             <Paragraph>
-              {lang === "ru"
-                ? "Мое имя Август Платина, люди называют меня Конфидант, что означает по сути близкий человек. Это для меня очень много значит. Это так благодаря моей способности создавать безопасную среду для людей, где они могут раскрыться и поделиться своими самыми глубокими мыслями и эмоциями. Мое стремление помочь людям в прохождении сложных ситуаций и поиске решений для их проблем привело меня к тому, что мое имя стало синонимом того что я делаю. Мой жизненный путь сформировал меня в того, кто я есть сегодня. Для меня это большая честь, делиться своим уникальным пониманием жизни, видением и опытом с теми, кто нуждается в моей поддержке."
-                : "I am Avgust Platina, known as 'Confidant' for my ability to provide a safe space for people to open up and share their deepest thoughts and emotions. With my passion for helping others navigate difficult situations and find solutions to their challenges, my name has become synonymous with my services. My life experience has shaped me into the person I am today, and I am honored to share my unique perspective with those in need of support."}
-            </Paragraph>
-            <Paragraph>
-              {lang === "ru"
-                ? "Я верю, что каждый человек, с кем я встречаюсь, приносит в мою жизнь свой уникальный дар, и я хочу чтобы общение со мной обогатило людей тем ценным опытом который поможет им преодолеть любые трудности."
-                : "I believe that each person I meet brings a gift of their presence into my life, just as I hope to provide valuable experiences for them."}
+              "Within each of us lies the power to be a miracle maker, for our
+              words, actions, and presence possess the extraordinary ability to
+              ignite hope, transform lives, and unleash the wonders that dwell
+              within the human heart."
+              <br /> <p>Avgust Platina to Anna K.</p>
             </Paragraph>
 
-            <Button onClick={scrollToStart}>
-              {lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}
-            </Button>
+            <NavLink
+              to={"/contacts"}
+              className={"link"}
+              onClick={() => scrollToTop()}
+            >
+              <Button>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Button>
+            </NavLink>
             <div className="icon">
               <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
               <h1>
@@ -347,9 +398,6 @@ const Main = ({ lang }) => {
             </div>
           </TextContainer>
         )}
-        <ImageContainer>
-          <Image src={photo} alt="Photograph" />
-        </ImageContainer>
       </Wrapper>
     </MainContainer>
   );

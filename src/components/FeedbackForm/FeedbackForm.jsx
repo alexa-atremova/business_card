@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
 
-import { StyledFeedbackForm } from "./styles";
-import { Description, MainTitle } from "../Services/Services";
+import { Description, StyledFeedbackForm } from "./styles";
+
 import { DisclaimerButton } from "../Start/Start";
 
 export default function FeedbackForm() {
@@ -31,11 +31,11 @@ export default function FeedbackForm() {
       return () => clearTimeout(timer);
     }
   }, [showSuccessMessage]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StyledFeedbackForm id="Contacts_block">
-      <MainTitle>Contact Me</MainTitle>
-
       <div className="wrapper">
         <div className="centerBlock">
           <div className="right">

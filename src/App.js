@@ -3,16 +3,22 @@ import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/main/MainPage";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
-import TestimonialPage from "./pages/testimonialPage/TestimonialPage";
-import OpeningHorizonsPage from "./pages/openingHorizonsPage/OpeningHorizonsPage";
-import StatementPage from "./pages/statementPage/StatementPage";
 import StoryPage from "./pages/storyPage/StoryPage";
 import Contacts from "./pages/Contacts/Contacts";
-import Calling from "./pages/calling/Calling";
+
+import { theme } from "./res/themes";
+import Thank from "./pages/thank/Thank";
+import AboutMe from "./pages/aboutme/AboutMe";
+import PricingPage from "./pages/pricing/PricingPage";
+import AssistancePage from "./pages/assistance/AssistancePage";
+import Bespoke_Assistance from "./components/Bespoke_Assistance/Bespoke_Assistance";
+import Bespoke_AssistancePage from "./pages/bespoke_assistance/Bespoke_AssistancePage";
+import PowerConversationPage from "./pages/powerConversationPage/PowerConversationPage";
 
 const SApp = styled.div`
   overflow: hidden;
   user-select: none;
+  background-color: ${theme.colors.dark_background};
 `;
 function App() {
   const [lang, setLang] = useState(window.localStorage.getItem("lang") || "en");
@@ -44,6 +50,13 @@ function App() {
         />
         <Route
           exact
+          path="/thank"
+          element={
+            <Thank handleLanguageChange={handleLanguageChange} lang={lang} />
+          }
+        />
+        <Route
+          exact
           path="/story"
           element={
             <StoryPage
@@ -54,16 +67,39 @@ function App() {
         />
         <Route
           exact
-          path="/calling"
+          path="/aboutme"
           element={
-            <Calling handleLanguageChange={handleLanguageChange} lang={lang} />
+            <AboutMe handleLanguageChange={handleLanguageChange} lang={lang} />
           }
         />
+
         <Route
           exact
-          path="/testimonials"
+          path="/pricing"
           element={
-            <TestimonialPage
+            <PricingPage
+              handleLanguageChange={handleLanguageChange}
+              lang={lang}
+            />
+          }
+        />
+
+        <Route
+          exact
+          path="/my_sincere_approach"
+          element={
+            <Bespoke_AssistancePage
+              handleLanguageChange={handleLanguageChange}
+              lang={lang}
+            />
+          }
+        />
+
+        <Route
+          exact
+          path="/power_of_conversation"
+          element={
+            <PowerConversationPage
               handleLanguageChange={handleLanguageChange}
               lang={lang}
             />
@@ -71,19 +107,9 @@ function App() {
         />
         <Route
           exact
-          path="/horizons"
+          path="/assistance"
           element={
-            <OpeningHorizonsPage
-              handleLanguageChange={handleLanguageChange}
-              lang={lang}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/statement"
-          element={
-            <StatementPage
+            <AssistancePage
               handleLanguageChange={handleLanguageChange}
               lang={lang}
             />

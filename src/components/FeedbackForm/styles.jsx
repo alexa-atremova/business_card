@@ -1,12 +1,40 @@
 import styled from "styled-components";
+import { theme } from "../../res/themes";
+
+export const Description = styled.p`
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 40px;
+  color: ${theme.colors.text_color};
+  b {
+    font-weight: bold;
+  }
+  p {
+    color: ${theme.colors.highlighted};
+  }
+  @media (max-width: 767px) {
+    max-width: 530px;
+  }
+  @media (max-width: 539px) {
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+`;
 
 export const StyledFeedbackForm = styled.section`
-  margin-top: 150px;
   margin-bottom: 100px;
   width: 100%;
+
   display: flex;
   align-items: center;
-  display: flex;
+  justify-content: center;
   flex-direction: column;
 
   overflow-x: hidden;
@@ -41,7 +69,7 @@ export const StyledFeedbackForm = styled.section`
       text-align: center;
       text-transform: uppercase;
 
-      color: #363636;
+      color: ${theme.colors.text_color};
       z-index: 2;
     }
   }
@@ -85,7 +113,7 @@ export const StyledFeedbackForm = styled.section`
 
             text-align: justify;
 
-            color: #363636;
+            color: ${theme.colors.text_color};
           }
           .contacts {
             display: flex;
@@ -115,7 +143,7 @@ export const StyledFeedbackForm = styled.section`
 
                 text-align: center;
 
-                color: #363636;
+                color: ${theme.colors.text_color};
               }
               .soc {
                 display: flex;
@@ -124,11 +152,11 @@ export const StyledFeedbackForm = styled.section`
                 align-self: center;
                 gap: 20px;
                 a {
-                  color: #000000;
+                  color: ${theme.colors.text_color};
                   font-size: 30px;
                   text-decoration: none;
                   &:hover {
-                    color: #ff6600;
+                    color: ${theme.colors.highlighted};
                   }
                 }
               }
@@ -190,6 +218,7 @@ export const StyledFeedbackForm = styled.section`
             margin-top: 70px;
             width: 100%;
             max-width: 600px;
+            margin-bottom: 20px;
 
             display: flex;
             flex-direction: column;
@@ -209,10 +238,10 @@ export const StyledFeedbackForm = styled.section`
               line-height: 145%;
               padding: 7px 20px;
 
-              color: #363636;
+              color: ${theme.colors.text_color};
 
-              background: #ffffff;
-              border: 1px solid #303e53;
+              background: ${theme.colors.light_background};
+              border: 1px solid ${theme.colors.highlighted};
               box-sizing: border-box;
               border-radius: 8px;
               :focus {
@@ -237,10 +266,10 @@ export const StyledFeedbackForm = styled.section`
               line-height: 145%;
               padding: 7px 20px;
 
-              color: #363636;
+              color: ${theme.colors.text_color};
 
-              background: #fff;
-              border: 1px solid #000000;
+              background: ${theme.colors.light_background};
+              border: 1px solid ${theme.colors.highlighted};
               box-sizing: border-box;
               border-radius: 8px;
               resize: none;
@@ -269,7 +298,7 @@ export const StyledFeedbackForm = styled.section`
               margin-left: 10px;
               display: inline-block;
               font-size: 14px;
-              color: #333;
+              color: ${theme.colors.text_color};
             }
           }
         }
@@ -278,7 +307,7 @@ export const StyledFeedbackForm = styled.section`
   }
   @media (max-width: 1359px) {
     background-size: 100% auto;
-    padding-top: 40px;
+
     .head {
       width: 900px;
       img {
@@ -358,7 +387,7 @@ export const StyledFeedbackForm = styled.section`
 
   @media (max-width: 1023px) {
     background-size: auto 100%;
-    padding-top: 30px;
+
     .head {
       width: 850px;
       img {
@@ -428,7 +457,6 @@ export const StyledFeedbackForm = styled.section`
   }
 
   @media (max-width: 767px) {
-    padding-top: 25px;
     .head {
       width: 450px;
       img {
@@ -470,7 +498,7 @@ export const StyledFeedbackForm = styled.section`
           max-width: 450px;
           .feedback {
             width: 100%;
-            padding: 10px;
+            padding: 0px;
             .form {
               margin-top: 0px;
               width: 100%;
@@ -545,7 +573,7 @@ export const StyledFeedbackForm = styled.section`
 
                       text-align: center;
 
-                      color: #363636;
+                      color: ${theme.colors.text_color};
                     }
                   }
                 }
@@ -573,7 +601,6 @@ export const StyledFeedbackForm = styled.section`
   }
 
   @media (max-width: 533px) {
-    padding-top: 10px;
     .head {
       width: 320px;
       img {

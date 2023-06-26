@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -10,21 +10,23 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { theme } from "../../../res/themes";
 
 const SMobileMenu = styled.nav`
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
   bottom: 0;
-  width: 350px;
-  background-color: #333333;
-  color: #fff;
+  width: 330px;
+  background-color: ${theme.colors.highlighted};
+
+  color: ${theme.colors.light_background};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
-  @media (max-width: 767px) {
+  @media (max-width: 1359px) {
     font-size: 20px;
-    background-color: #333333b3;
+    background-color: #e9e2c292;
     backdrop-filter: blur(10px);
 
     width: 100%;
@@ -32,14 +34,18 @@ const SMobileMenu = styled.nav`
 `;
 
 const CloseButton = styled.button`
+  display: none;
   position: absolute;
-  top: 10px;
+  top: 40px;
   right: 10px;
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: ${theme.colors.light_background};
   font-size: 40px;
   cursor: pointer;
+  @media (max-width: 1359px) {
+    display: flex;
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -55,7 +61,7 @@ const NavLinks = styled.ul`
   .wrap {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
     max-height: 700px;
@@ -70,11 +76,11 @@ const NavLinks = styled.ul`
       gap: 20px;
 
       a {
-        color: #fff;
+        color: ${theme.colors.light_background};
         font-size: 35px;
         text-decoration: none;
         &:hover {
-          color: #ff6600;
+          color: ${theme.colors.line};
         }
       }
     }
@@ -88,14 +94,14 @@ const NavLinks = styled.ul`
       li {
         padding: 20px;
         a {
-          font-size: 20px;
+          font-size: 18px;
           font-family: "Poppins", sans-serif;
-          color: #fff;
+          color: ${theme.colors.light_background};
           text-decoration: none;
-          border-bottom: 2px solid #ff6600;
+          border-bottom: 2px solid ${theme.colors.line};
 
           :hover {
-            color: #ff6600;
+            color: ${theme.colors.line};
 
             border-bottom: 0;
           }
@@ -105,7 +111,7 @@ const NavLinks = styled.ul`
         margin-top: 20px;
         a {
           font-size: 16px;
-          border-bottom: 1px solid #ff6600;
+          border-bottom: 2px solid ${theme.colors.line};
         }
       }
     }
@@ -127,21 +133,13 @@ const NavLinks = styled.ul`
           a {
             font-size: 18px;
             font-family: "Poppins", sans-serif;
-            color: #fff;
+
             text-decoration: none;
-            border-bottom: 2px solid #ff6600;
-
-            :hover {
-              color: #ff6600;
-
-              border-bottom: 0;
-            }
           }
         }
         .cll {
           a {
             font-size: 16px;
-            border-bottom: 1px solid #ff6600;
           }
         }
       }
@@ -153,8 +151,8 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
   return (
     <>
       <SMobileMenu open={open} ref={mobileMenuRef}>
-        <CloseButton onClick={handleMenuIconClick}>
-          <FontAwesomeIcon icon={faTimes} />
+        <CloseButton>
+          <FontAwesomeIcon icon={faTimes} onClick={handleMenuIconClick} />
         </CloseButton>
         {lang == "ru" ? (
           <NavLinks>
@@ -163,9 +161,9 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
                 <li>
                   <Link to="/">Главная Страница</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/story">История Создания</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/horizons"> Открывая Новые Горизонты</Link>
                 </li>
@@ -182,9 +180,9 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
                 <li>
                   <Link to="/testimonials">Отзывы</Link>
                 </li>
-                <li className="cll">
+                {/* <li className="cll">
                   <Link to="/calling">«Зов Сердца Садовника»</Link>
-                </li>
+                </li> */}
               </div>
               <div className="soc">
                 <a
@@ -217,31 +215,24 @@ const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
             <div className="wrap">
               <div className="links">
                 <li>
-                  <Link to="/">Main Page </Link>
+                  <Link to="/">Welcome To</Link>
                 </li>
                 <li>
-                  <Link to="/story">Story of Creation </Link>
-                </li>
-                <li>
-                  <Link to="/horizons"> Opening New Horizons</Link>
+                  <Link to="/aboutme">About Me</Link>
                 </li>
 
                 <li>
-                  <Link to="/statement"> Statement of Responsibility</Link>
+                  <Link to="/pricing"> Pricing</Link>
                 </li>
                 <li>
-                  <Link to="/privacy">Privacy Policy </Link>
+                  <Link to="/assistance"> Confidential Assistance </Link>
                 </li>
-                <li>
-                  <Link to="/testimonials">Testimonials</Link>
-                </li>
+
                 <li>
                   <Link to="/contacts">Contact Me </Link>
                 </li>
-                <li className="cll">
-                  <Link to="/calling">
-                    "The Calling of the Gardener's Heart"
-                  </Link>
+                <li>
+                  <Link to="/thank"> Gratitude </Link>
                 </li>
               </div>
               <div className="soc">
