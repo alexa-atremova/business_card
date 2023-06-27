@@ -161,7 +161,7 @@ const P = styled.p`
     font-size: 16px;
   }
 `;
-function Credentials({ handleLanguageChange, lang }) {
+function Testimonials({ handleLanguageChange, lang }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -169,39 +169,34 @@ function Credentials({ handleLanguageChange, lang }) {
     <>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
-      <SCredentials id="calling">
+      <SCredentials>
         <Wrapper>
-          <Title>Credentials</Title>
+          <Title> TESTIMONIALS </Title>
 
           <Paragraph>
-            In my area of expertise, I firmly believe that personal experience
-            is the only way to truly acquire real skills and abilities. It comes
-            at a high price, but there is simply no other way around it. I have
-            paid for every ounce of knowledge and expertise I possess with the
-            highest currency possible: my lifetime. Throughout my journey, I
-            have accumulated not only knowledge and techniques but also scars in
-            my soul and heart, as well as moments of joy. This is the price I
-            have paid to excel in my field. I have poured my soul into
-            everything I do because that's how you become truly exceptional in
-            this line of work. Formal credentials and diplomas may have their
-            place in certain professions, but in my realm, they pale in
-            comparison to the lessons learned through lived experiences. My
-            expertise is rooted in the depths of my personal journey and the
-            profound impact I have had on the lives of my clients. Every
-            interaction, every challenge, and every success has contributed to
-            the wealth of knowledge and understanding I bring to each
-            engagement. My commitment to continuous growth and learning ensures
-            that I stay at the forefront of my field, providing the highest
-            level of assistance to those who entrust me with their private,
-            personal, family, and business matters. When you work with me, you
-            are receiving the culmination of a lifetime's worth of investment
-            and dedication. I have paid the price in order to offer you the
-            support and guidance you deserve. Together, we will navigate the
-            delicate matters at hand, drawing upon my extensive personal
-            experience and unwavering commitment to your well-being. Please
-            don't hesitate to reach out for a personalized consultation, where
-            we can delve deeper into your specific needs and how my expertise
-            can best serve you in achieving your desired outcomes.
+            I have always believed that my work speaks for itself. I do not need
+            to prove anything to anyone by disclosing the specifics of my client
+            engagements. My focus is on providing exceptional assistance and
+            ensuring the well-being of those who entrust me with their private,
+            personal, family, and business matters. Confidentiality is the
+            golden rule that guides my work. It is the cornerstone of everything
+            I do, ensuring that my clients' stories remain protected and
+            undisclosed. Your confidentiality is my top priority, and I hold it
+            with the utmost respect. In my line of work, personal experiences
+            are the true measure of one's abilities and expertise. I rely on the
+            knowledge gained from my own journey and the transformative
+            experiences I have had. This is what allows me to offer unique and
+            valuable assistance to my clients. I hold my clients' trust as my
+            most prized possession, and I would never jeopardize it by revealing
+            any details about our work together. As a man in the shade, I
+            operate discreetly, ensuring that the privacy and confidentiality of
+            my clients are upheld. While some may choose to share their
+            experiences with others as a way of expressing appreciation, it is
+            not a requirement for me. The true and honest opinions shared
+            one-on-one hold the greatest value in my heart. Your confidentiality
+            and satisfaction are my priorities, and I am committed to providing
+            exceptional support and guidance in the most discreet and
+            personalized manner possible.
           </Paragraph>
         </Wrapper>
       </SCredentials>
@@ -210,4 +205,4 @@ function Credentials({ handleLanguageChange, lang }) {
   );
 }
 
-export default Credentials;
+export default Testimonials;

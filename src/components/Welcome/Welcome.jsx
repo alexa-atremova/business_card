@@ -12,11 +12,8 @@ const WelcomeContainer = styled.div`
   width: 100%;
   height: 100%;
   gap: 20px;
-  margin-top: 150px;
-  border-top: 1px solid ${theme.colors.highlighted};
-  padding-top: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid ${theme.colors.highlighted};
+  margin-top: 170px;
+  margin-bottom: 100px;
 
   @media (max-width: 1359px) {
     margin-top: 120px;

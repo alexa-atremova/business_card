@@ -7,7 +7,7 @@ const Bespoke_AssistanceContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 200px;
   margin-bottom: 100px;
   width: 100%;
   height: fit-content;

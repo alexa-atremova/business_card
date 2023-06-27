@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import video from "./../../assets/video1.mp4";
+import img from "./../../assets/img.jpg";
 import posterImage from "./../../assets/posterImg1.jpg";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../res/themes";
@@ -8,11 +9,12 @@ const StoryContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
 
   height: fit-content;
 
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 100px;
 
   @media (max-width: 1359px) {
@@ -29,11 +31,11 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   width: 100%;
 
   max-width: 1200px;
   gap: 20px;
+
   @media (max-width: 1359px) {
     border-right: 0;
     padding-right: 0;
@@ -48,6 +50,7 @@ const Wrapper = styled.div`
     max-width: 320px;
   }
 `;
+
 const TextContainer = styled.div`
   display: flex;
   align-items: center;

@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../res/themes";
+import Links from "../Links/Links";
 
 const StartContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 0px;
   width: 100%;
 
   height: fit-content;
   @media (max-width: 1359px) {
-    margin-top: 150px;
   }
   @media (max-width: 539px) {
-    margin-top: 100px;
     height: fit-content;
-    min-height: 300px;
   }
   .bttn {
     display: flex;
@@ -25,7 +23,7 @@ const StartContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    margin-bottom: 40px;
+
     h1 {
       text-align: center;
       font-family: "Poppins", sans-serif;
@@ -114,7 +112,6 @@ const BlockText = styled.p`
   @media (max-width: 539px) {
     font-size: 18px;
     line-height: 30px;
-    margin: 0;
   }
 `;
 export const DisclaimerButton = styled.button`
@@ -136,6 +133,7 @@ export const DisclaimerButton = styled.button`
 const Start = ({ lang }) => {
   return (
     <StartContainer id="start">
+      <Links />
       <Title>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Title>
 
       <BlocksContainer>

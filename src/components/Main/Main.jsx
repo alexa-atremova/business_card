@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import photo from "./../../assets/photo.png";
+import aboutme from "./../../assets/aboutme.jpg";
+import power from "./../../assets/power.jpg";
+import my_sincere_approach from "./../../assets/my_sincere_approach.jpg";
+import thankImg from "./../../assets/thankImg.jpg";
 import styled, { keyframes } from "styled-components";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { theme } from "../../res/themes";
 import { NavLink } from "react-router-dom";
 import scrollToTop from "../../helpers/scrollToTop";
+import Links from "../Links/Links";
 
 const MainContainer = styled.div`
   display: flex;
@@ -15,7 +20,8 @@ const MainContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  margin-top: 150px;
+  margin-top: 200px;
+
   a {
     text-decoration: none;
   }
@@ -27,8 +33,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
+  margin-bottom: 50px;
   gap: 20px;
   @media (max-width: 1359px) {
     align-items: flex-start;
@@ -277,127 +285,51 @@ const Image = styled.img`
   height: auto;
   border-radius: 200px;
 `;
-const Button = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  width: 170px;
-  height: 60px;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  background-color: ${theme.colors.highlighted};
 
-  color: ${theme.colors.light_background};
-  border-radius: 8px;
-`;
 const Main = ({ lang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const scrollToStart = () => {
-    const startElement = document.getElementById("start");
-    if (startElement) {
-      startElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
   return (
     <MainContainer>
       <Wrapper>
-        {lang === "ru" ? (
-          <TextContainer>
-            <TitleWrapp>
-              <Title1>Добро пожаловать в</Title1>
-              <Title2>
-                CONFIDANT SERVICE <br />
-                <h2>
-                  ВАШ ШАНС ИЗМЕНИТЬ СВОЮ ЖИЗНЬ
-                  <br /> ПОЧУВСТВУЙТЕ НАСТОЯЩИЕ ИЗМЕНЕНИЯ
-                </h2>
-              </Title2>
-            </TitleWrapp>
-
+        <TextContainer>
+          <TitleWrapp>
+            <Title1>
+              {/* {lang === "ru" ? "Добро пожаловать в" : "Welcome to"} */}
+              Welcome to
+            </Title1>
+            <Title2>
+              CONFIDANT SERVICE <br />
+              <div className="circle"></div>
+            </Title2>
+            <Title3>CONVERSATIONS THAT CHANGE LIVES</Title3>
+          </TitleWrapp>
+          <ParagraphWrap>
             <Paragraph>
-              Мое имя Август Платина, люди называют меня Конфидант, что означает
-              по сути близкий человек. Это для меня очень много значит. Это так
-              благодаря моей способности создавать безопасную среду для людей,
-              где они могут раскрыться и поделиться своими самыми глубокими
-              мыслями и эмоциями. Мое стремление помочь людям в прохождении
-              сложных ситуаций и поиске решений для их проблем привело меня к
-              тому, что мое имя стало синонимом того что я делаю. Мой жизненный
-              путь сформировал меня в того, кто я есть сегодня. Для меня это
-              большая честь, делиться своим уникальным пониманием жизни,
-              видением и опытом с теми, кто нуждается в моей поддержке.
+              “Dear Avgust , in the realm of wonders, you are a true miracle
+              maker. Your presence and actions, have the power to create
+              extraordinary transformations in the lives of others. With your
+              kindness, compassion, and belief, you inspire miracles to unfold,
+              bringing hope and joy to those around you. Your ability to see the
+              best in people and nurture their potential is truly remarkable.
+              You are a beacon of light, igniting the spark of miracles wherever
+              you go.” <br /> <p>Anna K.</p>
             </Paragraph>
-            <Paragraph>
-              Я верю, что каждый человек, с кем я встречаюсь, приносит в мою
-              жизнь свой уникальный дар, и я хочу чтобы общение со мной
-              обогатило людей тем ценным опытом который поможет им преодолеть
-              любые трудности.
-            </Paragraph>
+            <ImageContainer>
+              <Image src={photo} alt="Photograph" />
+            </ImageContainer>
+          </ParagraphWrap>
 
-            <Button onClick={scrollToStart}>КАК НАЧАТЬ</Button>
-            <div className="icon">
-              <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
-              <h1>
-                {" "}
-                Email: <a> info@confidantservice.com</a>{" "}
-              </h1>
-            </div>
-          </TextContainer>
-        ) : (
-          <TextContainer>
-            <TitleWrapp>
-              <Title1>
-                {/* {lang === "ru" ? "Добро пожаловать в" : "Welcome to"} */}
-                Welcome to
-              </Title1>
-              <Title2>
-                CONFIDANT SERVICE <br />
-                <div className="circle"></div>
-              </Title2>
-              <Title3>CONVERSATIONS THAT CHANGE LIVES</Title3>
-            </TitleWrapp>
-            <ParagraphWrap>
-              <Paragraph>
-                “Dear Avgust , in the realm of wonders, you are a true miracle
-                maker. Your presence and actions, have the power to create
-                extraordinary transformations in the lives of others. With your
-                kindness, compassion, and belief, you inspire miracles to
-                unfold, bringing hope and joy to those around you. Your ability
-                to see the best in people and nurture their potential is truly
-                remarkable. You are a beacon of light, igniting the spark of
-                miracles wherever you go.” <br /> <p>Anna K.</p>
-              </Paragraph>
-              <ImageContainer>
-                <Image src={photo} alt="Photograph" />
-              </ImageContainer>
-            </ParagraphWrap>
-
-            <Paragraph>
-              "Within each of us lies the power to be a miracle maker, for our
-              words, actions, and presence possess the extraordinary ability to
-              ignite hope, transform lives, and unleash the wonders that dwell
-              within the human heart."
-              <br /> <p>Avgust Platina to Anna K.</p>
-            </Paragraph>
-
-            <NavLink
-              to={"/contacts"}
-              className={"link"}
-              onClick={() => scrollToTop()}
-            >
-              <Button>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Button>
-            </NavLink>
-            <div className="icon">
-              <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
-              <h1>
-                {" "}
-                Email: <a> info@confidantservice.com</a>{" "}
-              </h1>
-            </div>
-          </TextContainer>
-        )}
+          <Paragraph>
+            "Within each of us lies the power to be a miracle maker, for our
+            words, actions, and presence possess the extraordinary ability to
+            ignite hope, transform lives, and unleash the wonders that dwell
+            within the human heart."
+            <br /> <p>Avgust Platina to Anna K.</p>
+          </Paragraph>
+        </TextContainer>
       </Wrapper>
     </MainContainer>
   );

@@ -14,6 +14,8 @@ import AssistancePage from "./pages/assistance/AssistancePage";
 import Bespoke_Assistance from "./components/Bespoke_Assistance/Bespoke_Assistance";
 import Bespoke_AssistancePage from "./pages/bespoke_assistance/Bespoke_AssistancePage";
 import PowerConversationPage from "./pages/powerConversationPage/PowerConversationPage";
+import CredentialsPage from "./pages/credentials/CredentialsPage";
+import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -110,6 +112,26 @@ function App() {
           path="/assistance"
           element={
             <AssistancePage
+              handleLanguageChange={handleLanguageChange}
+              lang={lang}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/credentials"
+          element={
+            <CredentialsPage
+              handleLanguageChange={handleLanguageChange}
+              lang={lang}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/testimonials"
+          element={
+            <TestimonialsPage
               handleLanguageChange={handleLanguageChange}
               lang={lang}
             />

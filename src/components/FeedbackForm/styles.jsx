@@ -205,6 +205,7 @@ export const StyledFeedbackForm = styled.section`
       }
       .right {
         display: flex;
+
         flex-direction: column;
 
         .feedback {
