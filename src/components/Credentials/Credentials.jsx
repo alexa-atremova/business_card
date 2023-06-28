@@ -176,32 +176,39 @@ function Credentials({ handleLanguageChange, lang }) {
           <Paragraph>
             In my area of expertise, I firmly believe that personal experience
             is the only way to truly acquire real skills and abilities. It comes
-            at a high price, but there is simply no other way around it. I have
-            paid for every ounce of knowledge and expertise I possess with the
-            highest currency possible: my lifetime. Throughout my journey, I
-            have accumulated not only knowledge and techniques but also scars in
-            my soul and heart, as well as moments of joy. This is the price I
-            have paid to excel in my field. I have poured my soul into
-            everything I do because that's how you become truly exceptional in
-            this line of work. Formal credentials and diplomas may have their
-            place in certain professions, but in my realm, they pale in
-            comparison to the lessons learned through lived experiences. My
-            expertise is rooted in the depths of my personal journey and the
-            profound impact I have had on the lives of my clients. Every
+            at a high price, but there is simply no other way around it.
+            <br />
+            <br /> I have paid for every ounce of knowledge and expertise I
+            possess with the highest currency possible: my lifetime. Throughout
+            my journey, I have accumulated not only knowledge and techniques but
+            also scars in my soul and heart, as well as moments of joy.
+            <br />
+            <br /> This is the price I have paid to excel in my field. I have
+            poured my soul into everything I do because that's how you become
+            truly exceptional in this line of work. Formal credentials and
+            diplomas may have their place in certain professions, but in my
+            realm, they pale in comparison to the lessons learned through lived
+            experiences.
+            <br />
+            <br /> My expertise is rooted in the depths of my personal journey
+            and the profound impact I have had on the lives of my clients. Every
             interaction, every challenge, and every success has contributed to
             the wealth of knowledge and understanding I bring to each
-            engagement. My commitment to continuous growth and learning ensures
-            that I stay at the forefront of my field, providing the highest
-            level of assistance to those who entrust me with their private,
-            personal, family, and business matters. When you work with me, you
-            are receiving the culmination of a lifetime's worth of investment
-            and dedication. I have paid the price in order to offer you the
-            support and guidance you deserve. Together, we will navigate the
-            delicate matters at hand, drawing upon my extensive personal
-            experience and unwavering commitment to your well-being. Please
-            don't hesitate to reach out for a personalized consultation, where
-            we can delve deeper into your specific needs and how my expertise
-            can best serve you in achieving your desired outcomes.
+            engagement.
+            <br />
+            <br /> My commitment to continuous growth and learning ensures that
+            I stay at the forefront of my field, providing the highest level of
+            assistance to those who entrust me with their private, personal,
+            family, and business matters. When you work with me, you are
+            receiving the culmination of a lifetime's worth of investment and
+            dedication. <br />
+            <br />I have paid the price in order to offer you the support and
+            guidance you deserve. Together, we will navigate the delicate
+            matters at hand, drawing upon my extensive personal experience and
+            unwavering commitment to your well-being. Please don't hesitate to
+            reach out for a personalized consultation, where we can delve deeper
+            into your specific needs and how my expertise can best serve you in
+            achieving your desired outcomes.
           </Paragraph>
         </Wrapper>
       </SCredentials>

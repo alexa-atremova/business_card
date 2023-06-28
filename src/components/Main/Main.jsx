@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
 import photo from "./../../assets/photo.png";
-import aboutme from "./../../assets/aboutme.jpg";
-import power from "./../../assets/power.jpg";
-import my_sincere_approach from "./../../assets/my_sincere_approach.jpg";
-import thankImg from "./../../assets/thankImg.jpg";
 import styled, { keyframes } from "styled-components";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { theme } from "../../res/themes";
-import { NavLink } from "react-router-dom";
-import scrollToTop from "../../helpers/scrollToTop";
-import Links from "../Links/Links";
+import { useLocation } from "react-router";
 
 const MainContainer = styled.div`
   display: flex;
@@ -25,8 +17,8 @@ const MainContainer = styled.div`
   a {
     text-decoration: none;
   }
-  @media (max-width: 1359px) {
-    margin-top: 150px;
+  @media (max-width: 767px) {
+    margin-top: 170px;
   }
 `;
 const Wrapper = styled.div`
@@ -292,7 +284,7 @@ const Main = ({ lang }) => {
   }, []);
 
   return (
-    <MainContainer>
+    <MainContainer id="Home_block">
       <Wrapper>
         <TextContainer>
           <TitleWrapp>

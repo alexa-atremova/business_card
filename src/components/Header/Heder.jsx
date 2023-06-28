@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import logo from "./../../assets/logo.png";
-import ru from "./../../assets/ru.png";
-import eng from "./../../assets/eng.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faInstagram,
   faFacebook,
@@ -13,9 +11,12 @@ import {
   faTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MobileMenu from "./MobileMenu/MobileMenu";
 import { theme } from "../../res/themes";
+import { Link as ScrollLink } from "react-scroll";
+import { NavHashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   position: relative;
@@ -60,7 +61,7 @@ const HeaderContainer = styled.header`
   @media (max-width: 1359px) {
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 0;
   }
 `;
@@ -72,15 +73,15 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 0 50px;
   @media (max-width: 1359px) {
-    max-width: 700px;
-    padding: 0 50px;
+    max-width: 720px;
+    padding: 0 10px;
   }
   @media (max-width: 767px) {
     max-width: 500px;
     padding: 0;
   }
   @media (max-width: 539px) {
-    max-width: 320px;
+    max-width: 340px;
     padding: 0;
   }
 `;
@@ -104,16 +105,27 @@ const Nav = styled.div`
     /* font-style: italic; */
   }
   @media (max-width: 1359px) {
-    max-width: 700px;
-    padding: 0 50px;
+    max-width: 600px;
+    padding: 0 10px;
+    h1 {
+      font-size: 40px;
+    }
   }
   @media (max-width: 767px) {
     max-width: 500px;
     padding: 0;
+    margin-top: 0px;
+    h1 {
+      margin: 0;
+      font-size: 30px;
+    }
   }
   @media (max-width: 539px) {
     max-width: 320px;
     padding: 0;
+    h1 {
+      font-size: 25px;
+    }
   }
 `;
 const NavLinks = styled.ul`
@@ -157,21 +169,13 @@ const NavLinks = styled.ul`
       }
     }
   }
-  @media (max-width: 539px) {
+  @media (max-width: 1359px) {
     .wrap {
-      max-height: 500px;
-
-      .soc {
-        gap: 20px;
-
-        a {
-          font-size: 30px;
-        }
-      }
       .links {
+        gap: 15px;
         li {
           a {
-            font-size: 18px;
+            font-size: 12px;
             font-family: "Poppins", sans-serif;
 
             text-decoration: none;
@@ -180,17 +184,32 @@ const NavLinks = styled.ul`
       }
     }
   }
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 const Logo = styled.img`
   width: 80px;
-
-  @media (max-width: 768px) {
+  @media (max-width: 1359px) {
+    width: 70px;
+  }
+  @media (max-width: 767px) {
     width: 60px;
+  }
+  @media (max-width: 539px) {
+    width: 50px;
   }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
+  @media (max-width: 1359px) {
+    width: 90px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -209,63 +228,7 @@ const SocialIcon = styled.a`
     font-size: 20px;
     margin-left: 10px;
   }
-  @media (max-width: 539px) {
-    font-size: 18px;
-    margin-left: 10px;
-    display: none;
-  }
 `;
-const ButtonsContainer = styled.div`
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 5px;
-  .langButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 5px;
-    margin-left: 5px;
-    gap: 5px;
-
-    width: 55px;
-    height: 40px;
-    background: ${theme.colors.light_background};
-    border: 1px solid #cfcfcf;
-    border-radius: 10px;
-
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
-
-    color: ${theme.colors.text_color};
-    @media (max-width: 1365px) {
-      width: 67px;
-      height: 36px;
-      font-size: 16px;
-      line-height: 20px;
-    }
-    @media (max-width: 1365px) {
-      width: 59px;
-      height: 31.5px;
-      font-size: 14px;
-      line-height: 17px;
-      margin-left: 0px;
-    }
-  }
-  .langImg {
-    width: 20px;
-    height: 20px;
-    @media (max-width: 1365px) {
-      width: 17px;
-      height: 17px;
-    }
-  }
-`;
-
 const MenuIcon = styled.div`
   display: none;
   justify-content: center;
@@ -278,11 +241,14 @@ const MenuIcon = styled.div`
 
   @media (max-width: 767px) {
     display: flex;
-    font-size: 26px;
+  }
+  @media (max-width: 539px) {
+    font-size: 25px;
   }
 `;
 
 const Header = ({ handleLanguageChange, lang }) => {
+  const path = useLocation();
   const [open, setOpen] = useState(false);
   const mobileMenuRef = useRef(null);
 
@@ -290,18 +256,6 @@ const Header = ({ handleLanguageChange, lang }) => {
     setOpen(!open);
   };
 
-  // const handleOverlayClick = (e) => {
-  //   if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
-  //     setOpen(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleOverlayClick);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleOverlayClick);
-  //   };
-  // }, []);
   return (
     <>
       <HeaderContainer>
@@ -313,34 +267,90 @@ const Header = ({ handleLanguageChange, lang }) => {
           <Nav ref={mobileMenuRef}>
             <h1>Confidant Service</h1>
             <NavLinks>
-              <MenuIcon onClick={handleMenuIconClick}>
-                <FontAwesomeIcon icon={faBars} />
-              </MenuIcon>
               <div className="wrap">
                 <div className="links">
                   <li>
-                    <Link to="/">Welcome To</Link>
+                    {path.pathname === "/" ? (
+                      <Link
+                        className="link"
+                        activeClass="active"
+                        to="Home_block"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                      >
+                        Welcome to
+                      </Link>
+                    ) : (
+                      <NavLink className={"link"} to="/">
+                        Welcome to
+                      </NavLink>
+                    )}
                   </li>
                   <li>
-                    <Link to="/pricing"> Pricing</Link>
+                    {path.pathname === "/pricing" ? (
+                      <Link to="/pricing"> Pricing</Link>
+                    ) : (
+                      <NavLink className={"link"} to="/pricing">
+                        Pricing
+                      </NavLink>
+                    )}
                   </li>
                   <li>
-                    <Link to="/assistance"> Confidential Assistance </Link>
+                    {path.pathname === "/" ? (
+                      <Link to="/assistance"> Confidential Assistance </Link>
+                    ) : (
+                      <NavLink className={"link"} to="/assistance">
+                        Confidential Assistance
+                      </NavLink>
+                    )}
                   </li>
                   <li>
-                    <Link to="/credentials"> Credentials </Link>
-                  </li>{" "}
-                  <li>
-                    <Link to="/testimonials"> Testimonials </Link>
+                    {path.pathname === "/" ? (
+                      <Link to="/credentials"> Credentials </Link>
+                    ) : (
+                      <NavLink className={"link"} to="/credentials">
+                        Credentials
+                      </NavLink>
+                    )}
                   </li>
                   <li>
-                    <Link to="/contacts">Contact Me </Link>
+                    {path.pathname === "/" ? (
+                      <Link to="/testimonials"> Testimonials </Link>
+                    ) : (
+                      <NavLink className={"link"} to="/testimonials">
+                        Testimonials
+                      </NavLink>
+                    )}
+                  </li>
+                  <li>
+                    {path.pathname === "/" ? (
+                      <ScrollLink
+                        to="contact"
+                        smooth={true}
+                        duration={500}
+                        onClick={() => setOpen(false)}
+                      >
+                        Contact Me
+                      </ScrollLink>
+                    ) : (
+                      <NavHashLink
+                        className={"link"}
+                        to="/#contact"
+                        onClick={() => setOpen(false)}
+                      >
+                        Contact Me
+                      </NavHashLink>
+                    )}
                   </li>
                 </div>
               </div>
             </NavLinks>
           </Nav>
-
+          <MenuIcon onClick={handleMenuIconClick}>
+            <FontAwesomeIcon icon={faBars} />
+          </MenuIcon>
           <SocialIcons>
             <SocialIcon
               href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
@@ -394,6 +404,7 @@ const Header = ({ handleLanguageChange, lang }) => {
       <MobileMenu
         lang={lang}
         open={open}
+        setOpen={setOpen}
         handleMenuIconClick={handleMenuIconClick}
         mobileMenuRef={mobileMenuRef}
       />

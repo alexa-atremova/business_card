@@ -176,27 +176,38 @@ function Testimonials({ handleLanguageChange, lang }) {
           <Paragraph>
             I have always believed that my work speaks for itself. I do not need
             to prove anything to anyone by disclosing the specifics of my client
-            engagements. My focus is on providing exceptional assistance and
-            ensuring the well-being of those who entrust me with their private,
-            personal, family, and business matters. Confidentiality is the
-            golden rule that guides my work. It is the cornerstone of everything
-            I do, ensuring that my clients' stories remain protected and
-            undisclosed. Your confidentiality is my top priority, and I hold it
-            with the utmost respect. In my line of work, personal experiences
-            are the true measure of one's abilities and expertise. I rely on the
-            knowledge gained from my own journey and the transformative
-            experiences I have had. This is what allows me to offer unique and
-            valuable assistance to my clients. I hold my clients' trust as my
-            most prized possession, and I would never jeopardize it by revealing
-            any details about our work together. As a man in the shade, I
-            operate discreetly, ensuring that the privacy and confidentiality of
-            my clients are upheld. While some may choose to share their
-            experiences with others as a way of expressing appreciation, it is
-            not a requirement for me. The true and honest opinions shared
-            one-on-one hold the greatest value in my heart. Your confidentiality
-            and satisfaction are my priorities, and I am committed to providing
-            exceptional support and guidance in the most discreet and
-            personalized manner possible.
+            engagements.
+            <br />
+            <br /> My focus is on providing exceptional assistance and ensuring
+            the well-being of those who entrust me with their private, personal,
+            family, and business matters. Confidentiality is the golden rule
+            that guides my work.
+            <br />
+            <br /> It is the cornerstone of everything I do, ensuring that my
+            clients' stories remain protected and undisclosed. Your
+            confidentiality is my top priority, and I hold it with the utmost
+            respect.
+            <br />
+            <br /> In my line of work, personal experiences are the true measure
+            of one's abilities and expertise. I rely on the knowledge gained
+            from my own journey and the transformative experiences I have had.
+            <br />
+            <br />
+            This is what allows me to offer unique and valuable assistance to my
+            clients. I hold my clients' trust as my most prized possession, and
+            I would never jeopardize it by revealing any details about our work
+            together.
+            <br />
+            <br /> As a man in the shade, I operate discreetly, ensuring that
+            the privacy and confidentiality of my clients are upheld. While some
+            may choose to share their experiences with others as a way of
+            expressing appreciation, it is not a requirement for me.
+            <br />
+            <br /> The true and honest opinions shared one-on-one hold the
+            greatest value in my heart. Your confidentiality and satisfaction
+            are my priorities, and I am committed to providing exceptional
+            support and guidance in the most discreet and personalized manner
+            possible.
           </Paragraph>
         </Wrapper>
       </SCredentials>

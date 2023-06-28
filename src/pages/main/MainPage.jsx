@@ -20,22 +20,31 @@ const SMainPage = styled.div`
   background-color: ${theme.colors.dark_background};
 `;
 const Border = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 50px;
   margin-bottom: 50px;
-  width: 80%;
-  height: 50px;
   max-width: 1200px;
+  width: 80%;
+  height: 20px;
+  /* 
   /* transform: scaleY(-1); */
-  border-top: 1px solid ${theme.colors.highlighted};
-  .curl {
-    width: 100%;
-
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  /* border-top: 1px solid ${theme.colors.highlighted};
+  border-bottom: 1px solid ${theme.colors.highlighted};
+  */
+  .border {
+    height: 5px;
+    margin-top: 10px;
+    width: 50%;
     border-top: 1px solid ${theme.colors.highlighted};
-    border-width: 1px;
-    border-radius: 200px / 80px;
+  }
+  .line {
+    width: 100%;
+    margin-top: 10px;
+    height: 5px;
+    border-top: 2px solid ${theme.colors.highlighted};
   }
 `;
 function MainPage({ handleLanguageChange, lang }) {
@@ -43,14 +52,19 @@ function MainPage({ handleLanguageChange, lang }) {
   return (
     <SMainPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
-      <ContactsButton scrolled={scrolled} />
+
       <Main lang={lang} />
-      {/* <Welcome /> */}
-      <Border style={{ transform: "scaleY(-1)" }}>
-        {/* <div className="curl"></div> */}
+      <Border>
+        <div className="border" />
+        <div className="line" />
+        <div className="border" />
       </Border>
       <Story />
-      <Border></Border>
+      <Border>
+        <div className="border" />
+        <div className="line" />
+        <div className="border" />
+      </Border>
       <Start />
       <FeedbackForm />
       <Disclaimer lang={lang} />

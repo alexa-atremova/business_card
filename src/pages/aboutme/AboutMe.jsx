@@ -14,7 +14,7 @@ const SAboutMe = styled.div`
   text-align: justify;
   width: 100%;
   height: fit-content;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 100px;
 `;
 const Wrapper = styled.div`

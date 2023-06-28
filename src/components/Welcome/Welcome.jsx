@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img from "./../../assets/img.jpg";
 import img2 from "./../../assets/photo2.jpg";
 import styled, { keyframes } from "styled-components";
@@ -12,11 +12,10 @@ const WelcomeContainer = styled.div`
   width: 100%;
   height: 100%;
   gap: 20px;
-  margin-top: 170px;
+  margin-top: 200px;
   margin-bottom: 100px;
 
   @media (max-width: 1359px) {
-    margin-top: 120px;
   }
   @media (max-width: 539px) {
     gap: 0px;
@@ -157,6 +156,9 @@ const Title1 = styled.h1`
 `;
 
 const Welcome = ({ lang }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <WelcomeContainer>
       <Title1>POWER OF CONVERSATION </Title1>

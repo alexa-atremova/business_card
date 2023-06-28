@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/main/MainPage";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import StoryPage from "./pages/storyPage/StoryPage";
-import Contacts from "./pages/Contacts/Contacts";
 
 import { theme } from "./res/themes";
 import Thank from "./pages/thank/Thank";
@@ -137,13 +136,7 @@ function App() {
             />
           }
         />
-        <Route
-          exact
-          path="/contacts"
-          element={
-            <Contacts handleLanguageChange={handleLanguageChange} lang={lang} />
-          }
-        />
+
         <Route
           exact
           path="*"

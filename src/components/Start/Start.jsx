@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../res/themes";
 import Links from "../Links/Links";
+import { useLocation } from "react-router";
+import { Element } from "react-scroll";
 
 const StartContainer = styled.div`
   display: flex;
@@ -131,9 +133,24 @@ export const DisclaimerButton = styled.button`
 `;
 
 const Start = ({ lang }) => {
+  const location = useLocation();
+  const contactsRef = useRef(null);
+
+  useEffect(() => {
+    if (location.hash === "#contacts" && contactsRef.current) {
+      contactsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+        offset: 100,
+      });
+    }
+  }, [location]);
+
   return (
-    <StartContainer id="start">
+    <StartContainer id="contact" ref={contactsRef}>
       <Links />
+
       <Title>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Title>
 
       <BlocksContainer>
@@ -143,13 +160,6 @@ const Start = ({ lang }) => {
             During this consultation, we will discuss your needs and goals.
           </BlockText>
         </Block1>
-        {/* <Block>
-          <BlockText>
-            {lang === "ru"
-              ? "Если Вас интересуют групповые услуги, во время консультации мы можем обсудить конкретные потребности вашей группы и разработать план, соответствующий Вашим целям."
-              : "If you're interested in group services, during the consultation, we can discuss the specific needs of your group and tailor a plan to suit your goals."}
-          </BlockText>
-        </Block> */}
       </BlocksContainer>
     </StartContainer>
   );

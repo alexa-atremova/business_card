@@ -13,11 +13,7 @@ export default function ContactsButton() {
         <div className="icon">
           <FontAwesomeIcon icon={faEnvelope} className="iconimges" />
         </div>
-        <NavLink
-          to={"/contacts"}
-          className={"link"}
-          onClick={() => scrollToTop()}
-        >
+        <NavLink className={"link"} onClick={() => scrollToTop()}>
           contact me
         </NavLink>
       </div>

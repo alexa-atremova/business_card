@@ -18,6 +18,7 @@ const LinkContainer = styled.div`
   max-width: 1200px;
 
   margin-bottom: 100px;
+  margin-top: 50px;
 
   gap: 20px;
 

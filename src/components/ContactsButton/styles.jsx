@@ -3,7 +3,7 @@ import { theme } from "../../res/themes";
 
 export const StyledContactsButton = styled.div`
   position: fixed;
-
+  display: none;
   bottom: 40px;
   right: 50px;
 

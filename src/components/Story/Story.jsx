@@ -15,7 +15,7 @@ const StoryContainer = styled.div`
   height: fit-content;
 
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   @media (max-width: 1359px) {
     margin-top: 100px;

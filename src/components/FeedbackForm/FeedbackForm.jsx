@@ -35,7 +35,7 @@ export default function FeedbackForm() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <StyledFeedbackForm id="Contacts_block">
+    <StyledFeedbackForm>
       <div className="wrapper">
         <div className="centerBlock">
           <div className="right">

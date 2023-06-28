@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -9,8 +9,12 @@ import {
   faTwitter,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { theme } from "../../../res/themes";
+import { useEffect, useRef } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import scrollToTop from "../../../helpers/scrollToTop";
+import { NavHashLink } from "react-router-hash-link";
 
 const SMobileMenu = styled.nav`
   position: fixed;
@@ -36,7 +40,7 @@ const SMobileMenu = styled.nav`
 const CloseButton = styled.button`
   display: none;
   position: absolute;
-  top: 40px;
+  top: 80px;
   right: 10px;
   background-color: transparent;
   border: none;
@@ -147,121 +151,155 @@ const NavLinks = styled.ul`
   }
 `;
 
-const MobileMenu = ({ lang, open, mobileMenuRef, handleMenuIconClick }) => {
+const MobileMenu = ({
+  lang,
+  open,
+  setOpen,
+  mobileMenuRef,
+  handleMenuIconClick,
+}) => {
+  // const location = useLocation();
+  const contactsRef = useRef(null);
+  const path = useLocation();
+
+  function handler() {
+    setOpen(false);
+    scrollToTop();
+  }
+
+  // useEffect(() => {
+  //   if (location.hash === "#contacts" && contactsRef.current) {
+  //     contactsRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [location]);
+
   return (
     <>
       <SMobileMenu open={open} ref={mobileMenuRef}>
         <CloseButton>
           <FontAwesomeIcon icon={faTimes} onClick={handleMenuIconClick} />
         </CloseButton>
-        {lang == "ru" ? (
-          <NavLinks>
-            <div className="wrap">
-              <div className="links">
-                <li>
-                  <Link to="/">Главная Страница</Link>
-                </li>
-                {/* <li>
-                  <Link to="/story">История Создания</Link>
-                </li> */}
-                <li>
-                  <Link to="/horizons"> Открывая Новые Горизонты</Link>
-                </li>
 
-                <li>
-                  <Link to="/statement"> Заявление Ответственности</Link>
-                </li>
-                <li>
-                  <Link to="/privacy">Privacy Policy </Link>
-                </li>
-                <li>
-                  <Link to="/contacts">Связаться со мной </Link>
-                </li>
-                <li>
-                  <Link to="/testimonials">Отзывы</Link>
-                </li>
-                {/* <li className="cll">
-                  <Link to="/calling">«Зов Сердца Садовника»</Link>
-                </li> */}
-              </div>
-              <div className="soc">
-                <a
-                  href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100092432314300"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-
-                <a href="https://twitter.com/confidantpro?s=11" target="_blank">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  href="http://www.tiktok.com/@confidantservice"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faTiktok} />
-                </a>
-              </div>
-            </div>
-          </NavLinks>
-        ) : (
-          <NavLinks>
-            <div className="wrap">
-              <div className="links">
-                <li>
-                  <Link to="/">Welcome To</Link>
-                </li>
-                <li>
-                  <Link to="/aboutme">About Me</Link>
-                </li>
-
-                <li>
+        <NavLinks>
+          <div className="wrap">
+            <div className="links">
+              <li>
+                {path.pathname === "/" ? (
+                  <Link
+                    className="link"
+                    activeClass="active"
+                    to="Home_block"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    onClick={() => handler()}
+                  >
+                    Home
+                  </Link>
+                ) : (
+                  <NavLink className={"link"} to="/" onClick={() => handler()}>
+                    Home
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {path.pathname === "/pricing" ? (
                   <Link to="/pricing"> Pricing</Link>
-                </li>
-                <li>
+                ) : (
+                  <NavLink
+                    className={"link"}
+                    to="/pricing"
+                    onClick={() => handler()}
+                  >
+                    Pricing
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {path.pathname === "/" ? (
                   <Link to="/assistance"> Confidential Assistance </Link>
-                </li>
-
-                <li>
-                  <Link to="/contacts">Contact Me </Link>
-                </li>
-                <li>
-                  <Link to="/thank"> Gratitude </Link>
-                </li>
-              </div>
-              <div className="soc">
-                <a
-                  href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100092432314300"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-
-                <a href="https://twitter.com/confidantpro?s=11" target="_blank">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  href="http://www.tiktok.com/@confidantservice"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faTiktok} />
-                </a>
-              </div>
+                ) : (
+                  <NavLink
+                    className={"link"}
+                    to="/assistance"
+                    onClick={() => handler()}
+                  >
+                    Confidential Assistance
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {path.pathname === "/" ? (
+                  <Link to="/credentials"> Credentials </Link>
+                ) : (
+                  <NavLink
+                    className={"link"}
+                    to="/credentials"
+                    onClick={() => handler()}
+                  >
+                    Credentials
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {path.pathname === "/" ? (
+                  <Link to="/testimonials"> Testimonials </Link>
+                ) : (
+                  <NavLink
+                    className={"link"}
+                    to="/testimonials"
+                    onClick={() => handler()}
+                  >
+                    Testimonials
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {path.pathname === "/" ? (
+                  <ScrollLink
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    ref={contactsRef}
+                    onClick={() => setOpen(false)}
+                  >
+                    Contact Me
+                  </ScrollLink>
+                ) : (
+                  <NavHashLink
+                    className={"link"}
+                    to="/#contact"
+                    onClick={() => setOpen(false)}
+                  >
+                    Contact Me
+                  </NavHashLink>
+                )}
+              </li>
             </div>
-          </NavLinks>
-        )}
+            <div className="soc">
+              <a
+                href="https://instagram.com/confidantservice?igshid=YmMyMTA2M2Y="
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100092432314300"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+
+              <a href="https://twitter.com/confidantpro?s=11" target="_blank">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+              <a href="http://www.tiktok.com/@confidantservice" target="_blank">
+                <FontAwesomeIcon icon={faTiktok} />
+              </a>
+            </div>
+          </div>
+        </NavLinks>
       </SMobileMenu>
     </>
   );
