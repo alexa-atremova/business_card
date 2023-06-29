@@ -9,6 +9,8 @@ import { NavLink } from "react-router-dom";
 import scrollToTop from "../../helpers/scrollToTop";
 
 const LinkContainer = styled.div`
+  /* position: absolute; */
+  top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,21 +18,20 @@ const LinkContainer = styled.div`
 
   width: 100%;
   max-width: 1200px;
-
   margin-bottom: 100px;
-  margin-top: 50px;
-
   gap: 20px;
 
   @media (max-width: 1359px) {
     max-width: 700px;
   }
   @media (max-width: 767px) {
-    max-width: 500px;
+    max-width: 450px;
     flex-wrap: wrap;
+    gap: 50px;
   }
   @media (max-width: 539px) {
     max-width: 320px;
+    gap: 20px;
   }
 `;
 const LinkWrap = styled.div`
@@ -81,6 +82,7 @@ const LinkWrap = styled.div`
     gap: 20px;
   }
   @media (max-width: 539px) {
+    margin-top: 20px;
   }
 `;
 const LinkImage = styled.img`

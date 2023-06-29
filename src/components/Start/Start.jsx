@@ -4,20 +4,30 @@ import { theme } from "../../res/themes";
 import Links from "../Links/Links";
 import { useLocation } from "react-router";
 import { Element } from "react-scroll";
+import FeedbackForm from "../FeedbackForm/FeedbackForm";
 
 const StartContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 0px;
-  width: 100%;
 
+  width: 100%;
+  min-height: 1200px;
   height: fit-content;
+  .wrapLink {
+    top: 20px;
+    position: absolute;
+  }
   @media (max-width: 1359px) {
+    min-height: 1000px;
+  }
+  @media (max-width: 767px) {
+    min-height: 1400px;
   }
   @media (max-width: 539px) {
-    height: fit-content;
+    min-height: 1250px;
   }
   .bttn {
     display: flex;
@@ -52,6 +62,7 @@ const Title = styled.h2`
   font-weight: 500;
   border-bottom: 1px solid ${theme.colors.highlighted};
   color: ${theme.colors.text_color};
+  padding-top: 200px;
   margin: 0;
   text-transform: uppercase;
   @media (max-width: 1359px) {
@@ -136,22 +147,14 @@ const Start = ({ lang }) => {
   const location = useLocation();
   const contactsRef = useRef(null);
 
-  useEffect(() => {
-    if (location.hash === "#contacts" && contactsRef.current) {
-      contactsRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-        offset: 100,
-      });
-    }
-  }, [location]);
-
   return (
-    <StartContainer id="contact" ref={contactsRef}>
-      <Links />
-
-      <Title>{lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}</Title>
+    <StartContainer>
+      <div className="wrapLink">
+        <Links style={{ position: "absolute" }} />
+      </div>
+      <Title id="contact" ref={contactsRef}>
+        {lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}
+      </Title>
 
       <BlocksContainer>
         <Block1>
@@ -160,6 +163,7 @@ const Start = ({ lang }) => {
             During this consultation, we will discuss your needs and goals.
           </BlockText>
         </Block1>
+        <FeedbackForm />
       </BlocksContainer>
     </StartContainer>
   );

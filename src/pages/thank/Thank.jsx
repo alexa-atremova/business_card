@@ -5,6 +5,9 @@ import Footer from "../../components/Footer/Footer";
 import ContactsButton from "../../components/ContactsButton/ContactsButton";
 import { theme } from "../../res/themes";
 import thank from "../../assets/thank.jpg";
+import Lines from "../../components/Lines/Lines";
+import Links from "../../components/Links/Links";
+import { SPage } from "../main/MainPage";
 
 const SThank = styled.div`
   display: flex;
@@ -134,7 +137,7 @@ function Thank({ handleLanguageChange, lang }) {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <>
+    <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
       <SThank id="privacy">
@@ -163,8 +166,10 @@ function Thank({ handleLanguageChange, lang }) {
           </Paragraph1>
         </Wrapper>
       </SThank>
+      <Lines />
+      <Links />
       <Footer />
-    </>
+    </SPage>
   );
 }
 

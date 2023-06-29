@@ -8,7 +8,7 @@ const PricingContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  margin-bottom: 100px;
+
   width: 100%;
   height: fit-content;
 `;

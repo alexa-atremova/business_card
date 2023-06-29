@@ -95,7 +95,10 @@ const Nav = styled.div`
   padding: 0 50px;
   margin-top: 20px;
   gap: 20px;
-  h1 {
+  .H {
+    display: flex;
+
+    flex-direction: row;
     margin: 0;
     margin-bottom: 5px;
     font-weight: 700;
@@ -103,6 +106,54 @@ const Nav = styled.div`
     line-height: 35px;
     font-family: "Noto Serif";
     /* font-style: italic; */
+    .circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid black;
+      color: black;
+      text-align: center;
+
+      font-weight: 700;
+      line-height: 9px;
+      font-size: 7px;
+    }
+
+    .circle::before {
+      content: "G";
+    }
+    @media (max-width: 1359px) {
+      font-size: 30px;
+      .circle {
+        width: 8px;
+        height: 8px;
+
+        line-height: 8px;
+        font-size: 6px;
+      }
+
+      .circle::before {
+        content: "G";
+      }
+    }
+    @media (max-width: 767px) {
+      font-size: 26px;
+      .circle {
+        width: 8px;
+        height: 8px;
+
+        line-height: 8px;
+        font-size: 6px;
+      }
+
+      .circle::before {
+        content: "G";
+      }
+    }
   }
   @media (max-width: 1359px) {
     max-width: 600px;
@@ -205,7 +256,9 @@ const SocialIcons = styled.div`
   display: flex;
   @media (max-width: 1359px) {
     width: 90px;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 12px;
   }
   @media (max-width: 767px) {
     display: none;
@@ -221,8 +274,8 @@ const SocialIcon = styled.a`
     color: ${theme.colors.line};
   }
   @media (max-width: 1359px) {
+    margin-left: 0px;
     font-size: 25px;
-    margin-left: 10px;
   }
   @media (max-width: 767px) {
     font-size: 20px;
@@ -265,7 +318,9 @@ const Header = ({ handleLanguageChange, lang }) => {
             <Logo src={logo} />
           </Link>
           <Nav ref={mobileMenuRef}>
-            <h1>Confidant Service</h1>
+            <div className="H">
+              Confidant Service <div className="circle"></div>
+            </div>
             <NavLinks>
               <div className="wrap">
                 <div className="links">

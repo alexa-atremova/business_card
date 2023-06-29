@@ -38,41 +38,7 @@ export const StyledFeedbackForm = styled.section`
   flex-direction: column;
 
   overflow-x: hidden;
-  .head {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 1000px;
-    overflow-x: hidden;
-    img {
-      width: 1000px;
-      position: absolute;
-      z-index: 1;
-      padding-right: 250px;
-      opacity: 0;
-      transition: transform 1s, opacity 0.3s;
-    }
-    .aos-animate {
-      opacity: 1;
-      transition: transform 1s, opacity 0.3s;
-    }
 
-    h1 {
-      font-family: "Poppins", sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 55px;
-      line-height: 145%;
-      /* identical to box height, or 80px */
-
-      text-align: center;
-      text-transform: uppercase;
-
-      color: ${theme.colors.text_color};
-      z-index: 2;
-    }
-  }
   .wrapper {
     width: 100%;
     max-width: 1360px;
@@ -145,60 +111,6 @@ export const StyledFeedbackForm = styled.section`
 
                 color: ${theme.colors.text_color};
               }
-              .soc {
-                display: flex;
-                flex-direction: row;
-                justify-self: center;
-                align-self: center;
-                gap: 20px;
-                a {
-                  color: ${theme.colors.text_color};
-                  font-size: 30px;
-                  text-decoration: none;
-                  &:hover {
-                    color: ${theme.colors.highlighted};
-                  }
-                }
-              }
-            }
-          }
-          .social {
-            width: 100%;
-            margin-top: 20px;
-
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 18px;
-            a {
-              width: 26px;
-              height: 26px;
-              position: relative;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              img {
-                position: absolute;
-                width: 26px;
-                height: 26px;
-              }
-              .socialLogo {
-                opacity: 1;
-                transition: opacity 0.3s;
-              }
-              .socialLogoHover {
-                opacity: 0;
-                transition: opacity 0.3s;
-              }
-              :hover {
-                .socialLogo {
-                  opacity: 0;
-                }
-                .socialLogoHover {
-                  opacity: 1;
-                }
-              }
             }
           }
         }
@@ -216,7 +128,6 @@ export const StyledFeedbackForm = styled.section`
           align-items: center;
 
           .form {
-            margin-top: 70px;
             width: 100%;
             max-width: 600px;
             margin-bottom: 20px;
@@ -355,7 +266,6 @@ export const StyledFeedbackForm = styled.section`
             width: 100%;
 
             .form {
-              margin-top: 70px;
               width: 100%;
               max-width: 600px;
               gap: 20px;
@@ -433,7 +343,6 @@ export const StyledFeedbackForm = styled.section`
           max-width: 400px;
           .feedback {
             .form {
-              margin-top: 50px;
               .field {
                 font-size: 16px;
               }
@@ -458,16 +367,6 @@ export const StyledFeedbackForm = styled.section`
   }
 
   @media (max-width: 767px) {
-    .head {
-      width: 450px;
-      img {
-        width: 450px;
-        padding-right: 90px;
-      }
-      h1 {
-        font-size: 30px;
-      }
-    }
     .wrapper {
       .centerBlock {
         gap: 10px;
@@ -501,7 +400,6 @@ export const StyledFeedbackForm = styled.section`
             width: 100%;
             padding: 0px;
             .form {
-              margin-top: 0px;
               width: 100%;
 
               gap: 20px;
@@ -578,21 +476,6 @@ export const StyledFeedbackForm = styled.section`
                     }
                   }
                 }
-                .social {
-                  width: 100%;
-
-                  display: flex;
-                  flex-direction: row;
-                  align-items: center;
-                  justify-content: flex-end;
-                  gap: 18px;
-                  a {
-                    img {
-                      width: 20px;
-                      height: 20px;
-                    }
-                  }
-                }
               }
             }
           }
@@ -602,16 +485,6 @@ export const StyledFeedbackForm = styled.section`
   }
 
   @media (max-width: 533px) {
-    .head {
-      width: 320px;
-      img {
-        width: 320px;
-        padding-right: 90px;
-      }
-      h1 {
-        font-size: 20px;
-      }
-    }
     .wrapper {
       .centerBlock {
         .left {

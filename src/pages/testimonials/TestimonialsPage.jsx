@@ -4,15 +4,20 @@ import Footer from "../../components/Footer/Footer";
 import ContactsButton from "../../components/ContactsButton/ContactsButton";
 import Credentials from "../../components/Credentials/Credentials";
 import Testimonials from "../../components/Testimonials/Testimonials";
+import Lines from "../../components/Lines/Lines";
+import Links from "../../components/Links/Links";
+import { SPage } from "../main/MainPage";
 
 function TestimonialsPage({ handleLanguageChange, lang }) {
   return (
-    <>
+    <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
       <Testimonials lang={lang} />
+      <Lines />
+      <Links />
       <Footer />
-    </>
+    </SPage>
   );
 }
 

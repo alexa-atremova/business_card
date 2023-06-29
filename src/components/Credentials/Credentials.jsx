@@ -16,7 +16,6 @@ const SCredentials = styled.div`
   width: 100%;
   height: fit-content;
   margin-top: 200px;
-  margin-bottom: 100px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -212,7 +211,6 @@ function Credentials({ handleLanguageChange, lang }) {
           </Paragraph>
         </Wrapper>
       </SCredentials>
-      <Footer />
     </>
   );
 }

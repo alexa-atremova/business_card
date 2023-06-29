@@ -6,6 +6,9 @@ import img1 from "../../assets/img_1.jpg";
 import img2 from "../../assets/img_2.jpg";
 import ContactsButton from "../../components/ContactsButton/ContactsButton";
 import { theme } from "../../res/themes";
+import { SPage } from "../main/MainPage";
+import Lines from "../../components/Lines/Lines";
+import Links from "../../components/Links/Links";
 
 const SAboutMe = styled.div`
   display: flex;
@@ -165,7 +168,7 @@ function AboutMe({ handleLanguageChange, lang }) {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <>
+    <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
       <SAboutMe id="calling">
@@ -300,8 +303,10 @@ function AboutMe({ handleLanguageChange, lang }) {
           </Paragraph>
         </Wrapper>
       </SAboutMe>
+      <Lines />
+      <Links />
       <Footer />
-    </>
+    </SPage>
   );
 }
 

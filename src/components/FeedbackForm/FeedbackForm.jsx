@@ -5,6 +5,8 @@ import emailjs from "@emailjs/browser";
 import { Description, StyledFeedbackForm } from "./styles";
 
 import { DisclaimerButton } from "../Start/Start";
+import { Paragraph1, ParagraphItalic } from "../Story/Story";
+import Phrase from "../Phrase/Phrase";
 
 export default function FeedbackForm() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -155,6 +157,7 @@ export default function FeedbackForm() {
           </div>
         </div>
       </div>
+      <Phrase />
     </StyledFeedbackForm>
   );
 }

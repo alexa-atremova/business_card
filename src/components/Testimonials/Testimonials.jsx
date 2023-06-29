@@ -211,7 +211,6 @@ function Testimonials({ handleLanguageChange, lang }) {
           </Paragraph>
         </Wrapper>
       </SCredentials>
-      <Footer />
     </>
   );
 }

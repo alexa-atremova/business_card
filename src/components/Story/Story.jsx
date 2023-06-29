@@ -145,6 +145,7 @@ const Paragraph1 = styled.div`
     text-align: justify;
   }
 `;
+
 const Paragraph = styled.p`
   display: flex;
   justify-content: flex-start;

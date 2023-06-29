@@ -28,6 +28,7 @@ const SMobileMenu = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+
   @media (max-width: 1359px) {
     font-size: 20px;
     background-color: #e9e2c292;
@@ -195,16 +196,16 @@ const MobileMenu = ({
                     duration={500}
                     onClick={() => handler()}
                   >
-                    Home
+                    Welcome to
                   </Link>
                 ) : (
                   <NavLink className={"link"} to="/" onClick={() => handler()}>
-                    Home
+                    Welcome to
                   </NavLink>
                 )}
               </li>
               <li>
-                {path.pathname === "/pricing" ? (
+                {path.pathname === "/" ? (
                   <Link to="/pricing"> Pricing</Link>
                 ) : (
                   <NavLink
