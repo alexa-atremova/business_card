@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { theme } from "../../res/themes";
+import Lines from "../Lines/Lines";
 
 const Bespoke_AssistanceContainer = styled.div`
   display: flex;
@@ -11,6 +12,17 @@ const Bespoke_AssistanceContainer = styled.div`
 
   width: 100%;
   height: fit-content;
+  max-width: 1200px;
+  @media (max-width: 1359px) {
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    max-width: 510px;
+  }
+  @media (max-width: 539px) {
+    flex-direction: column;
+    max-width: 320px;
+  }
 `;
 
 export const MainTitle = styled.h2`
@@ -133,6 +145,7 @@ const Bespoke_Assistance = ({ lang }) => {
   }, []);
   return (
     <Bespoke_AssistanceContainer>
+      <Lines />
       <MainTitle> My Sincere Approach</MainTitle>
 
       <BlocksContainer>

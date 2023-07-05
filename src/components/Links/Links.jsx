@@ -5,11 +5,12 @@ import my_sincere_approach from "./../../assets/my_sincere_approach.jpg";
 import thankImg from "./../../assets/thankImg.jpg";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../res/themes";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import scrollToTop from "../../helpers/scrollToTop";
+import Phrase from "../Phrase/Phrase";
+import { SPage } from "../../pages/main/MainPage";
 
-const LinkContainer = styled.div`
-  /* position: absolute; */
+export const LinkContainer = styled.div`
   top: 20px;
   display: flex;
   align-items: center;
@@ -34,7 +35,7 @@ const LinkContainer = styled.div`
     gap: 20px;
   }
 `;
-const LinkWrap = styled.div`
+export const LinkWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +86,7 @@ const LinkWrap = styled.div`
     margin-top: 20px;
   }
 `;
-const LinkImage = styled.img`
+export const LinkImage = styled.img`
   width: 100%;
   width: 250px;
   height: 330px;
@@ -105,40 +106,43 @@ const LinkImage = styled.img`
   }
 `;
 const Links = ({ lang }) => {
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <LinkContainer>
-      <NavLink to={"/power_of_conversation"}>
-        <LinkWrap>
-          <LinkImage src={power} />
-          <p>Power of Conversation</p>
-        </LinkWrap>
-      </NavLink>
-      <NavLink to={"/aboutme"}>
-        <LinkWrap>
-          <LinkImage src={aboutme} />
-          <p>
-            About <br /> Me
-          </p>
-        </LinkWrap>
-      </NavLink>
-      <NavLink to={"/my_sincere_approach"}>
-        <LinkWrap>
-          <LinkImage src={my_sincere_approach} />
-          <p>My Sincere Approach</p>
-        </LinkWrap>
-      </NavLink>
+    <SPage>
+      <LinkContainer>
+        <NavLink to={"/power_of_conversation"}>
+          <LinkWrap>
+            <LinkImage src={power} />
+            <p>Power of Conversation</p>
+          </LinkWrap>
+        </NavLink>
+        <NavLink to={"/aboutme"}>
+          <LinkWrap>
+            <LinkImage src={aboutme} />
+            <p>
+              About <br /> Me
+            </p>
+          </LinkWrap>
+        </NavLink>
+        <NavLink to={"/my_sincere_approach"}>
+          <LinkWrap>
+            <LinkImage src={my_sincere_approach} />
+            <p>My Sincere Approach</p>
+          </LinkWrap>
+        </NavLink>
 
-      <NavLink to={"/thank"}>
-        <LinkWrap>
-          <LinkImage src={thankImg} />
-          <p>Gratitude</p>
-        </LinkWrap>
-      </NavLink>
-    </LinkContainer>
+        <NavLink to={"/thank"}>
+          <LinkWrap>
+            <LinkImage src={thankImg} />
+            <p>Gratitude</p>
+          </LinkWrap>
+        </NavLink>
+      </LinkContainer>
+    </SPage>
   );
 };
 

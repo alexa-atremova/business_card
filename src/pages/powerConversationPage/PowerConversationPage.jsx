@@ -6,6 +6,7 @@ import Welcome from "../../components/Welcome/Welcome";
 import { SPage } from "../main/MainPage";
 import Lines from "../../components/Lines/Lines";
 import Links from "../../components/Links/Links";
+import Phrase from "../../components/Phrase/Phrase";
 
 function PowerConversationPage({ handleLanguageChange, lang }) {
   return (
@@ -15,6 +16,7 @@ function PowerConversationPage({ handleLanguageChange, lang }) {
       <Welcome lang={lang} />
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

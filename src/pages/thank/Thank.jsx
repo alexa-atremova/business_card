@@ -9,6 +9,8 @@ import Lines from "../../components/Lines/Lines";
 import Links from "../../components/Links/Links";
 import { SPage } from "../main/MainPage";
 
+import Phrase from "../../components/Phrase/Phrase";
+
 const SThank = styled.div`
   display: flex;
   align-items: center;
@@ -18,6 +20,17 @@ const SThank = styled.div`
   height: fit-content;
   margin-top: 150px;
   margin-bottom: 100px;
+  max-width: 1200px;
+  @media (max-width: 1359px) {
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    max-width: 510px;
+  }
+  @media (max-width: 539px) {
+    flex-direction: column;
+    max-width: 320px;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -42,23 +55,23 @@ const Wrapper = styled.div`
 const Title = styled.h2`
   margin: 0;
   margin-bottom: 50px;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
-  border-bottom: 2px solid ${theme.colors.highlighted};
 
   color: ${theme.colors.text_color};
   text-transform: uppercase;
   @media (max-width: 1359px) {
-    font-size: 34px;
+    font-size: 25px;
   }
   @media (max-width: 767px) {
-    font-size: 26px;
+    font-size: 20px;
   }
 `;
 const ImageWrap = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  margin-bottom: 30px;
   max-width: 700px;
   @media (max-width: 1359px) {
     max-width: 500px;
@@ -88,18 +101,27 @@ const Paragraph = styled.p`
   font-family: "Noto Serif";
   font-style: italic;
   color: ${theme.colors.text_color};
-  font-size: 35px;
+
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 35px;
+  margin-bottom: 30px;
+
   @media (max-width: 1359px) {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 35px;
+    max-width: 700px;
   }
   @media (max-width: 767px) {
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
-    font-size: 18px;
+    margin-top: 15px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    max-width: 320px;
   }
   a {
     user-select: all;
@@ -112,18 +134,27 @@ const Paragraph1 = styled.p`
   width: 100%;
   font-family: "Noto Serif";
   color: ${theme.colors.text_color};
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 35px;
   margin-bottom: 20px;
+  margin: 0;
+
   @media (max-width: 1359px) {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 35px;
+    max-width: 700px;
   }
   @media (max-width: 767px) {
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
-    font-size: 18px;
+    margin-top: 15px;
+    line-height: 30px;
+
+    max-width: 320px;
   }
   a {
     user-select: all;
@@ -136,15 +167,17 @@ function Thank({ handleLanguageChange, lang }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
       <SThank id="privacy">
         <Wrapper>
+          <Lines />
           <Title>Gratitude</Title>
           <ImageWrap>
-            <Image src={thank} alt="" />
+            <Image src={thank} />
           </ImageWrap>
           <Paragraph>
             "When eating fruit remember the one who planted the tree…"
@@ -168,6 +201,7 @@ function Thank({ handleLanguageChange, lang }) {
       </SThank>
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

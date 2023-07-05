@@ -6,15 +6,19 @@ import Pricing from "../../components/Pricing/Pricing";
 import Lines from "../../components/Lines/Lines";
 import { SPage } from "../main/MainPage";
 import Links from "../../components/Links/Links";
+import Phrase from "../../components/Phrase/Phrase";
 
 function PricingPage({ handleLanguageChange, lang }) {
   return (
     <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
+
       <ContactsButton />
+
       <Pricing lang={lang} />
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

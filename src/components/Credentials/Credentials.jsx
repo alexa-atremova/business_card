@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../Header/Heder";
 import Footer from "../Footer/Footer";
-import img1 from "../../assets/img_1.jpg";
+import cred from "../../assets/cred.jpg";
 import img2 from "../../assets/img_2.jpg";
 import ContactsButton from "../ContactsButton/ContactsButton";
 import { theme } from "../../res/themes";
+import Lines from "../Lines/Lines";
 
 const SCredentials = styled.div`
   display: flex;
@@ -16,6 +17,17 @@ const SCredentials = styled.div`
   width: 100%;
   height: fit-content;
   margin-top: 200px;
+  max-width: 1200px;
+  @media (max-width: 1359px) {
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    max-width: 510px;
+  }
+  @media (max-width: 539px) {
+    flex-direction: column;
+    max-width: 320px;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -34,57 +46,48 @@ const Wrapper = styled.div`
     flex-direction: column;
     max-width: 320px;
   }
-  .wrap1 {
+
+  .wrap2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
+    flex-direction: row;
     img {
+      max-width: 300px;
       border-radius: 10px;
-      width: 100%;
+      padding: 30px;
+    }
+    @media (max-width: 1359px) {
+      max-width: 700px;
+    }
+    @media (max-width: 767px) {
+      max-width: 510px;
+    }
+    @media (max-width: 539px) {
+      flex-direction: column;
+      max-width: 320px;
     }
   }
-  .wrap2,
-  .wrap3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    img {
-      margin-top: 30px;
 
-      margin-left: 20px;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-  }
-  .wrap3 {
-    img {
-      width: 100%;
-      max-width: 400px;
-      float: left;
-      margin-right: 20px;
-    }
-  }
   @media (max-width: 1359px) {
-    .wrap2,
-    .wrap3 {
+    .wrap2 {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       img {
-        margin-top: 0px;
-
-        margin-left: 0px;
-        width: 100%;
       }
     }
-    .wrap3 {
+  }
+  @media (max-width: 767px) {
+    .wrap2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       img {
-        float: left;
-        margin-right: 20px;
+        padding: 20px;
+        max-width: 300px;
       }
     }
   }
@@ -93,18 +96,18 @@ const Wrapper = styled.div`
 const Title = styled.h2`
   font-family: "Poppins", sans-serif;
 
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
-  border-bottom: 2px solid ${theme.colors.highlighted};
+
   color: ${theme.colors.text_color};
 
   text-transform: uppercase;
   @media (max-width: 1359px) {
-    font-size: 34px;
+    font-size: 25px;
   }
   @media (max-width: 767px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 
@@ -114,25 +117,27 @@ const Paragraph = styled.p`
   flex: 1;
   font-family: "Noto Serif";
   color: ${theme.colors.text_color};
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 35px;
   margin-bottom: 20px;
+  margin: 0;
 
   @media (max-width: 1359px) {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 35px;
+    max-width: 700px;
   }
   @media (max-width: 767px) {
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
-    font-size: 18px;
-  }
-  a {
-    user-select: all;
-    text-decoration: none;
-    color: orange;
-    margin-left: 10px;
+    margin-top: 15px;
+    line-height: 30px;
+
+    max-width: 320px;
   }
 `;
 const P = styled.p`
@@ -168,29 +173,35 @@ function Credentials({ handleLanguageChange, lang }) {
     <>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
-      <SCredentials id="calling">
-        <Wrapper>
-          <Title>Credentials</Title>
 
+      <SCredentials>
+        <Wrapper>
+          <Lines />
+          <Title>Credentials</Title>
           <Paragraph>
+            {" "}
             In my area of expertise, I firmly believe that personal experience
             is the only way to truly acquire real skills and abilities. It comes
             at a high price, but there is simply no other way around it.
-            <br />
-            <br /> I have paid for every ounce of knowledge and expertise I
-            possess with the highest currency possible: my lifetime. Throughout
-            my journey, I have accumulated not only knowledge and techniques but
-            also scars in my soul and heart, as well as moments of joy.
-            <br />
-            <br /> This is the price I have paid to excel in my field. I have
-            poured my soul into everything I do because that's how you become
-            truly exceptional in this line of work. Formal credentials and
-            diplomas may have their place in certain professions, but in my
-            realm, they pale in comparison to the lessons learned through lived
-            experiences.
-            <br />
-            <br /> My expertise is rooted in the depths of my personal journey
-            and the profound impact I have had on the lives of my clients. Every
+          </Paragraph>
+          <div className="wrap2">
+            <img src={cred} alt="" />
+            <Paragraph>
+              I have paid for every ounce of knowledge and expertise I possess
+              with the highest currency possible: my lifetime. Throughout my
+              journey, I have accumulated not only knowledge and techniques but
+              also scars in my soul and heart, as well as moments of joy. <br />
+              <br /> This is the price I have paid to excel in my field. I have
+              poured my soul into everything I do because that's how you become
+              truly exceptional in this line of work. Formal credentials and
+              diplomas may have their place in certain professions, but in my
+              realm, they pale in comparison to the lessons learned through
+              lived experiences.
+            </Paragraph>
+          </div>
+          <Paragraph>
+            My expertise is rooted in the depths of my personal journey and the
+            profound impact I have had on the lives of my clients. Every
             interaction, every challenge, and every success has contributed to
             the wealth of knowledge and understanding I bring to each
             engagement.

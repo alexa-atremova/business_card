@@ -6,6 +6,7 @@ import Bespoke_Assistance from "../../components/Bespoke_Assistance/Bespoke_Assi
 import { SPage } from "../main/MainPage";
 import Lines from "../../components/Lines/Lines";
 import Links from "../../components/Links/Links";
+import Phrase from "../../components/Phrase/Phrase";
 
 function Bespoke_AssistancePage({ handleLanguageChange, lang }) {
   return (
@@ -15,6 +16,7 @@ function Bespoke_AssistancePage({ handleLanguageChange, lang }) {
       <Bespoke_Assistance lang={lang} />
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

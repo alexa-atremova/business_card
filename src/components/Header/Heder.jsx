@@ -329,7 +329,7 @@ const Header = ({ handleLanguageChange, lang }) => {
                       <Link
                         className="link"
                         activeClass="active"
-                        to="Home_block"
+                        to="/"
                         spy={true}
                         smooth={true}
                         offset={0}
@@ -344,7 +344,7 @@ const Header = ({ handleLanguageChange, lang }) => {
                     )}
                   </li>
                   <li>
-                    {path.pathname === "/pricing" ? (
+                    {path.pathname === "/" ? (
                       <Link to="/pricing"> Pricing</Link>
                     ) : (
                       <NavLink className={"link"} to="/pricing">
@@ -381,18 +381,18 @@ const Header = ({ handleLanguageChange, lang }) => {
                   </li>
                   <li>
                     {path.pathname === "/" ? (
-                      <ScrollLink
-                        to="contact"
+                      <Link
+                        to="contact_me"
                         smooth={true}
                         duration={500}
                         onClick={() => setOpen(false)}
                       >
                         Contact Me
-                      </ScrollLink>
+                      </Link>
                     ) : (
                       <NavHashLink
                         className={"link"}
-                        to="/#contact"
+                        to="/contact_me"
                         onClick={() => setOpen(false)}
                       >
                         Contact Me

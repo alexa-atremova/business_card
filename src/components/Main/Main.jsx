@@ -107,8 +107,7 @@ const TitleWrapp = styled.div`
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   width: 100%;
-  border-left: 2px solid ${theme.colors.highlighted};
-  padding-left: 16px;
+  /* border-left: 2px solid ${theme.colors.highlighted}; */
 `;
 const Title1 = styled.h1`
   font-size: 34px;
@@ -193,7 +192,7 @@ const Title2 = styled.div`
 `;
 const Title3 = styled.h1`
   font-size: 34px;
-
+  font-family: "Noto Serif";
   color: ${theme.colors.text_color};
   margin: 0;
   @media (max-width: 1359px) {
@@ -207,22 +206,58 @@ const Title3 = styled.h1`
 
 const ParagraphWrap = styled.div`
   width: 100%;
-
+  margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-
+  background-color: white;
   gap: 50px;
+  padding: 10px 0px;
+
   @media (max-width: 1359px) {
-    gap: 35px;
+    gap: 5px;
   }
   @media (max-width: 767px) {
     flex-direction: column;
-    gap: 0px;
+    padding: 0px 20px;
+    margin-top: 0px;
   }
 `;
+const Paragraph3 = styled.p`
+  display: flex;
+  flex-direction: column;
 
+  width: 100%;
+  position: relative;
+  font-size: 20px;
+  line-height: 50px;
+  font-family: "Noto Serif";
+  font-style: italic;
+  padding: 0 20px;
+  color: ${theme.colors.dark_background};
+  font-weight: 500;
+
+  p {
+    margin: 0;
+    align-self: flex-end;
+
+    margin-right: 30px;
+  }
+
+  @media (max-width: 1359px) {
+    font-size: 14px;
+    line-height: 35px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  @media (max-width: 539px) {
+    margin: 0;
+  }
+`;
 const Paragraph = styled.p`
   display: flex;
   flex-direction: column;
@@ -230,9 +265,10 @@ const Paragraph = styled.p`
   width: 100%;
   position: relative;
   font-size: 25px;
-  line-height: 35px;
+  line-height: 50px;
   font-family: "Noto Serif";
   font-style: italic;
+
   p {
     margin: 0;
     align-self: flex-end;
@@ -242,10 +278,11 @@ const Paragraph = styled.p`
 
   @media (max-width: 1359px) {
     font-size: 20px;
+    line-height: 40px;
   }
   @media (max-width: 767px) {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 30px;
   }
 `;
 
@@ -255,11 +292,11 @@ const ImageContainer = styled.div`
   justify-self: flex-start;
   width: 100%;
   max-width: 350px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  z-index: 10;
 
   @media (max-width: 1359px) {
-    margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     max-width: 290px;
   }
   @media (max-width: 767px) {
@@ -268,6 +305,10 @@ const ImageContainer = styled.div`
     justify-self: flex-start;
     margin: 0;
     max-width: 320px;
+  }
+  @media (max-width: 539px) {
+    margin-top: 0px;
+    margin-bottom: 25px;
   }
 `;
 
@@ -299,7 +340,8 @@ const Main = ({ lang }) => {
             <Title3>CONVERSATIONS THAT CHANGE LIVES</Title3>
           </TitleWrapp>
           <ParagraphWrap>
-            <Paragraph>
+            <div className="back"></div>
+            <Paragraph3>
               “Dear Avgust , in the realm of wonders, you are a true miracle
               maker. Your presence and actions, have the power to create
               extraordinary transformations in the lives of others. With your
@@ -308,7 +350,7 @@ const Main = ({ lang }) => {
               best in people and nurture their potential is truly remarkable.
               You are a beacon of light, igniting the spark of miracles wherever
               you go.” <br /> <p>Anna K.</p>
-            </Paragraph>
+            </Paragraph3>
             <ImageContainer>
               <Image src={photo} alt="Photograph" />
             </ImageContainer>

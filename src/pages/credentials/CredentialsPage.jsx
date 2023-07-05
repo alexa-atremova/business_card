@@ -6,6 +6,7 @@ import Credentials from "../../components/Credentials/Credentials";
 import Links from "../../components/Links/Links";
 import Lines from "../../components/Lines/Lines";
 import { SPage } from "../main/MainPage";
+import Phrase from "../../components/Phrase/Phrase";
 
 function CredentialsPage({ handleLanguageChange, lang }) {
   return (
@@ -15,6 +16,7 @@ function CredentialsPage({ handleLanguageChange, lang }) {
       <Credentials lang={lang} />
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

@@ -11,17 +11,24 @@ const Border = styled.div`
   margin-bottom: 50px;
   max-width: 1200px;
   width: 80%;
-  height: 20px;
-
+  height: 14px;
+  @media (max-width: 1359px) {
+  }
+  @media (max-width: 767px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 539px) {
+  }
   .border {
     height: 5px;
-    margin-top: 10px;
+    margin-top: 7px;
     width: 50%;
     border-top: 1px solid ${theme.colors.highlighted};
   }
   .line {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 7px;
     height: 5px;
     border-top: 2px solid ${theme.colors.highlighted};
   }

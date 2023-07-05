@@ -15,6 +15,7 @@ import Bespoke_AssistancePage from "./pages/bespoke_assistance/Bespoke_Assistanc
 import PowerConversationPage from "./pages/powerConversationPage/PowerConversationPage";
 import CredentialsPage from "./pages/credentials/CredentialsPage";
 import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
+import Contacts from "./pages/Contacts/Contacts";
 
 const SApp = styled.div`
   overflow: hidden;
@@ -136,7 +137,7 @@ function App() {
             />
           }
         />
-
+        <Route exact path="/contact_me" element={<Contacts />} />
         <Route
           exact
           path="*"

@@ -3,6 +3,7 @@ import img from "./../../assets/img.jpg";
 import img2 from "./../../assets/photo2.jpg";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../res/themes";
+import Lines from "../Lines/Lines";
 
 const WelcomeContainer = styled.div`
   display: flex;
@@ -13,12 +14,17 @@ const WelcomeContainer = styled.div`
   height: 100%;
   gap: 20px;
   margin-top: 200px;
-  margin-bottom: 100px;
-
+  margin-bottom: 50px;
+  max-width: 1200px;
   @media (max-width: 1359px) {
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    max-width: 510px;
   }
   @media (max-width: 539px) {
-    gap: 0px;
+    flex-direction: column;
+    max-width: 320px;
   }
 `;
 const Wrapper = styled.div`
@@ -31,7 +37,8 @@ const Wrapper = styled.div`
 
   gap: 40px;
   @media (max-width: 1359px) {
-    align-items: flex-start;
+    flex-direction: column;
+
     max-width: 700px;
     gap: 20px;
   }
@@ -57,6 +64,12 @@ const Paragraph = styled.p`
   text-align: justify;
 
   /* text-align: left; */
+  .ital {
+    background-color: white;
+    color: ${theme.colors.dark_background};
+    padding: 10px;
+    font-style: italic;
+  }
   .w {
     display: inline-block;
     p {
@@ -98,7 +111,7 @@ const Paragraph = styled.p`
     max-width: 500px;
   }
   @media (max-width: 539px) {
-    margin-top: 20px;
+    margin-top: 15px;
     line-height: 30px;
 
     max-width: 320px;
@@ -110,19 +123,19 @@ const ImageContainer = styled.div`
   max-width: 300px;
 
   @media (max-width: 1359px) {
-    margin-top: 80px;
-    max-width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 400px;
   }
   @media (max-width: 767px) {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    margin-top: 40px;
-    max-width: 220px;
+    margin-top: 20px;
+    max-width: 320px;
   }
   @media (max-width: 539px) {
     margin-top: 20px;
-    max-width: 300px;
+    max-width: 320px;
   }
 `;
 
@@ -136,6 +149,7 @@ const Image = styled.img`
 const Title1 = styled.h1`
   width: 100%;
   font-size: 25px;
+  line-height: 50px;
   color: ${theme.colors.text_color};
   margin: 0;
   text-align: center;
@@ -146,11 +160,11 @@ const Title1 = styled.h1`
   @media (max-width: 767px) {
     max-width: 500px;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 35px;
   }
   @media (max-width: 539px) {
     margin-top: 20px;
-    line-height: 25px;
+    line-height: 30px;
     max-width: 320px;
   }
 `;
@@ -161,16 +175,17 @@ const Welcome = ({ lang }) => {
   }, []);
   return (
     <WelcomeContainer>
+      <Lines />
       <Title1>POWER OF CONVERSATION </Title1>
       <Paragraph>
-        <i>
+        <div className="ital">
           "I engage in conversations that have the power to change people's
           lives. Through the simple act of talking, I have been called a healer,
           a messenger from God, a miracle maker, a magician, and a savior, among
           other titles. While I don't feel the need to label myself in any
           particular way, for the sake of simplicity in explaining my role to
           others, I refer to myself as a Confidant.”
-        </i>
+        </div>
       </Paragraph>
       <Wrapper>
         <ImageContainer>

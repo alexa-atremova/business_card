@@ -258,19 +258,19 @@ const MobileMenu = ({
               </li>
               <li>
                 {path.pathname === "/" ? (
-                  <ScrollLink
-                    to="contact"
+                  <Link
+                    to="/contact_me"
                     smooth={true}
                     duration={500}
                     ref={contactsRef}
                     onClick={() => setOpen(false)}
                   >
                     Contact Me
-                  </ScrollLink>
+                  </Link>
                 ) : (
                   <NavHashLink
                     className={"link"}
-                    to="/#contact"
+                    to="/contact_me"
                     onClick={() => setOpen(false)}
                   >
                     Contact Me

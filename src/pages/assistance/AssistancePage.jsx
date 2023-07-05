@@ -6,6 +6,7 @@ import Assistance from "../../components/Assistance/Assistance";
 import Lines from "../../components/Lines/Lines";
 import Links from "../../components/Links/Links";
 import { SPage } from "../main/MainPage";
+import Phrase from "../../components/Phrase/Phrase";
 
 function AssistancePage({ handleLanguageChange, lang }) {
   return (
@@ -15,6 +16,7 @@ function AssistancePage({ handleLanguageChange, lang }) {
       <Assistance lang={lang} />
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );

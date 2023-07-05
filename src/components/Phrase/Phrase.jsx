@@ -11,8 +11,10 @@ const ParagraphItalic = styled.div`
   font-style: italic;
   font-size: 20px;
   line-height: 2;
-  margin: 0;
+
   margin-top: 50px;
+  margin-bottom: 50px;
+
   width: 100%;
   max-width: 1200px;
   @media (max-width: 1359px) {

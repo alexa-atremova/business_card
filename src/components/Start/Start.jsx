@@ -5,6 +5,7 @@ import Links from "../Links/Links";
 import { useLocation } from "react-router";
 import { Element } from "react-scroll";
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
+import Lines from "../Lines/Lines";
 
 const StartContainer = styled.div`
   position: relative;
@@ -14,20 +15,17 @@ const StartContainer = styled.div`
   align-items: center;
 
   width: 100%;
-  min-height: 1200px;
+
   height: fit-content;
   .wrapLink {
     top: 20px;
     position: absolute;
   }
   @media (max-width: 1359px) {
-    min-height: 1000px;
   }
   @media (max-width: 767px) {
-    min-height: 1400px;
   }
   @media (max-width: 539px) {
-    min-height: 1250px;
   }
   .bttn {
     display: flex;
@@ -56,13 +54,13 @@ const StartContainer = styled.div`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   font-family: "Poppins", sans-serif;
   font-size: 32px;
   font-weight: 500;
-  border-bottom: 1px solid ${theme.colors.highlighted};
+
   color: ${theme.colors.text_color};
-  padding-top: 200px;
+
   margin: 0;
   text-transform: uppercase;
   @media (max-width: 1359px) {
@@ -94,7 +92,10 @@ const BlocksContainer = styled.div`
 
 const Block1 = styled.div`
   width: 100%;
-  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: fit-content;
 
   font-family: "Noto Serif", Times, serif;
@@ -114,17 +115,23 @@ const Block1 = styled.div`
   }
 `;
 const BlockText = styled.p`
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.5;
   color: ${theme.colors.text_color};
-  text-align: justify;
-  a {
-    font-weight: 600;
-    color: ${theme.colors.highlighted};
+  text-align: center;
+  max-width: 700px;
+
+  @media (max-width: 1359px) {
+    font-size: 18px;
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
-    font-size: 18px;
-    line-height: 30px;
+    max-width: 320px;
   }
 `;
 export const DisclaimerButton = styled.button`
@@ -149,9 +156,6 @@ const Start = ({ lang }) => {
 
   return (
     <StartContainer>
-      <div className="wrapLink">
-        <Links style={{ position: "absolute" }} />
-      </div>
       <Title id="contact" ref={contactsRef}>
         {lang === "ru" ? "КАК НАЧАТЬ" : "HOW TO START"}
       </Title>

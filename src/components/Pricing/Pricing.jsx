@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { theme } from "../../res/themes";
+import Lines from "../Lines/Lines";
 
 const PricingContainer = styled.div`
   display: flex;
@@ -11,6 +12,17 @@ const PricingContainer = styled.div`
 
   width: 100%;
   height: fit-content;
+  max-width: 1200px;
+  @media (max-width: 1359px) {
+    max-width: 700px;
+  }
+  @media (max-width: 767px) {
+    max-width: 510px;
+  }
+  @media (max-width: 539px) {
+    flex-direction: column;
+    max-width: 320px;
+  }
 `;
 
 export const MainTitle = styled.h2`
@@ -83,15 +95,20 @@ const BlocksContainer = styled.div`
 `;
 
 const Block = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   height: fit-content;
   font-family: "Noto Serif";
+  text-align: center;
   background-color: ${theme.colors.light_background};
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 
   color: ${theme.colors.text_color};
-  padding: 16px;
+  padding: 20px;
   @media (max-width: 1359px) {
   }
   @media (max-width: 767px) {
@@ -116,23 +133,13 @@ const BlockTitle = styled.h3`
   }
 `;
 
-const BlockText = styled.p`
-  font-size: 14px;
-  line-height: 1.5;
-  color: ${theme.colors.text_color};
-  @media (max-width: 539px) {
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0;
-  }
-`;
-
 const Pricing = ({ lang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <PricingContainer>
+      <Lines />
       <MainTitle> Pricing</MainTitle>
 
       <BlocksContainer>
@@ -155,8 +162,8 @@ const Pricing = ({ lang }) => {
           consultation that typically lasts between 90 to 120 minutes.
           <br /> <br /> During this in-depth session, we will engage in a
           profound discussion about your goals, challenges, and any other
-          pertinent information that will guide our collaboration. The cost of
-          this exclusive consultation is €500.
+          pertinent information that will guide our collaboration. <br />
+          The cost of this exclusive consultation is €500.
         </Block>
         <Block>
           <BlockTitle> Ongoing Support</BlockTitle>

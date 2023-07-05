@@ -9,6 +9,7 @@ import { theme } from "../../res/themes";
 import { SPage } from "../main/MainPage";
 import Lines from "../../components/Lines/Lines";
 import Links from "../../components/Links/Links";
+import Phrase from "../../components/Phrase/Phrase";
 
 const SAboutMe = styled.div`
   display: flex;
@@ -96,18 +97,18 @@ const Wrapper = styled.div`
 const Title = styled.h2`
   font-family: "Poppins", sans-serif;
 
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
-  border-bottom: 2px solid ${theme.colors.highlighted};
+  margin: 0;
   color: ${theme.colors.text_color};
 
   text-transform: uppercase;
   @media (max-width: 1359px) {
-    font-size: 34px;
+    font-size: 25px;
   }
   @media (max-width: 767px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 
@@ -117,19 +118,26 @@ const Paragraph = styled.p`
   flex: 1;
   font-family: "Noto Serif";
   color: ${theme.colors.text_color};
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 35px;
   margin-bottom: 20px;
 
   @media (max-width: 1359px) {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 35px;
+    max-width: 700px;
   }
   @media (max-width: 767px) {
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
   }
   @media (max-width: 539px) {
-    font-size: 18px;
+    margin-top: 15px;
+    line-height: 30px;
+
+    max-width: 320px;
   }
   a {
     user-select: all;
@@ -171,8 +179,10 @@ function AboutMe({ handleLanguageChange, lang }) {
     <SPage>
       <Header handleLanguageChange={handleLanguageChange} lang={lang} />
       <ContactsButton />
-      <SAboutMe id="calling">
+
+      <SAboutMe>
         <Wrapper>
+          <Lines />
           <Title>ABOUT ME</Title>
           <P>
             Avgust Platina <br />
@@ -305,6 +315,7 @@ function AboutMe({ handleLanguageChange, lang }) {
       </SAboutMe>
       <Lines />
       <Links />
+      <Phrase />
       <Footer />
     </SPage>
   );
